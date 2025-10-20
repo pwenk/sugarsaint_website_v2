@@ -1,0 +1,31 @@
+<svg width="640" height="400" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Sugar consumption vs obesity rates</title>
+  <desc id="desc">Simple line chart showing sugar consumption trending down while obesity trends up.</desc>
+  <defs>
+    <linearGradient id="grid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7f0df" />
+      <stop offset="100%" stop-color="#fffaf2" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" rx="28" fill="url(#grid)" />
+  <rect x="40" y="40" width="560" height="320" rx="20" fill="#ffffff" opacity="0.92" />
+  <g stroke="#efe4cf" stroke-width="1">
+    <line x1="80" y1="320" x2="580" y2="320" />
+    <line x1="80" y1="260" x2="580" y2="260" />
+    <line x1="80" y1="200" x2="580" y2="200" />
+    <line x1="80" y1="140" x2="580" y2="140" />
+    <line x1="80" y1="80" x2="580" y2="80" />
+    <line x1="140" y1="80" x2="140" y2="320" />
+    <line x1="260" y1="80" x2="260" y2="320" />
+    <line x1="380" y1="80" x2="380" y2="320" />
+    <line x1="500" y1="80" x2="500" y2="320" />
+  </g>
+  <polyline points="80,120 140,150 200,190 260,220 320,240 380,260 440,280 500,295 560,310" fill="none" stroke="#8a8a8a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="80,300 140,280 200,240 260,210 320,190 380,160 440,140 500,120 560,100" fill="none" stroke="#d4af37" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="200" cy="190" r="6" fill="#8a8a8a" />
+  <circle cx="500" cy="120" r="7" fill="#d4af37" />
+  <text x="90" y="105" font-family="'Inter', sans-serif" font-size="12" fill="#6a6258">Sugar consumption</text>
+  <text x="420" y="125" font-family="'Inter', sans-serif" font-size="12" fill="#b48f2a">Obesity rates</text>
+  <text x="70" y="340" font-family="'Inter', sans-serif" font-size="12" fill="#9a8f7f">1970</text>
+  <text x="540" y="340" font-family="'Inter', sans-serif" font-size="12" fill="#9a8f7f">2013</text>
+</svg>

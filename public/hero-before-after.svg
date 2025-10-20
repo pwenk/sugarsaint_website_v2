@@ -1,0 +1,38 @@
+<svg width="640" height="520" viewBox="0 0 640 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Before and after energy illustration</title>
+  <desc id="desc">Split card comparing a tired and energized figure with subtle glow accents.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7efe0" />
+      <stop offset="100%" stop-color="#fffaf2" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#f3d88a" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#f3d88a" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="640" height="520" rx="32" fill="url(#bg)" />
+  <rect x="40" y="40" width="560" height="440" rx="28" fill="#ffffff" opacity="0.9" />
+  <rect x="40" y="40" width="280" height="440" rx="28" fill="#ece8e2" opacity="0.85" />
+  <rect x="320" y="40" width="280" height="440" rx="28" fill="#fff6e1" opacity="0.85" />
+  <g transform="translate(160 260)">
+    <circle cx="0" cy="-120" r="48" fill="#b5b0a9" />
+    <rect x="-38" y="-60" width="76" height="140" rx="36" fill="#c9c4be" />
+    <rect x="-68" y="40" width="136" height="90" rx="28" fill="#d8d3cd" />
+    <rect x="-92" y="100" width="184" height="20" rx="10" fill="#ded8d2" />
+    <circle cx="-72" cy="60" r="26" fill="#bcb6b0" />
+    <circle cx="72" cy="60" r="26" fill="#bcb6b0" />
+  </g>
+  <g transform="translate(480 260)">
+    <circle cx="0" cy="-120" r="48" fill="#d4af37" />
+    <rect x="-38" y="-60" width="76" height="140" rx="36" fill="#f6e2a5" />
+    <rect x="-68" y="40" width="136" height="90" rx="28" fill="#fff4d2" />
+    <rect x="-92" y="100" width="184" height="20" rx="10" fill="#ffe8ac" />
+    <circle cx="-72" cy="60" r="26" fill="#f1d37f" />
+    <circle cx="72" cy="60" r="26" fill="#f1d37f" />
+    <circle cx="0" cy="-40" r="110" fill="url(#glow)" />
+  </g>
+  <path d="M320 120 L320 400" stroke="#d4af37" stroke-width="4" stroke-dasharray="14 12" opacity="0.5" />
+  <circle cx="320" cy="260" r="32" fill="#d4af37" opacity="0.1" />
+  <path d="M300 260 L340 260" stroke="#d4af37" stroke-width="6" stroke-linecap="round" />
+</svg>

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" style="background-color: #FFFBF5;">
+  <!-- Grid Lines -->
+  <g stroke="#E5E5E5" stroke-width="1" opacity="0.5">
+    <line x1="100" y1="100" x2="100" y2="500" />
+    <line x1="100" y1="500" x2="1100" y2="500" />
+    <line x1="100" y1="400" x2="1100" y2="400" stroke-dasharray="4,4" />
+    <line x1="100" y1="300" x2="1100" y2="300" stroke-dasharray="4,4" />
+    <line x1="100" y1="200" x2="1100" y2="200" stroke-dasharray="4,4" />
+    <line x1="100" y1="100" x2="1100" y2="100" stroke-dasharray="4,4" />
+  </g>
+
+  <!-- Left Y-Axis (Sugar Intake) -->
+  <text x="20" y="280" font-family="Inter, sans-serif" font-size="14" fill="#2C2C2C" font-weight="600" transform="rotate(-90 20 280)">
+    Sugar Intake (g/person/day)
+  </text>
+  <text x="70" y="510" font-family="Inter, sans-serif" font-size="12" fill="#2C2C2C" text-anchor="end">75.0</text>
+  <text x="70" y="410" font-family="Inter, sans-serif" font-size="12" fill="#2C2C2C" text-anchor="end">85.0</text>
+  <text x="70" y="310" font-family="Inter, sans-serif" font-size="12" fill="#2C2C2C" text-anchor="end">95.0</text>
+  <text x="70" y="210" font-family="Inter, sans-serif" font-size="12" fill="#2C2C2C" text-anchor="end">105.0</text>
+  <text x="70" y="110" font-family="Inter, sans-serif" font-size="12" fill="#2C2C2C" text-anchor="end">115.0</text>
+  <text x="70" y="60" font-family="Inter, sans-serif" font-size="12" fill="#2C2C2C" text-anchor="end">125.0</text>
+
+  <!-- Right Y-Axis (Obesity %) -->
+  <text x="1180" y="280" font-family="Inter, sans-serif" font-size="14" fill="#C29F2F" font-weight="600" transform="rotate(90 1180 280)">
+    Adults with Obesity (%)
+  </text>
+  <text x="1130" y="510" font-family="Inter, sans-serif" font-size="12" fill="#C29F2F" text-anchor="start">10</text>
+  <text x="1130" y="410" font-family="Inter, sans-serif" font-size="12" fill="#C29F2F" text-anchor="start">15</text>
+  <text x="1130" y="310" font-family="Inter, sans-serif" font-size="12" fill="#C29F2F" text-anchor="start">20</text>
+  <text x="1130" y="210" font-family="Inter, sans-serif" font-size="12" fill="#C29F2F" text-anchor="start">25</text>
+  <text x="1130" y="110" font-family="Inter, sans-serif" font-size="12" fill="#C29F2F" text-anchor="start">30</text>
+  <text x="1130" y="60" font-family="Inter, sans-serif" font-size="12" fill="#C29F2F" text-anchor="start">35</text>
+  <text x="1130" y="30" font-family="Inter, sans-serif" font-size="12" fill="#C29F2F" text-anchor="start">40</text>
+
+  <!-- X-Axis (Years) -->
+  <text x="600" y="550" font-family="Inter, sans-serif" font-size="16" fill="#2C2C2C" font-weight="600" text-anchor="middle">Year</text>
+  <text x="145" y="530" font-family="Inter, sans-serif" font-size="13" fill="#2C2C2C" text-anchor="middle">1980</text>
+  <text x="345" y="530" font-family="Inter, sans-serif" font-size="13" fill="#2C2C2C" text-anchor="middle">1985</text>
+  <text x="495" y="530" font-family="Inter, sans-serif" font-size="13" fill="#2C2C2C" text-anchor="middle">1990</text>
+  <text x="645" y="530" font-family="Inter, sans-serif" font-size="13" fill="#2C2C2C" text-anchor="middle">1995</text>
+  <text x="795" y="530" font-family="Inter, sans-serif" font-size="13" fill="#2C2C2C" text-anchor="middle">2000</text>
+  <text x="945" y="530" font-family="Inter, sans-serif" font-size="13" fill="#2C2C2C" text-anchor="middle">2005</text>
+  <text x="1055" y="530" font-family="Inter, sans-serif" font-size="13" fill="#2C2C2C" text-anchor="middle">2010</text>
+
+  <!-- Sugar Intake Line (Blue/Turquoise) - showing decline after 1999 -->
+  <polyline
+    points="145,485 215,450 285,420 355,390 425,365 495,335 565,310 635,290 705,260 775,245 845,255 915,270 985,285 1055,320 1095,335"
+    fill="none"
+    stroke="#4A90E2"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+
+  <!-- Obesity Line (Sacred Gold) - showing rise -->
+  <polyline
+    points="145,445 215,420 285,390 355,360 425,335 495,300 565,270 635,245 705,225 775,205 845,190 915,175 985,165 1055,150 1095,135"
+    fill="none"
+    stroke="#D4AF37"
+    stroke-width="3"
+    stroke-dasharray="8,4"
+    stroke-linecap="round"
+  />
+
+  <!-- Legend -->
+  <rect x="400" y="80" width="300" height="70" fill="#FFFBF5" stroke="#E5E5E5" stroke-width="1" rx="4" />
+  <line x1="420" y1="105" x2="470" y2="105" stroke="#4A90E2" stroke-width="3" />
+  <text x="480" y="110" font-family="Inter, sans-serif" font-size="14" fill="#2C2C2C">Sugar Intake</text>
+
+  <line x1="420" y1="130" x2="470" y2="130" stroke="#D4AF37" stroke-width="3" stroke-dasharray="8,4" />
+  <text x="480" y="135" font-family="Inter, sans-serif" font-size="14" fill="#C29F2F">Obesity Rate</text>
+
+  <!-- Annotation Arrow and Text -->
+  <g opacity="0.8">
+    <path d="M 850 370 L 850 320 L 820 340 M 850 320 L 880 340" stroke="#C29F2F" stroke-width="2" fill="none" />
+    <text x="860" y="395" font-family="Inter, sans-serif" font-size="12" fill="#C29F2F" font-style="italic">
+      Sugar ↓ 15-23%
+    </text>
+    <text x="860" y="410" font-family="Inter, sans-serif" font-size="12" fill="#C29F2F" font-style="italic">
+      (1999-2013)
+    </text>
+  </g>
+
+  <!-- Data Source Citation -->
+  <text x="100" y="580" font-family="Inter, sans-serif" font-size="11" fill="#666666" font-style="italic">
+    Source: USDA Food Availability Data | Analysis: Stephan Guyenet, PhD
+  </text>
+</svg>

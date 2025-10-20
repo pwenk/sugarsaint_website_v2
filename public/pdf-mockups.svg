@@ -1,0 +1,32 @@
+<svg width="520" height="360" viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">SugarSaint resources preview</title>
+  <desc id="desc">Stacked cards representing SugarSaint course PDFs and trackers.</desc>
+  <defs>
+    <linearGradient id="sheet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7e8" />
+      <stop offset="100%" stop-color="#fff2d5" />
+    </linearGradient>
+  </defs>
+  <rect width="520" height="360" rx="24" fill="#fffaf2" />
+  <g opacity="0.55" transform="rotate(-6 260 180)">
+    <rect x="100" y="60" width="320" height="220" rx="18" fill="#ede6d9" />
+  </g>
+  <g transform="rotate(-2 260 180)">
+    <rect x="90" y="70" width="340" height="230" rx="20" fill="#ffffff" />
+    <rect x="100" y="92" width="160" height="14" rx="7" fill="#d4af37" />
+    <rect x="100" y="120" width="200" height="12" rx="6" fill="#efe4cf" />
+    <rect x="100" y="150" width="260" height="10" rx="5" fill="#efe4cf" />
+    <rect x="100" y="176" width="280" height="10" rx="5" fill="#efe4cf" />
+    <rect x="100" y="202" width="220" height="10" rx="5" fill="#efe4cf" />
+    <rect x="100" y="228" width="150" height="10" rx="5" fill="#efe4cf" />
+  </g>
+  <g transform="translate(150 90)">
+    <rect width="240" height="180" rx="16" fill="url(#sheet)" />
+    <rect x="20" y="24" width="120" height="12" rx="6" fill="#d4af37" />
+    <rect x="20" y="52" width="180" height="10" rx="5" fill="#e3d5b5" />
+    <rect x="20" y="74" width="150" height="10" rx="5" fill="#e3d5b5" />
+    <rect x="20" y="96" width="200" height="10" rx="5" fill="#e3d5b5" />
+    <rect x="20" y="128" width="90" height="28" rx="14" fill="#2c2c2c" opacity="0.9" />
+    <text x="38" y="148" font-family="'Inter', sans-serif" font-size="12" fill="#fff9ec">Download</text>
+  </g>
+</svg>
