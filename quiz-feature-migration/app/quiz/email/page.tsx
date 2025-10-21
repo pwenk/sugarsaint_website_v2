@@ -67,10 +67,7 @@ export default function EmailCapturePage() {
         throw new Error('Failed to submit quiz')
       }
 
-      // Save email to localStorage for checkout (before clearing quiz answers)
-      localStorage.setItem('quizEmail', email)
-
-      // Clear quiz answers from localStorage
+      // Clear localStorage
       localStorage.removeItem('quizAnswers')
 
       // Redirect to results page
