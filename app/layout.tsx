@@ -24,13 +24,7 @@ export const metadata: Metadata = {
   title: "SugarSaint — Heal Your Metabolism",
   description:
     "Stop blaming sugar. Start trusting your body with the SugarSaint metabolic practice. Take the 2-minute quiz and access Module 1 for free.",
-  icons: {
-    icon: [
-      { url: "/favicon.png", sizes: "any" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/favicon.png",
-  },
+  // Favicon auto-detected from app/icon.png by Next.js
   openGraph: {
     title: "SugarSaint — Heal Your Metabolism",
     description:
