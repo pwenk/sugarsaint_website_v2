@@ -206,7 +206,7 @@ const navLinks = [
   { href: "#pillars", label: "Principles" },
   { href: "#testimonials", label: "Results" },
   { href: "#modules", label: "Modules" },
-  { href: "#quiz", label: "Quiz" },
+  { href: "/quiz", label: "Quiz" },
 ];
 
 function Section({
@@ -304,7 +304,7 @@ export default function Home() {
             </nav>
             <div className="flex items-center gap-3">
               <Button variant="ghost" className="px-5 text-sm font-semibold text-[#2c2c2c]" asChild>
-                <Link href="#quiz">Free Quiz</Link>
+                <Link href="/quiz">Free Quiz</Link>
               </Button>
               <Button size="sm" className="bg-[#2c2c2c] px-5 text-sm font-semibold text-white hover:bg-[#433c36]" asChild>
                 <Link href="https://sugarsaint.com/course" target="_blank" rel="noreferrer">
@@ -351,7 +351,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button size="lg" className="px-10 text-base" asChild>
-                <Link href="#quiz">Take The 2-Minute Quiz</Link>
+                <Link href="/quiz">Take The 2-Minute Quiz</Link>
               </Button>
               <Button
                 size="lg"
@@ -394,7 +394,7 @@ export default function Home() {
                 title={"They told you sugar was poison.\nThey sold you “heart-healthy” oils.\nThey destroyed your metabolism."}
                 description="For 50 years, the nutrition establishment blamed sugar and carbs for metabolic disease—while seed oil consumption increased 1,000% in the American diet. The data tells a different story, honey."
               />
-              <div className="grid gap-5 text-base text-[#403930] sm:text-lg lg:grid-cols-2">
+              <div className="space-y-5 text-base text-[#403930] sm:text-lg">
                 <p>
                   From 1999 to 2013, sugar consumption decreased by 23%. Obesity rates kept climbing. If sugar causes obesity, how do we explain that, sugar?
                 </p>
@@ -552,7 +552,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
                   <Button size="lg" className="px-8 text-base" asChild>
-                    <Link href="#quiz">Take The Quiz &amp; Get Module 1 Free</Link>
+                    <Link href="/quiz">Take The Quiz &amp; Get Module 1 Free</Link>
                   </Button>
                   <Button
                     size="lg"
@@ -672,7 +672,7 @@ export default function Home() {
             <div className="flex flex-col items-center gap-3 sm:gap-4">
               <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
                 <Button size="lg" className="w-full px-8 text-sm sm:w-auto sm:px-10 sm:text-base" asChild>
-                  <Link href="https://forms.sugarsaint.com/quiz" target="_blank" rel="noreferrer">
+                  <Link href="/quiz">
                     Take The Free Quiz Now
                     <ArrowRight className="size-4" aria-hidden />
                   </Link>
