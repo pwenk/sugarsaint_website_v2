@@ -1,60 +1,9 @@
-'use client'
-
-import { useState } from 'react'
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle2, Gift, Loader2 } from "lucide-react"
+import { CheckCircle2, Gift } from "lucide-react"
 
 export function ResultsGreen() {
-  const [isCheckingOut, setIsCheckingOut] = useState(false)
-  const [error, setError] = useState('')
-
-  const handleCheckout = async () => {
-    setIsCheckingOut(true)
-    setError('')
-
-    try {
-      // Get email from localStorage (saved during quiz submission)
-      const quizEmail = localStorage.getItem('quizEmail')
-
-      if (!quizEmail) {
-        setError('Email not found. Please retake the quiz.')
-        setIsCheckingOut(false)
-        return
-      }
-
-      // Call checkout API
-      const response = await fetch('/api/stripe/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: quizEmail,
-          outcome: 'green',
-        }),
-      })
-
-      if (!response.ok) {
-        throw new Error('Failed to create checkout session')
-      }
-
-      const { url } = await response.json()
-
-      // Redirect to Stripe Checkout
-      if (url) {
-        window.location.href = url
-      } else {
-        throw new Error('No checkout URL received')
-      }
-    } catch (err) {
-      console.error('Checkout error:', err)
-      setError('Something went wrong. Please try again or contact support.')
-      setIsCheckingOut(false)
-    }
-  }
-
   return (
     <div className="space-y-10">
       {/* Hero Section */}
@@ -152,26 +101,11 @@ export function ResultsGreen() {
           <h3 className="text-2xl font-semibold text-[#2c2c2c]">
             Ready to heal your metabolism, sugar?
           </h3>
-          {error && (
-            <div className="rounded-lg bg-red-50 p-3 text-sm text-red-800">
-              {error}
-            </div>
-          )}
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-            <Button
-              size="lg"
-              className="px-10 text-base"
-              onClick={handleCheckout}
-              disabled={isCheckingOut}
-            >
-              {isCheckingOut ? (
-                <>
-                  <Loader2 className="mr-2 size-4 animate-spin" />
-                  Processing...
-                </>
-              ) : (
-                'Enroll in SugarSaint Now'
-              )}
+            <Button size="lg" className="px-10 text-base" asChild>
+              <Link href="https://buy.stripe.com/cNifZaexQecU1bt6oo" target="_blank" rel="noreferrer">
+                Enroll in SugarSaint Now
+              </Link>
             </Button>
             <Button size="lg" variant="outline" className="px-10 text-base" asChild>
               <Link href="/">

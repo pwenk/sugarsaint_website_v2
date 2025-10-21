@@ -307,7 +307,7 @@ export default function Home() {
                 <Link href="/quiz">Free Quiz</Link>
               </Button>
               <Button size="sm" className="bg-[#2c2c2c] px-5 text-sm font-semibold text-white hover:bg-[#433c36]" asChild>
-                <Link href="https://sugarsaint.com/course" target="_blank" rel="noreferrer">
+                <Link href="https://buy.stripe.com/cNifZaexQecU1bt6oo" target="_blank" rel="noreferrer">
                   Buy for $297
                 </Link>
               </Button>
@@ -318,7 +318,7 @@ export default function Home() {
               <Link href="#quiz">Free Quiz</Link>
             </Button>
             <Button size="sm" variant="outline" className="px-4" asChild>
-              <Link href="https://sugarsaint.com/course" target="_blank" rel="noreferrer">
+              <Link href="https://buy.stripe.com/cNifZaexQecU1bt6oo" target="_blank" rel="noreferrer">
                 Buy
               </Link>
             </Button>
@@ -359,7 +359,7 @@ export default function Home() {
                 className="px-10 text-base border-[#2c2c2c]/10 bg-white/70 text-[#2c2c2c] backdrop-blur hover:bg-white/90"
                 asChild
               >
-                <Link href="https://sugarsaint.com/course" target="_blank" rel="noreferrer">
+                <Link href="https://buy.stripe.com/cNifZaexQecU1bt6oo" target="_blank" rel="noreferrer">
                   Buy SugarSaint ($297)
                 </Link>
               </Button>
@@ -375,7 +375,7 @@ export default function Home() {
 
       <Section id="problem" className="bg-white">
         <div className="space-y-10">
-          <div className="overflow-hidden rounded-[32px] border border-[#efe4cf] bg-white shadow-[0_22px_60px_rgba(0,0,0,0.08)]">
+          <div className="mx-auto max-w-full overflow-hidden rounded-[32px] border border-[#efe4cf] bg-white shadow-[0_22px_60px_rgba(0,0,0,0.08)]">
             <Image
               src="/images/sugar-obesity-chart.svg"
               alt="Sugar consumption falling while obesity rates climb"
@@ -383,9 +383,11 @@ export default function Home() {
               height={720}
               className="h-full w-full object-cover"
             />
-            <p className="px-6 pb-6 pt-3 text-center text-xs uppercase tracking-[0.32em] text-[#9a8f7f]">
-              Source: USDA Food Availability Data · Analysis by Stephan Guyenet, PhD
-            </p>
+            <div className="w-full px-6 pb-6 pt-3">
+              <p className="text-center text-xs uppercase tracking-[0.32em] text-[#9a8f7f]">
+                Source: USDA Food Availability Data · Analysis by Stephan Guyenet, PhD
+              </p>
+            </div>
           </div>
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             <div className="space-y-6">
@@ -560,7 +562,7 @@ export default function Home() {
                     className="px-8 text-base"
                     asChild
                   >
-                    <Link href="https://sugarsaint.com/course" target="_blank" rel="noreferrer">
+                    <Link href="https://buy.stripe.com/cNifZaexQecU1bt6oo" target="_blank" rel="noreferrer">
                       See Everything In The Course
                     </Link>
                   </Button>
@@ -683,7 +685,7 @@ export default function Home() {
                   className="w-full px-8 text-sm sm:w-auto sm:px-10 sm:text-base"
                   asChild
                 >
-                  <Link href="https://sugarsaint.com/course" target="_blank" rel="noreferrer">
+                  <Link href="https://buy.stripe.com/cNifZaexQecU1bt6oo" target="_blank" rel="noreferrer">
                     Buy The Full Course ($297)
                   </Link>
                 </Button>

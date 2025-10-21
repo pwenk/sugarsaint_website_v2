@@ -54,27 +54,28 @@ export async function POST(request: NextRequest) {
       console.log('Contact may already exist, continuing...')
     }
 
-    // 2. Send result email
-    const emailResult = await resend.emails.send({
-      from: 'SugarSaint <[email protected]>',
-      to: email,
-      subject: getSubjectLine(outcome),
-      html: getEmailTemplate(outcome),
-    })
+    // 2. Send result email (optional - don't fail if email sending fails)
+    try {
+      const emailResult = await resend.emails.send({
+        from: 'SugarSaint <[email protected]>',
+        to: email,
+        subject: getSubjectLine(outcome),
+        html: getEmailTemplate(outcome),
+      })
 
-    if (emailResult.error) {
-      console.error('Email send error:', emailResult.error)
-      return NextResponse.json(
-        { error: 'Failed to send email' },
-        { status: 500 }
-      )
+      if (emailResult.error) {
+        console.error('Email send error:', emailResult.error)
+        // Don't fail the request - just log the error
+      }
+    } catch (emailError) {
+      console.error('Email sending failed:', emailError)
+      // Continue anyway - email is optional
     }
 
     // 3. Return success
     return NextResponse.json({
       success: true,
       outcome,
-      emailId: emailResult.data?.id,
     })
   } catch (error) {
     console.error('Quiz submission error:', error)
