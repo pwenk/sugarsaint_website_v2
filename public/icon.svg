@@ -1,0 +1,42 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="faviconTitle faviconDesc">
+  <title id="faviconTitle">SugarSaint favicon</title>
+  <desc id="faviconDesc">Three-dimensional sugar cube with halo and sparkle</desc>
+  <defs>
+    <linearGradient id="darkHalo" x1="12" y1="10" x2="84" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF9CD9" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#B7A0FF" stop-opacity="0.85" />
+    </linearGradient>
+    <linearGradient id="darkTop" x1="22" y1="14" x2="74" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF5FF" />
+      <stop offset="1" stop-color="#E9D9FF" />
+    </linearGradient>
+    <linearGradient id="darkLeft" x1="18" y1="40" x2="54" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F3E8FF" />
+      <stop offset="1" stop-color="#BFA8FF" />
+    </linearGradient>
+    <linearGradient id="darkRight" x1="46" y1="40" x2="88" y2="94" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E4D7FF" />
+      <stop offset="1" stop-color="#B58BFF" />
+    </linearGradient>
+    <radialGradient id="darkStar" cx="0.5" cy="0.5" r="0.75" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <!-- Centered sugar cube with halo and sparkle -->
+  <g transform="translate(24 20)">
+    <!-- Halo -->
+    <ellipse cx="48" cy="26" rx="42" ry="12" fill="none" stroke="url(#darkHalo)" stroke-width="3" stroke-linecap="round" />
+    <!-- Cube top face -->
+    <polygon points="48,12 80,30 48,48 16,30" fill="url(#darkTop)" />
+    <!-- Cube left face -->
+    <polygon points="16,30 48,48 48,92 16,72" fill="url(#darkLeft)" />
+    <!-- Cube right face -->
+    <polygon points="48,48 80,30 80,72 48,92" fill="url(#darkRight)" />
+    <!-- Highlight lines -->
+    <path d="M20 69L46 83" stroke="#FFE9FF" stroke-width="3" stroke-linecap="round" stroke-opacity="0.85" />
+    <path d="M52 46L78 30" stroke="#F3E4FF" stroke-width="2.4" stroke-linecap="round" stroke-opacity="0.65" />
+    <!-- Sparkle -->
+    <path d="M86 2L89 9L96 12L89 15L86 22L83 15L76 12L83 9Z" fill="url(#darkStar)" />
+  </g>
+</svg>

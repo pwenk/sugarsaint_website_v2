@@ -24,7 +24,13 @@ export const metadata: Metadata = {
   title: "SugarSaint — Heal Your Metabolism",
   description:
     "Stop blaming sugar. Start trusting your body with the SugarSaint metabolic practice. Take the 2-minute quiz and access Module 1 for free.",
-  // Favicon is automatically handled by app/icon.svg (sugar cube only)
+  icons: {
+    icon: [
+      { url: "/favicon.png", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: "SugarSaint — Heal Your Metabolism",
     description:
