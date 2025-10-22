@@ -20,6 +20,10 @@ This is the **SugarSaint marketing website** built with Next.js 15, React 19, an
 - Shadcn/ui components
 - Supabase (planned for backend)
 
+**URLs:**
+- **Canonical URL:** `sugarsaint.bio` (marketing website)
+- **Course Platform:** `course.sugarsaint.bio` (course content delivery)
+
 ## Project Structure
 
 ```

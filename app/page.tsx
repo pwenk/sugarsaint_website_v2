@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { TimeCapsuleCTA } from "@/components/time-capsule-cta";
 import {
   type LucideIcon,
   Activity,
@@ -307,7 +308,7 @@ export default function Home() {
                 <Link href="/quiz">Free Quiz</Link>
               </Button>
               <Button size="sm" className="bg-[#2c2c2c] px-5 text-sm font-semibold text-white hover:bg-[#433c36]" asChild>
-                <Link href="https://buy.stripe.com/cNifZaexQecU1bt6oo" target="_blank" rel="noreferrer">
+                <Link href="https://buy.polar.sh/polar_cl_8P7Z3TGPlCzXSgbJ0MNkG3HrYyVlcumvIjDMu3YLrwH" target="_blank" rel="noreferrer">
                   Buy for $297
                 </Link>
               </Button>
@@ -318,7 +319,7 @@ export default function Home() {
               <Link href="#quiz">Free Quiz</Link>
             </Button>
             <Button size="sm" variant="outline" className="px-4" asChild>
-              <Link href="https://buy.stripe.com/cNifZaexQecU1bt6oo" target="_blank" rel="noreferrer">
+              <Link href="https://buy.polar.sh/polar_cl_8P7Z3TGPlCzXSgbJ0MNkG3HrYyVlcumvIjDMu3YLrwH" target="_blank" rel="noreferrer">
                 Buy
               </Link>
             </Button>
@@ -359,7 +360,7 @@ export default function Home() {
                 className="px-10 text-base border-[#2c2c2c]/10 bg-white/70 text-[#2c2c2c] backdrop-blur hover:bg-white/90"
                 asChild
               >
-                <Link href="https://buy.stripe.com/cNifZaexQecU1bt6oo" target="_blank" rel="noreferrer">
+                <Link href="https://buy.polar.sh/polar_cl_8P7Z3TGPlCzXSgbJ0MNkG3HrYyVlcumvIjDMu3YLrwH" target="_blank" rel="noreferrer">
                   Buy SugarSaint ($297)
                 </Link>
               </Button>
@@ -557,7 +558,7 @@ export default function Home() {
                     className="px-8 text-base"
                     asChild
                   >
-                    <Link href="https://buy.stripe.com/cNifZaexQecU1bt6oo" target="_blank" rel="noreferrer">
+                    <Link href="https://buy.polar.sh/polar_cl_8P7Z3TGPlCzXSgbJ0MNkG3HrYyVlcumvIjDMu3YLrwH" target="_blank" rel="noreferrer">
                       See Everything In The Course
                     </Link>
                   </Button>
@@ -647,6 +648,10 @@ export default function Home() {
         </div>
       </Section>
 
+      <Section id="time-capsule" className="bg-gradient-to-br from-[#fff6e6] via-[#fffbf5] to-[#fff2d8]">
+        <TimeCapsuleCTA />
+      </Section>
+
       <Section id="quiz" className="py-14 sm:py-16 md:py-20">
         <div className="relative overflow-hidden rounded-[24px] border border-[#efe4cf] bg-gradient-to-br from-[#fff6e6] via-[#fffbf5] to-[#fff2d8] p-8 shadow-[0_28px_80px_rgba(198,150,39,0.16)] sm:rounded-[32px] sm:p-10 md:p-14">
           <div className="absolute -top-20 right-[-60px] hidden size-[220px] rounded-full bg-[#d4af37]/25 blur-3xl sm:block" aria-hidden />
@@ -680,7 +685,7 @@ export default function Home() {
                   className="w-full px-8 text-sm sm:w-auto sm:px-10 sm:text-base"
                   asChild
                 >
-                  <Link href="https://buy.stripe.com/cNifZaexQecU1bt6oo" target="_blank" rel="noreferrer">
+                  <Link href="https://buy.polar.sh/polar_cl_8P7Z3TGPlCzXSgbJ0MNkG3HrYyVlcumvIjDMu3YLrwH" target="_blank" rel="noreferrer">
                     Buy The Full Course ($297)
                   </Link>
                 </Button>

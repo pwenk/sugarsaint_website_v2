@@ -103,7 +103,7 @@ export function ResultsGreen() {
           </h3>
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Button size="lg" className="px-10 text-base" asChild>
-              <Link href="https://buy.stripe.com/cNifZaexQecU1bt6oo" target="_blank" rel="noreferrer">
+              <Link href="https://buy.polar.sh/polar_cl_8P7Z3TGPlCzXSgbJ0MNkG3HrYyVlcumvIjDMu3YLrwH" target="_blank" rel="noreferrer">
                 Enroll in SugarSaint Now
               </Link>
             </Button>
