@@ -1,6 +1,7 @@
 import { getAllArticles } from "@/lib/blog";
 import Link from "next/link";
 import { Metadata } from "next";
+import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
   title: "Blog | SugarSaint",
@@ -25,9 +26,11 @@ export default function BlogIndex() {
   );
 
   return (
-    <div className="min-h-screen bg-cream">
-      {/* Hero Section */}
-      <section className="border-b border-charcoal/10 bg-cream py-16 md:py-24">
+    <>
+      <SiteHeader />
+      <div className="min-h-screen bg-cream">
+        {/* Hero Section */}
+        <section className="border-b border-charcoal/10 bg-cream py-16 md:py-24">
         <div className="container mx-auto max-w-4xl px-4">
           <h1 className="mb-6 text-center font-semibold text-5xl text-charcoal md:text-6xl">
             SugarSaint Blog
@@ -75,6 +78,7 @@ export default function BlogIndex() {
           ))}
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

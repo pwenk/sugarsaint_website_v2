@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
+import { SiteHeader } from "@/components/site-header";
 
 interface ArticlePageProps {
   params: Promise<{
@@ -113,6 +114,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         />
       )}
 
+      <SiteHeader />
       <article className="min-h-screen bg-cream">
         {/* Article Header */}
         <header className="border-b border-charcoal/10 bg-cream py-12 md:py-16">

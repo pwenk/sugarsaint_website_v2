@@ -32,7 +32,7 @@ Temperature is the output signal. It shows what's happening at the cellular leve
 
 Normal waking temperature is 97.8°F to 98.6°F. Measured under your tongue. Before you get out of bed.
 
-Below 97.8°F? Your metabolism is running slow. Your cells aren't making enough energy. Your thyroid hormone isn't getting into cells efficiently.
+Below 97.8°F? Your metabolism is running slow. Your cells aren't making enough energy. Your thyroid hormone isn't getting into cells efficiently. [Learn how seed oils block thyroid function](/blog/seed-oils-and-thyroid).
 
 Above 98.0°F consistently? You're in the healthy range. Your cells are making energy. Your thyroid is working.
 

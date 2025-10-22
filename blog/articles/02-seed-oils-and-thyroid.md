@@ -46,7 +46,7 @@ This is where PUFAs interfere.
 
 PUFAs oxidize easily. They incorporate into cell membranes. Your cell membranes are supposed to be fluid. Flexible. Allow hormones to pass through.
 
-PUFA-rich membranes are rigid. Less permeable. T3 has trouble passing through.
+PUFA-rich membranes are rigid. Less permeable. T3 has trouble passing through. [Learn the fundamental difference between PUFAs and saturated fats](/blog/pufas-vs-saturated-fat).
 
 The hormone is in your blood. Your thyroid is making it. But it can't reach the mitochondria where energy production happens.
 
@@ -84,13 +84,13 @@ Eat enough carbohydrates. Your body needs glucose to convert T4 to T3. Fruit. Po
 
 Low-carb diets suppress T3 conversion in many people. If you're cold and tired on low-carb, add carbs back. Watch your temperature rise.
 
-Track your waking temperature daily. Same thermometer. Same time. Under your tongue before you move.
+Track your waking temperature daily. Same thermometer. Same time. Under your tongue before you move. [Full temperature tracking protocol here](/blog/temperature-tracking-metabolism).
 
 Week 1: Might feel worse. You're clearing stored PUFAs. Headaches. Fatigue. Irritability. Push through.
 
 Week 2: Wake up easier. Hands warmer. Energy more stable.
 
-Week 3: Temperature climbs toward 97.8°F or higher. Pulse strengthens. Brain fog clears.
+Week 3: Temperature climbs toward 97.8°F or higher. Pulse strengthens. Brain fog clears. [Better temperature rhythm means better sleep too](/blog/body-temperature-sleep).
 
 This is your thyroid function recovering. Not because you fixed your gland. Because you stopped blocking the hormone.
 

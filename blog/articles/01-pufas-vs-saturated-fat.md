@@ -38,7 +38,7 @@ PUFAs oxidize before they even reach your plate. Heat during processing. Light o
 
 Then they oxidize more inside your body. Your cells try to use them for membranes. The membranes become rigid. Less fluid. Hormones can't pass through easily. Cell function declines.
 
-Ray Peat documented this for decades. He showed that animals fed saturated fats have higher metabolic rates than animals fed PUFAs. Same calories. Different fats. Different outcomes.
+Ray Peat documented this for decades. He showed that animals fed saturated fats have higher metabolic rates than animals fed PUFAs. Same calories. Different fats. Different outcomes. [Read more about how seed oils suppress thyroid function](/blog/seed-oils-and-thyroid).
 
 Your mitochondria burn saturated fats cleanly. Complete combustion. CO2 and water. Energy and heat.
 
@@ -60,7 +60,7 @@ Your body tries to use them for energy. But they don't burn as cleanly. They gen
 
 Your body incorporates them into cell membranes. This is the problem. PUFA-rich membranes are less fluid. They're more prone to damage. They interfere with hormone signaling.
 
-Your body stores excess as body fat. But this fat oxidizes slowly over time. Even sitting in your fat cells, PUFAs generate inflammation. You're carrying oxidized fat around.
+Your body stores excess as body fat. But this fat oxidizes slowly over time. Even sitting in your fat cells, PUFAs generate inflammation. You're carrying oxidized fat around. [This is why PUFAs drive obesity more than sugar does](/blog/pufas-vs-sugar-obesity).
 
 Losing weight when you're PUFA-loaded means releasing oxidized fats into your bloodstream. This is why some people feel terrible when they lose weight quickly. They're mobilizing years of stored vegetable oil.
 
@@ -76,7 +76,7 @@ Start cooking with butter, coconut oil, and ghee. Your body will use these for n
 
 Eat enough carbohydrates. Glucose helps your body preferentially burn PUFAs for energy instead of storing them. Orange juice. Fruit. Potatoes. Honey.
 
-Track your temperature. As your membranes improve, your temperature should climb. More energy production means more heat. You should feel warmer within a few weeks.
+Track your temperature. As your membranes improve, your temperature should climb. More energy production means more heat. You should feel warmer within a few weeks. [Learn how to track body temperature correctly](/blog/temperature-tracking-metabolism).
 
 Be patient. If you've been eating vegetable oil for twenty years, you won't reverse it in two weeks. But you'll notice improvement faster than you expect.
 

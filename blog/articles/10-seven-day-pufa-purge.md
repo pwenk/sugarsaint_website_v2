@@ -30,7 +30,7 @@ Your body will tell you if this matters.
 
 **Day 0: Preparation**
 
-Clean out your pantry. Read every label. Throw out or give away anything with:
+Clean out your pantry. Read every label. [Learn how to identify hidden PUFAs](/blog/hidden-pufas-packaged-foods). Throw out or give away anything with:
 - Vegetable oil
 - Canola oil
 - Soybean oil
@@ -50,7 +50,7 @@ Buy supplies:
 - Fruit
 - Salt
 
-Buy a digital thermometer if you don't have one.
+Buy a digital thermometer if you don't have one. [Full temperature tracking protocol](/blog/temperature-tracking-metabolism).
 
 **Day 1-7: The Protocol**
 
