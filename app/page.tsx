@@ -389,28 +389,23 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-            <div className="space-y-6">
-              <SectionHeading
-                eyebrow="THE OLD GOSPEL WAS WRONG"
-                title={"They told you sugar was poison.\nThey sold you “heart-healthy” oils.\nThey destroyed your metabolism."}
-                description="For 50 years, the nutrition establishment blamed sugar and carbs for metabolic disease—while seed oil consumption increased 1,000% in the American diet. The data tells a different story, honey."
-              />
-              <div className="space-y-5 text-base text-[#403930] sm:text-lg">
-                <p>
-                  From 1999 to 2013, sugar consumption decreased by 23%. Obesity rates kept climbing. If sugar causes obesity, how do we explain that, sugar?
-                </p>
-                <p>
-                  In 1970, the American Heart Association told everyone to stop eating saturated fat—ditch butter, lard, and coconut oil. Replace it with &ldquo;heart-healthy&rdquo; vegetable oils. That&apos;s when the obesity epidemic started.
-                </p>
-                <p>
-                  The real enemy isn&apos;t glucose. It&apos;s the PUFAs—polyunsaturated fatty acids in seed oils—that damage your mitochondria and wreck thyroid function at the cellular level. Your body knows this. Time to listen.
-                </p>
-              </div>
+          <div className="space-y-6">
+            <SectionHeading
+              eyebrow="THE OLD GOSPEL WAS WRONG"
+              title={`They told you sugar was poison.\\nThey sold you "heart-healthy" oils.\\nThey destroyed your metabolism.`}
+              description="For 50 years, the nutrition establishment blamed sugar and carbs for metabolic disease—while seed oil consumption increased 1,000% in the American diet. The data tells a different story, honey."
+            />
+            <div className="space-y-5 text-base text-[#403930] sm:text-lg">
+              <p>
+                From 1999 to 2013, sugar consumption decreased by 23%. Obesity rates kept climbing. If sugar causes obesity, how do we explain that, sugar?
+              </p>
+              <p>
+                In 1970, the American Heart Association told everyone to stop eating saturated fat—ditch butter, lard, and coconut oil. Replace it with &ldquo;heart-healthy&rdquo; vegetable oils. That&apos;s when the obesity epidemic started.
+              </p>
+              <p>
+                The real enemy isn&apos;t glucose. It&apos;s the PUFAs—polyunsaturated fatty acids in seed oils—that damage your mitochondria and wreck thyroid function at the cellular level. Your body knows this. Time to listen.
+              </p>
             </div>
-            <p className="self-center text-base text-[#6a6258] lg:max-w-md">
-              USDA & NHANES data, 1970-2013: as sugar consumption fell 23%, obesity surged. The villain isn’t fructose—it’s decades of seed-oil indoctrination.
-            </p>
           </div>
         </div>
       </Section>
