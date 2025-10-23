@@ -10,7 +10,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/#problem", label: "Problem" },
@@ -20,56 +19,41 @@ const navLinks = [
   { href: "/quiz", label: "Quiz" },
 ];
 
+// Main content pillars organized by topic
 const contentPillars = [
   {
-    title: "PUFAs & Metabolism",
-    href: "/blog?cluster=PUFAs+%26+Metabolism",
-    description: "How seed oils suppress metabolic rate and energy production",
+    title: "Understanding PUFAs",
+    description: "Why seed oils matter and how they affect metabolism",
+    articles: [
+      { title: "PUFAs & Metabolism", href: "/blog?cluster=PUFAs+%26+Metabolism" },
+      { title: "Sugar & Obesity Myth", href: "/blog?cluster=Sugar+%26+Obesity+Myth" },
+    ],
   },
   {
-    title: "Thyroid Health",
-    href: "/blog?cluster=Thyroid+Health+%26+Hormones",
-    description: "Understanding thyroid function and metabolic signals",
+    title: "Hormone Health",
+    description: "Thyroid, testosterone, and reproductive hormones",
+    articles: [
+      { title: "Thyroid Health", href: "/blog?cluster=Thyroid+Health+%26+Hormones" },
+      { title: "Women's Hormones", href: "/blog?cluster=Women%27s+Hormones" },
+      { title: "Men's Health", href: "/blog?cluster=Testosterone+%26+Men%27s+Health" },
+    ],
   },
   {
-    title: "Temperature & Pulse",
-    href: "/blog?cluster=Temperature+%26+Pulse+Tracking",
-    description: "Master body signal tracking for metabolic health",
+    title: "Self-Tracking",
+    description: "Measure and experiment with your metabolism",
+    articles: [
+      { title: "Temperature & Pulse", href: "/blog?cluster=Temperature+%26+Pulse+Tracking" },
+      { title: "Experiments", href: "/blog?cluster=Experiments+%26+Self-Tracking" },
+    ],
   },
   {
-    title: "Women's Hormones",
-    href: "/blog?cluster=Women%27s+Hormones",
-    description: "How PUFAs affect estrogen, progesterone, and cycles",
-  },
-  {
-    title: "Men's Health",
-    href: "/blog?cluster=Testosterone+%26+Men%27s+Health",
-    description: "Testosterone optimization and metabolic function",
-  },
-  {
-    title: "Food & Labeling",
-    href: "/blog?cluster=Restaurant+Survival+%26+Food+Labeling",
-    description: "Identify hidden PUFAs and navigate real-world eating",
-  },
-  {
-    title: "Digestion & Gut",
-    href: "/blog?cluster=Digestion+%26+Gut",
-    description: "How seed oils damage gut lining and microbiome",
-  },
-  {
-    title: "Sleep",
-    href: "/blog?cluster=Sleep",
-    description: "Temperature rhythm and metabolic effects on sleep",
-  },
-  {
-    title: "Sugar & Obesity",
-    href: "/blog?cluster=Sugar+%26+Obesity+Myth",
-    description: "The real cause of obesity (hint: it's not sugar)",
-  },
-  {
-    title: "Experiments",
-    href: "/blog?cluster=Experiments+%26+Self-Tracking",
-    description: "Practical protocols for self-experimentation",
+    title: "Practical Guide",
+    description: "Real-world implementation and food choices",
+    articles: [
+      { title: "Food Labels", href: "/blog?cluster=Restaurant+Survival+%26+Food+Labeling" },
+      { title: "Digestion & Gut", href: "/blog?cluster=Digestion+%26+Gut" },
+      { title: "Sleep Quality", href: "/blog?cluster=Sleep" },
+    ],
   },
 ];
 
@@ -104,35 +88,43 @@ export function SiteHeader() {
                     Blog
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-[600px] gap-3 p-4 md:grid-cols-2">
+                    <div className="w-[500px] p-4 lg:w-[600px]">
                       <Link
                         href="/blog"
-                        className="group col-span-2 flex flex-col justify-end rounded-md bg-gradient-to-b from-[#fffbf5] to-[#fff4df] p-6 no-underline outline-none transition-colors hover:bg-[#fff4df] focus:shadow-md"
+                        className="group mb-3 flex flex-col justify-end rounded-md bg-gradient-to-b from-[#fffbf5] to-[#fff4df] p-4 no-underline outline-none transition-colors hover:bg-[#fff4df] focus:shadow-md"
                       >
-                        <div className="mb-2 mt-4 text-lg font-semibold text-[#2c2c2c]">
+                        <div className="mb-1 text-base font-semibold text-[#2c2c2c]">
                           All Articles
                         </div>
-                        <p className="text-sm leading-tight text-[#4a4a4a]">
-                          Browse all blog posts about metabolic health, PUFAs, and
-                          self-experimentation
+                        <p className="text-xs leading-tight text-[#4a4a4a]">
+                          Browse all blog posts about metabolic health
                         </p>
                       </Link>
-                      {contentPillars.map((pillar) => (
-                        <Link
-                          key={pillar.href}
-                          href={pillar.href}
-                          className={cn(
-                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-[#fff4df] focus:bg-[#fff4df]"
-                          )}
-                        >
-                          <div className="text-sm font-semibold leading-none text-[#2c2c2c]">
-                            {pillar.title}
+                      <div className="grid gap-4 md:grid-cols-2">
+                        {contentPillars.map((pillar) => (
+                          <div key={pillar.title} className="space-y-2">
+                            <div className="px-2">
+                              <h4 className="text-sm font-semibold text-[#2c2c2c]">
+                                {pillar.title}
+                              </h4>
+                              <p className="text-xs text-[#4a4a4a]">
+                                {pillar.description}
+                              </p>
+                            </div>
+                            <div className="space-y-1">
+                              {pillar.articles.map((article) => (
+                                <Link
+                                  key={article.href}
+                                  href={article.href}
+                                  className="block rounded-md px-2 py-1.5 text-xs text-[#4a4a4a] transition-colors hover:bg-[#fff4df] hover:text-[#2c2c2c]"
+                                >
+                                  {article.title}
+                                </Link>
+                              ))}
+                            </div>
                           </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-[#4a4a4a]">
-                            {pillar.description}
-                          </p>
-                        </Link>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
