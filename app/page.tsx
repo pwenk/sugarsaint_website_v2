@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { TimeCapsuleCTA } from "@/components/time-capsule-cta";
+import { SiteHeader } from "@/components/site-header";
 import {
   type LucideIcon,
   Activity,
@@ -284,48 +285,7 @@ function SectionHeading({
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <header className="sticky top-0 z-50 border-b border-[#efe4cf]/70 bg-[#fffbf5]/90 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <Link href="#top" className="flex items-center gap-3 text-[#2c2c2c]">
-            <Image
-              src="/images/sugarsaint-logo.png"
-              alt="SugarSaint logo"
-              width={170}
-              height={60}
-              priority
-            />
-          </Link>
-          <div className="hidden items-center gap-8 lg:flex">
-            <nav className="flex items-center gap-6 text-sm font-medium text-[#4a4a4a]">
-              {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="transition-colors hover:text-[#d4af37]">
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-            <div className="flex items-center gap-3">
-              <Button variant="ghost" className="px-5 text-sm font-semibold text-[#2c2c2c]" asChild>
-                <Link href="/quiz">Free Quiz</Link>
-              </Button>
-              <Button size="sm" className="bg-[#2c2c2c] px-5 text-sm font-semibold text-white hover:bg-[#433c36]" asChild>
-                <Link href="https://buy.polar.sh/polar_cl_8P7Z3TGPlCzXSgbJ0MNkG3HrYyVlcumvIjDMu3YLrwH" target="_blank" rel="noreferrer">
-                  Buy for $297
-                </Link>
-              </Button>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 lg:hidden">
-            <Button size="sm" className="px-4" asChild>
-              <Link href="#quiz">Free Quiz</Link>
-            </Button>
-            <Button size="sm" variant="outline" className="px-4" asChild>
-              <Link href="https://buy.polar.sh/polar_cl_8P7Z3TGPlCzXSgbJ0MNkG3HrYyVlcumvIjDMu3YLrwH" target="_blank" rel="noreferrer">
-                Buy
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <Section id="top" className="relative overflow-hidden pb-20 pt-32 sm:pb-24 sm:pt-36 md:pb-28 md:pt-40">
         <div className="pointer-events-none absolute inset-0">
@@ -361,7 +321,7 @@ export default function Home() {
                 asChild
               >
                 <Link href="https://buy.polar.sh/polar_cl_8P7Z3TGPlCzXSgbJ0MNkG3HrYyVlcumvIjDMu3YLrwH" target="_blank" rel="noreferrer">
-                  Buy SugarSaint ($297)
+                  Buy The Full Course — $297
                 </Link>
               </Button>
             </div>
