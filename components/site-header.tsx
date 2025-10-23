@@ -88,40 +88,30 @@ export function SiteHeader() {
                     Blog
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[500px] p-4 lg:w-[600px]">
+                    <div className="w-[340px] p-3">
                       <Link
                         href="/blog"
-                        className="group mb-3 flex flex-col justify-end rounded-md bg-gradient-to-b from-[#fffbf5] to-[#fff4df] p-4 no-underline outline-none transition-colors hover:bg-[#fff4df] focus:shadow-md"
+                        className="mb-2 block rounded-md bg-gradient-to-b from-[#fffbf5] to-[#fff4df] p-3 text-sm font-semibold text-[#2c2c2c] no-underline outline-none transition-colors hover:bg-[#fff4df]"
                       >
-                        <div className="mb-1 text-base font-semibold text-[#2c2c2c]">
-                          All Articles
-                        </div>
-                        <p className="text-xs leading-tight text-[#4a4a4a]">
-                          Browse all blog posts about metabolic health
-                        </p>
+                        All Articles →
                       </Link>
-                      <div className="grid gap-4 md:grid-cols-2">
+                      <div className="space-y-3 pt-2">
                         {contentPillars.map((pillar) => (
-                          <div key={pillar.title} className="space-y-2">
-                            <div className="px-2">
-                              <h4 className="text-sm font-semibold text-[#2c2c2c]">
+                          <div key={pillar.title} className="space-y-1">
+                            <div className="px-2 pb-1">
+                              <h4 className="text-xs font-semibold uppercase tracking-wide text-[#d4af37]">
                                 {pillar.title}
                               </h4>
-                              <p className="text-xs text-[#4a4a4a]">
-                                {pillar.description}
-                              </p>
                             </div>
-                            <div className="space-y-1">
-                              {pillar.articles.map((article) => (
-                                <Link
-                                  key={article.href}
-                                  href={article.href}
-                                  className="block rounded-md px-2 py-1.5 text-xs text-[#4a4a4a] transition-colors hover:bg-[#fff4df] hover:text-[#2c2c2c]"
-                                >
-                                  {article.title}
-                                </Link>
-                              ))}
-                            </div>
+                            {pillar.articles.map((article) => (
+                              <Link
+                                key={article.href}
+                                href={article.href}
+                                className="block rounded-md px-2 py-1 text-xs text-[#4a4a4a] transition-colors hover:bg-[#fff4df] hover:text-[#2c2c2c]"
+                              >
+                                {article.title}
+                              </Link>
+                            ))}
                           </div>
                         ))}
                       </div>

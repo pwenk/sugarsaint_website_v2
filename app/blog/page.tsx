@@ -9,11 +9,21 @@ export const metadata: Metadata = {
     "Evidence-based articles about PUFAs, metabolism, thyroid health, and hormones. Learn how to optimize your metabolic health through diet and self-experimentation.",
 };
 
-export default function BlogIndex() {
+interface BlogIndexProps {
+  searchParams: Promise<{ cluster?: string }>;
+}
+
+export default async function BlogIndex({ searchParams }: BlogIndexProps) {
+  const { cluster: filterCluster } = await searchParams;
   const articles = getAllArticles();
 
-  // Group articles by cluster
-  const articlesByCluster = articles.reduce(
+  // Filter articles if cluster parameter is present
+  const filteredArticles = filterCluster
+    ? articles.filter((article) => article.metadata.cluster === filterCluster)
+    : articles;
+
+  // Group articles by cluster for display
+  const articlesByCluster = filteredArticles.reduce(
     (acc, article) => {
       const cluster = article.metadata.cluster;
       if (!acc[cluster]) {
@@ -22,7 +32,7 @@ export default function BlogIndex() {
       acc[cluster].push(article);
       return acc;
     },
-    {} as Record<string, typeof articles>
+    {} as Record<string, typeof filteredArticles>
   );
 
   return (
@@ -31,26 +41,47 @@ export default function BlogIndex() {
       <div className="min-h-screen bg-cream">
         {/* Hero Section */}
         <section className="border-b border-charcoal/10 bg-cream py-16 md:py-24">
-        <div className="container mx-auto max-w-4xl px-4">
-          <h1 className="mb-6 text-center font-semibold text-5xl text-charcoal md:text-6xl">
-            SugarSaint Blog
-          </h1>
-          <p className="mx-auto max-w-2xl text-center text-charcoal/70 text-lg">
-            Evidence-based articles about PUFAs, metabolism, thyroid health, and
-            hormones. No BS. No dogma. Just practical information you can test
-            yourself.
-          </p>
-        </div>
-      </section>
+          <div className="container mx-auto max-w-4xl px-4">
+            {filterCluster ? (
+              <>
+                <Link
+                  href="/blog"
+                  className="mb-4 inline-flex items-center text-gold hover:underline"
+                >
+                  ← All Articles
+                </Link>
+                <h1 className="mb-6 text-center font-semibold text-5xl text-charcoal md:text-6xl">
+                  {filterCluster}
+                </h1>
+                <p className="mx-auto max-w-2xl text-center text-charcoal/70 text-lg">
+                  {filteredArticles.length} article{filteredArticles.length !== 1 ? 's' : ''} in this category
+                </p>
+              </>
+            ) : (
+              <>
+                <h1 className="mb-6 text-center font-semibold text-5xl text-charcoal md:text-6xl">
+                  SugarSaint Blog
+                </h1>
+                <p className="mx-auto max-w-2xl text-center text-charcoal/70 text-lg">
+                  Evidence-based articles about PUFAs, metabolism, thyroid health, and
+                  hormones. No BS. No dogma. Just practical information you can test
+                  yourself.
+                </p>
+              </>
+            )}
+          </div>
+        </section>
 
-      {/* Articles by Cluster */}
-      <section className="py-16">
-        <div className="container mx-auto max-w-6xl px-4">
-          {Object.entries(articlesByCluster).map(([cluster, clusterArticles]) => (
+        {/* Articles by Cluster */}
+        <section className="py-16">
+          <div className="container mx-auto max-w-6xl px-4">
+            {Object.entries(articlesByCluster).map(([cluster, clusterArticles]) => (
             <div key={cluster} className="mb-16">
-              <h2 className="mb-8 border-b border-charcoal/20 pb-4 font-semibold text-2xl text-charcoal md:text-3xl">
-                {cluster}
-              </h2>
+              {!filterCluster && (
+                <h2 className="mb-8 border-b border-charcoal/20 pb-4 font-semibold text-2xl text-charcoal md:text-3xl">
+                  {cluster}
+                </h2>
+              )}
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {clusterArticles.map((article) => (
                   <Link
