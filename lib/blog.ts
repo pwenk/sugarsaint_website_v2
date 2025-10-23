@@ -10,6 +10,8 @@ export interface ArticleMetadata {
   keyword: string;
   cluster: string;
   date: string;
+  image?: string; // Optional cover image path
+  excerpt?: string; // Optional short description
 }
 
 export interface Article {
