@@ -94,7 +94,7 @@ export default function CourseDashboard() {
           </h3>
           <p className="text-gray-600">
             This is a placeholder dashboard. Your full course content will be added here.
-            You've successfully set up password protection for your MVP!
+            You&apos;ve successfully set up password protection for your MVP!
           </p>
         </div>
       </main>

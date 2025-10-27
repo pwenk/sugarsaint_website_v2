@@ -33,7 +33,7 @@ export default function CourseLoginPage() {
       } else {
         setError(data.error || 'Invalid password')
       }
-    } catch (err) {
+    } catch {
       setError('Something went wrong. Please try again.')
     } finally {
       setLoading(false)
