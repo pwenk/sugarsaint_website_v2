@@ -1,0 +1,19 @@
+# robots.txt for sugarsaint.bio
+# Generated: 2025-10-27
+
+# Allow all bots to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow crawling of API routes
+Disallow: /api/
+
+# Disallow crawling of protected quiz flow pages (they redirect anyway)
+Disallow: /quiz/email
+Disallow: /quiz/results
+
+# Disallow crawling of payment processing pages
+Disallow: /payment/
+
+# Sitemap location
+Sitemap: https://sugarsaint.bio/sitemap.xml
