@@ -18,13 +18,15 @@ HOW TO ACCESS YOUR COURSE
 
 1. Visit https://course.sugarsaint.bio
 
-2. You'll be redirected to the login page
+2. You'll see the login page
 
 3. Enter your password: SUGAR
 
 4. Click "Access Course"
 
-5. You're in! Start with Module 1.
+5. You'll be automatically taken to the course materials!
+
+Anytime you want to access the course, just log in again with the same password.
 
 --------------------------------------------
 IMPORTANT NOTES

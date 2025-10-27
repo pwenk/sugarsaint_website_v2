@@ -1,17 +1,16 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { MINTLIFY_URL } from '@/lib/config'
 
 export default function CourseLoginPage() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -28,8 +27,8 @@ export default function CourseLoginPage() {
       const data = await response.json()
 
       if (response.ok) {
-        // Redirect to course dashboard
-        router.push('/course/dashboard')
+        // Redirect to Mintlify course docs
+        window.location.href = MINTLIFY_URL
       } else {
         setError(data.error || 'Invalid password')
       }
