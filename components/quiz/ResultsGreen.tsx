@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle2, Gift } from "lucide-react"
+import { FREE_MODULE_URL } from "@/lib/config"
 
 export function ResultsGreen() {
   return (
@@ -108,8 +109,8 @@ export function ResultsGreen() {
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="px-10 text-base" asChild>
-              <Link href="/">
-                See Full Course Overview
+              <Link href={FREE_MODULE_URL} target="_blank" rel="noreferrer">
+                Try Module 1 Free
               </Link>
             </Button>
           </div>
