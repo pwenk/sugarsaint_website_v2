@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
-import { Clock, Star, CheckCircle2, Download, ArrowRight } from "lucide-react"
+import { Clock, Star, CheckCircle2, ArrowRight } from "lucide-react"
 
 export default function FreeModule1Page() {
   return (
