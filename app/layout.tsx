@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Crimson_Pro, Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CookieBanner } from "@/components/cookie-banner";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -57,6 +58,7 @@ export default function RootLayout({
       >
         {children}
         <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );
