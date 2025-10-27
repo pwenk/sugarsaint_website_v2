@@ -1,10 +1,6 @@
 /**
  * Course Configuration
- * Update the MINTLIFY_URL with your actual Mintlify docs URL
+ * Mintlify docs URL - where users are redirected after login
  */
 
-// TODO: Update this with your actual Mintlify URL
-// Examples:
-// - https://sugarsaint.mintlify.app
-// - https://docs.sugarsaint.bio
-export const MINTLIFY_URL = 'https://sugarsaint.mintlify.app'
+export const MINTLIFY_URL = 'https://course.sugarsaint.bio'
