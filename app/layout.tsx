@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sugarsaint.com"),
+  metadataBase: new URL("https://sugarsaint.bio"),
   title: "SugarSaint — Heal Your Metabolism",
   description:
     "Stop blaming sugar. Start trusting your body with the SugarSaint metabolic practice. Take the 2-minute quiz and access Module 1 for free.",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "SugarSaint — Heal Your Metabolism",
     description:
       "Stop blaming sugar. Start trusting your body with the SugarSaint metabolic practice. Take the 2-minute quiz and access Module 1 for free.",
-    url: "https://sugarsaint.com",
+    url: "https://sugarsaint.bio",
     type: "website",
   },
   twitter: {
