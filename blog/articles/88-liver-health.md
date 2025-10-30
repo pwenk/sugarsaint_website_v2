@@ -3,7 +3,7 @@ title: "How to Heal Your Liver (and Why It Matters for Metabolism)"
 slug: liver-health
 keyword: liver health fatty liver detox metabolism
 cluster: Practical Implementation
-date: 2025-10-27
+date: 2025-10-10
 ---
 
 # How to Heal Your Liver (and Why It Matters for Metabolism)

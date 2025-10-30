@@ -3,7 +3,7 @@ title: "How Do PUFAs Make Perimenopause Worse?"
 slug: perimenopause-pufas
 keyword: perimenopause menopause pufas hormones hot flashes
 cluster: Women's Health
-date: 2025-10-26
+date: 2025-09-29
 ---
 
 # How Do PUFAs Make Perimenopause Worse?

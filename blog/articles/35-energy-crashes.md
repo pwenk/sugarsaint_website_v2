@@ -3,7 +3,7 @@ title: "Why Do You Crash After Eating? The Blood Sugar Rollercoaster"
 slug: energy-crashes
 keyword: energy crash after eating
 cluster: PUFAs & Metabolism
-date: 2025-10-23
+date: 2025-08-18
 ---
 
 # Why Do You Crash After Eating? The Blood Sugar Rollercoaster

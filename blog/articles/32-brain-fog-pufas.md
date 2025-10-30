@@ -3,7 +3,7 @@ title: "Why Can't You Think Clearly? PUFAs and Brain Fog"
 slug: brain-fog-pufas
 keyword: brain fog pufas cognitive
 cluster: PUFAs & Metabolism
-date: 2025-10-23
+date: 2025-08-15
 ---
 
 # Why Can't You Think Clearly? PUFAs and Brain Fog

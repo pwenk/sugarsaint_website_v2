@@ -3,7 +3,7 @@ title: "How to Read Your Thyroid Labs (What Your Doctor Won't Tell You)"
 slug: thyroid-labs-interpretation
 keyword: thyroid labs TSH free T3 reverse T3 optimal ranges
 cluster: Thyroid & Hormones
-date: 2025-10-27
+date: 2025-10-05
 ---
 
 # How to Read Your Thyroid Labs (What Your Doctor Won't Tell You)

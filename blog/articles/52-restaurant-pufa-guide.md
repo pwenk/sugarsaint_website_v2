@@ -3,7 +3,7 @@ title: "How to Eat at Restaurants Without Seed Oils"
 slug: restaurant-pufa-guide
 keyword: restaurant eating seed oils pufa guide
 cluster: Practical Implementation
-date: 2025-10-24
+date: 2025-09-04
 ---
 
 # How to Eat at Restaurants Without Seed Oils

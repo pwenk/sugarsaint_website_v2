@@ -3,7 +3,7 @@ title: "Does Sugar Actually Cause Insulin Resistance?"
 slug: sugar-insulin-myth
 keyword: sugar insulin resistance myth
 cluster: Sugar & Obesity Myth
-date: 2025-10-23
+date: 2025-08-02
 ---
 
 # Does Sugar Actually Cause Insulin Resistance?

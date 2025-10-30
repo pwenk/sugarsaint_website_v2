@@ -3,7 +3,7 @@ title: "Seed Oils and Thyroid: How PUFAs Influence Energy"
 slug: seed-oils-and-thyroid
 keyword: seed oils thyroid
 cluster: Thyroid Health & Hormones
-date: 2025-10-22
+date: 2025-07-16
 ---
 
 # Seed Oils and Thyroid: How PUFAs Influence Energy

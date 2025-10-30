@@ -3,7 +3,7 @@ title: "7-Day PUFA Purge: What to Expect"
 slug: seven-day-pufa-purge
 keyword: pufa elimination experiment
 cluster: Experiments & Self-Tracking
-date: 2025-10-22
+date: 2025-07-24
 ---
 
 # 7-Day PUFA Purge: What to Expect

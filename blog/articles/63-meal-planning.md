@@ -3,7 +3,7 @@ title: "How to Plan Simple, Metabolism-Boosting Meals"
 slug: meal-planning
 keyword: meal planning metabolism pufa-free meals
 cluster: Practical Implementation
-date: 2025-10-25
+date: 2025-09-15
 ---
 
 # How to Plan Simple, Metabolism-Boosting Meals

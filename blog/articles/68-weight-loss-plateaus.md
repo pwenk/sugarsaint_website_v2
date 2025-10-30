@@ -3,7 +3,7 @@ title: "Why Did Your Weight Loss Plateau? (And How to Fix It)"
 slug: weight-loss-plateaus
 keyword: weight loss plateau metabolism thyroid stall
 cluster: Sugar & Obesity Myth-Busting
-date: 2025-10-25
+date: 2025-09-20
 ---
 
 # Why Did Your Weight Loss Plateau? (And How to Fix It)"

@@ -3,7 +3,7 @@ title: "How to Eat Out at Restaurants While Avoiding PUFAs"
 slug: restaurant-pufa-guide
 keyword: eating out restaurants seed oils PUFAs dining guide
 cluster: Practical Implementation
-date: 2025-10-28
+date: 2025-10-27
 ---
 
 # How to Eat Out at Restaurants While Avoiding PUFAs

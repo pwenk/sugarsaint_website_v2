@@ -3,7 +3,7 @@ title: "Should Kids Avoid Seed Oils? Metabolism for Children"
 slug: kids-metabolism
 keyword: kids children seed oils
 cluster: Practical Implementation
-date: 2025-10-23
+date: 2025-08-23
 ---
 
 # Should Kids Avoid Seed Oils? Metabolism for Children

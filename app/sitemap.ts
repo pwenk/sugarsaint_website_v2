@@ -44,19 +44,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Dynamic blog articles with staggered dates
+  // Dynamic blog articles using their actual dates
   const articles = getAllArticles()
-  const today = new Date()
 
-  const blogPages: MetadataRoute.Sitemap = articles.map((article, index) => {
-    // Spread articles over the past ~3.5 months (109 articles, ~1 per day)
-    const daysAgo = index
-    const articleDate = new Date(today)
-    articleDate.setDate(today.getDate() - daysAgo)
-
+  const blogPages: MetadataRoute.Sitemap = articles.map((article) => {
     return {
       url: `${baseUrl}/blog/${article.metadata.slug}`,
-      lastModified: articleDate,
+      lastModified: new Date(article.metadata.date),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     }

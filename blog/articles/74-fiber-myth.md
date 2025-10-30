@@ -3,7 +3,7 @@ title: "Do You Really Need 30+ Grams of Fiber Daily?"
 slug: fiber-myth
 keyword: fiber digestion gut health constipation
 cluster: Sugar & Obesity Myth-Busting
-date: 2025-10-26
+date: 2025-09-26
 ---
 
 # Do You Really Need 30+ Grams of Fiber Daily?

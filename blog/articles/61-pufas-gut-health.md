@@ -3,7 +3,7 @@ title: "How Do PUFAs Damage Your Gut and Cause Digestive Issues?"
 slug: pufas-gut-health
 keyword: pufas gut health digestion inflammation
 cluster: PUFAs & Metabolism
-date: 2025-10-25
+date: 2025-09-13
 ---
 
 # How Do PUFAs Damage Your Gut and Cause Digestive Issues?

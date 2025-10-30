@@ -3,7 +3,7 @@ title: "Is Keto Bad for Your Thyroid?"
 slug: keto-thyroid
 keyword: keto ketogenic diet thyroid hypothyroidism T3
 cluster: Sugar & Obesity Myth-Busting
-date: 2025-10-28
+date: 2025-10-20
 ---
 
 # Is Keto Bad for Your Thyroid?

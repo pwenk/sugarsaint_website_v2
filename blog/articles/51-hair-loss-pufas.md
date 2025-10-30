@@ -3,7 +3,7 @@ title: "Why Is Your Hair Falling Out? The PUFA-Thyroid Connection"
 slug: hair-loss-pufas
 keyword: hair loss thyroid pufas metabolism
 cluster: PUFAs & Metabolism
-date: 2025-10-24
+date: 2025-09-03
 ---
 
 # Why Is Your Hair Falling Out? The PUFA-Thyroid Connection

@@ -3,7 +3,7 @@ title: "How to Track Your Metabolic Progress (Beyond the Scale)"
 slug: tracking-symptoms
 keyword: tracking symptoms metabolism progress markers
 cluster: Tracking & Testing
-date: 2025-10-25
+date: 2025-09-18
 ---
 
 # How to Track Your Metabolic Progress (Beyond the Scale)

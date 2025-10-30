@@ -3,7 +3,7 @@ title: "Should You Eat Seasonally or Is Year-Round Fruit Fine?"
 slug: seasonal-eating
 keyword: seasonal eating fruit year round
 cluster: Practical Implementation
-date: 2025-10-23
+date: 2025-08-22
 ---
 
 # Should You Eat Seasonally or Is Year-Round Fruit Fine?

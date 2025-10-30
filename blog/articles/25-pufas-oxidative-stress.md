@@ -3,7 +3,7 @@ title: "How Do PUFAs Create Oxidative Stress and Damage Cells?"
 slug: pufas-oxidative-stress
 keyword: pufas oxidative stress aging
 cluster: PUFAs & Metabolism
-date: 2025-10-23
+date: 2025-08-08
 ---
 
 # How Do PUFAs Create Oxidative Stress and Damage Cells?

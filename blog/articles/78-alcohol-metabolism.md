@@ -3,7 +3,7 @@ title: "How Does Alcohol Affect Your Metabolism?"
 slug: alcohol-metabolism
 keyword: alcohol metabolism thyroid liver health
 cluster: Practical Implementation
-date: 2025-10-26
+date: 2025-09-30
 ---
 
 # How Does Alcohol Affect Your Metabolism?

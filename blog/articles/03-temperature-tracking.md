@@ -3,7 +3,7 @@ title: "How Do You Track Body Temperature for Metabolism?"
 slug: temperature-tracking-metabolism
 keyword: track body temperature metabolism
 cluster: Temperature & Pulse Tracking
-date: 2025-10-22
+date: 2025-07-17
 ---
 
 # How Do You Track Body Temperature for Metabolism?

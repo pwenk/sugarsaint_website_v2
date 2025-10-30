@@ -3,7 +3,7 @@ title: "How Does Exercise Affect Metabolism and When Is It Harmful?"
 slug: exercise-metabolism
 keyword: overtraining low metabolism
 cluster: Exercise & Physical Activity
-date: 2025-10-23
+date: 2025-08-05
 ---
 
 # How Does Exercise Affect Metabolism and When Is It Harmful?

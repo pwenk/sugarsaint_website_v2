@@ -3,7 +3,7 @@ title: "Does Poor Metabolism Cause Anxiety?"
 slug: anxiety-pufas
 keyword: anxiety thyroid metabolism
 cluster: PUFAs & Metabolism
-date: 2025-10-23
+date: 2025-08-20
 ---
 
 # Does Poor Metabolism Cause Anxiety?

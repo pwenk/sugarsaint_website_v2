@@ -3,7 +3,7 @@ title: "PUFAs vs Sugar: Which Actually Causes Obesity?"
 slug: pufas-vs-sugar-obesity
 keyword: pufas sugar obesity
 cluster: Sugar & Obesity Myth
-date: 2025-10-22
+date: 2025-07-23
 ---
 
 # PUFAs vs Sugar: Which Actually Causes Obesity?

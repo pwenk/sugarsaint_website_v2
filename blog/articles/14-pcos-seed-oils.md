@@ -3,7 +3,7 @@ title: "How Do Seed Oils Affect PCOS?"
 slug: pcos-seed-oils
 keyword: pcos seed oils
 cluster: Women's Hormones
-date: 2025-10-23
+date: 2025-07-28
 ---
 
 # How Do Seed Oils Affect PCOS?

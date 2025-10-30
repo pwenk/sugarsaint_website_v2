@@ -3,7 +3,7 @@ title: "How Do PUFAs Affect Children's Health and Development?"
 slug: children-pufas
 keyword: children pufas development adhd behavior
 cluster: Practical Implementation
-date: 2025-10-25
+date: 2025-09-17
 ---
 
 # How Do PUFAs Affect Children's Health and Development?

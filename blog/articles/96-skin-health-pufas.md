@@ -3,7 +3,7 @@ title: "Will Eliminating PUFAs Clear Your Skin?"
 slug: skin-health-pufas
 keyword: skin health acne eczema pufas aging wrinkles
 cluster: PUFA Effects
-date: 2025-10-28
+date: 2025-10-18
 ---
 
 # Will Eliminating PUFAs Clear Your Skin?

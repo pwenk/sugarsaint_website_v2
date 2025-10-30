@@ -3,7 +3,7 @@ title: "What Symptoms Should You Track to Monitor Metabolic Health?"
 slug: tracking-symptoms
 keyword: metabolic health symptoms track
 cluster: Experiments & Self-Tracking
-date: 2025-10-23
+date: 2025-08-10
 ---
 
 # What Symptoms Should You Track to Monitor Metabolic Health?

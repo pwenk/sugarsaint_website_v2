@@ -3,7 +3,7 @@ title: "How to Track Your Pulse to Monitor Metabolism"
 slug: pulse-tracking-guide
 keyword: pulse heart rate metabolism thyroid tracking
 cluster: Tracking & Testing
-date: 2025-10-26
+date: 2025-09-25
 ---
 
 # How to Track Your Pulse to Monitor Metabolism

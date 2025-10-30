@@ -3,7 +3,7 @@ title: "Why Is Your Skin Breaking Out? PUFAs and Acne"
 slug: skin-health-pufas
 keyword: acne pufas skin health
 cluster: PUFAs & Metabolism
-date: 2025-10-23
+date: 2025-08-24
 ---
 
 # Why Is Your Skin Breaking Out? PUFAs and Acne

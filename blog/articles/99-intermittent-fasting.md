@@ -3,7 +3,7 @@ title: "Does Intermittent Fasting Slow Your Metabolism?"
 slug: intermittent-fasting
 keyword: intermittent fasting metabolism thyroid weight loss
 cluster: Sugar & Obesity Myth-Busting
-date: 2025-10-28
+date: 2025-10-21
 ---
 
 # Does Intermittent Fasting Slow Your Metabolism?

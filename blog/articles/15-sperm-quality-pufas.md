@@ -3,7 +3,7 @@ title: "How Do Seed Oils Affect Sperm Quality?"
 slug: sperm-quality-pufas
 keyword: sperm quality seed oils
 cluster: Testosterone & Men's Health
-date: 2025-10-23
+date: 2025-07-29
 ---
 
 # How Do Seed Oils Affect Sperm Quality?

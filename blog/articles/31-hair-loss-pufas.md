@@ -3,7 +3,7 @@ title: "Why Is Your Hair Falling Out? The PUFA-Thyroid Connection"
 slug: hair-loss-pufas
 keyword: hair loss thyroid pufas
 cluster: Women's Hormones
-date: 2025-10-23
+date: 2025-08-14
 ---
 
 # Why Is Your Hair Falling Out? The PUFA-Thyroid Connection

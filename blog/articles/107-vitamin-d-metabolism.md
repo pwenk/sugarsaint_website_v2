@@ -3,7 +3,7 @@ title: "Is Vitamin D Deficiency Sabotaging Your Metabolism?"
 slug: vitamin-d-metabolism
 keyword: vitamin D deficiency metabolism thyroid supplementation testing
 cluster: Sugar & Obesity Myth-Busting
-date: 2025-10-28
+date: 2025-10-29
 ---
 
 # Is Vitamin D Deficiency Sabotaging Your Metabolism?

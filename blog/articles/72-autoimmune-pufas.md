@@ -3,7 +3,7 @@ title: "Can Eliminating PUFAs Help Autoimmune Conditions?"
 slug: autoimmune-pufas
 keyword: autoimmune pufas inflammation hashimoto celiac
 cluster: PUFAs & Metabolism
-date: 2025-10-26
+date: 2025-09-24
 ---
 
 # Can Eliminating PUFAs Help Autoimmune Conditions?

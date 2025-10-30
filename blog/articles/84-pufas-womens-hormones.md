@@ -3,7 +3,7 @@ title: "How Do PUFAs Disrupt Women's Hormones?"
 slug: pufas-womens-hormones
 keyword: womens hormones estrogen progesterone PCOS periods
 cluster: Women's Health
-date: 2025-10-27
+date: 2025-10-06
 ---
 
 # How Do PUFAs Disrupt Women's Hormones?

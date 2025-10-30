@@ -3,7 +3,7 @@ title: "Why Can't You Stop Craving Sugar?"
 slug: craving-sugar
 keyword: sugar cravings metabolism
 cluster: Sugar & Obesity Myth
-date: 2025-10-23
+date: 2025-08-28
 ---
 
 # Why Can't You Stop Craving Sugar?

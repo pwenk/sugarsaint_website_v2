@@ -3,7 +3,7 @@ title: "How to Identify Hidden PUFAs in Packaged Foods"
 slug: hidden-pufas-packaged-foods
 keyword: identify hidden pufas
 cluster: Restaurant Survival & Food Labeling
-date: 2025-10-22
+date: 2025-07-20
 ---
 
 # How to Identify Hidden PUFAs in Packaged Foods

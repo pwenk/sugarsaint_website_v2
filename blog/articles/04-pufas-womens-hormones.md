@@ -3,7 +3,7 @@ title: "How Do PUFAs Affect Women's Hormones?"
 slug: pufas-womens-hormones
 keyword: pufas estrogen progesterone
 cluster: Women's Hormones
-date: 2025-10-22
+date: 2025-07-18
 ---
 
 # How Do PUFAs Affect Women's Hormones?

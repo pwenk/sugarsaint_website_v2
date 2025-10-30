@@ -3,7 +3,7 @@ title: "Why Do Your Joints Hurt? PUFAs and Inflammation"
 slug: joint-pain-pufas
 keyword: joint pain inflammation pufas
 cluster: PUFAs & Metabolism
-date: 2025-10-23
+date: 2025-08-27
 ---
 
 # Why Do Your Joints Hurt? PUFAs and Inflammation

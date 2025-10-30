@@ -3,7 +3,7 @@ title: "Will Eliminating PUFAs Fix Your Joint Pain?"
 slug: joint-pain-pufas
 keyword: joint pain inflammation arthritis pufas
 cluster: PUFA Effects
-date: 2025-10-28
+date: 2025-10-14
 ---
 
 # Will Eliminating PUFAs Fix Your Joint Pain?

@@ -3,7 +3,7 @@ title: "How Does Coffee Affect Metabolism and Thyroid Function?"
 slug: coffee-metabolism
 keyword: coffee thyroid metabolism
 cluster: Practical Implementation
-date: 2025-10-23
+date: 2025-08-21
 ---
 
 # How Does Coffee Affect Metabolism and Thyroid Function?

@@ -3,7 +3,7 @@ title: "What Is Oxidative Stress and How Do PUFAs Cause It?"
 slug: pufas-oxidative-stress
 keyword: oxidative stress pufas free radicals mitochondria
 cluster: PUFAs & Metabolism
-date: 2025-10-24
+date: 2025-09-12
 ---
 
 # What Is Oxidative Stress and How Do PUFAs Cause It?

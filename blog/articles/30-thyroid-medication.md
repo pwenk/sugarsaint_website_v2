@@ -3,7 +3,7 @@ title: "Should You Take Thyroid Medication While Fixing Metabolism?"
 slug: thyroid-medication
 keyword: thyroid medication metabolism
 cluster: Thyroid Health & Hormones
-date: 2025-10-23
+date: 2025-08-13
 ---
 
 # Should You Take Thyroid Medication While Fixing Metabolism?

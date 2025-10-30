@@ -3,7 +3,7 @@ title: "How to Navigate Social Situations While Avoiding Seed Oils"
 slug: social-situations
 keyword: social situations seed oils diet social eating
 cluster: Practical Implementation
-date: 2025-10-25
+date: 2025-09-22
 ---
 
 # How to Navigate Social Situations While Avoiding Seed Oils

@@ -3,7 +3,7 @@ title: "Do You Really Need That Much Protein?"
 slug: protein-myths
 keyword: protein requirements myths bodybuilding plant protein
 cluster: Sugar & Obesity Myth-Busting
-date: 2025-10-27
+date: 2025-10-08
 ---
 
 # Do You Really Need That Much Protein?

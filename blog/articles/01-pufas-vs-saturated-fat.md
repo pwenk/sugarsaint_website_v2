@@ -3,7 +3,7 @@ title: "PUFAs vs Saturated Fat: What Your Mitochondria Actually Notice"
 slug: pufas-vs-saturated-fat
 keyword: pufas saturated fat
 cluster: PUFAs & Metabolism
-date: 2025-10-22
+date: 2025-07-15
 ---
 
 # PUFAs vs Saturated Fat: What Your Mitochondria Actually Notice

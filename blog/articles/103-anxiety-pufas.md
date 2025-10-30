@@ -3,7 +3,7 @@ title: "Can Eliminating PUFAs Reduce Your Anxiety?"
 slug: anxiety-pufas
 keyword: anxiety PUFAs inflammation cortisol mental health stress
 cluster: PUFA Effects
-date: 2025-10-28
+date: 2025-10-25
 ---
 
 # Can Eliminating PUFAs Reduce Your Anxiety?

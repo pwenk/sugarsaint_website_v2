@@ -3,7 +3,7 @@ title: "Is Fructose Really Toxic? The Truth About Fruit Sugar"
 slug: fructose-myth
 keyword: fructose toxic fruit sugar
 cluster: Sugar & Obesity Myth
-date: 2025-10-23
+date: 2025-08-12
 ---
 
 # Is Fructose Really Toxic? The Truth About Fruit Sugar

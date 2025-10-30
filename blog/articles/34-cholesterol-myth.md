@@ -3,7 +3,7 @@ title: "Does Saturated Fat Really Raise Cholesterol and Cause Heart Disease?"
 slug: cholesterol-myth
 keyword: saturated fat cholesterol myth
 cluster: Sugar & Obesity Myth
-date: 2025-10-23
+date: 2025-08-17
 ---
 
 # Does Saturated Fat Really Raise Cholesterol and Cause Heart Disease?

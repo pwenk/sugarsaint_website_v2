@@ -3,7 +3,7 @@ title: "Are Nut and Seed Oils Better Than Vegetable Oils?"
 slug: nuts-seed-oils
 keyword: nut oils seed oils almonds walnuts flaxseed
 cluster: PUFA Education
-date: 2025-10-27
+date: 2025-10-04
 ---
 
 # Are Nut and Seed Oils Better Than Vegetable Oils?

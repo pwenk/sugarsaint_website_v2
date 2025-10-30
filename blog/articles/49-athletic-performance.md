@@ -3,7 +3,7 @@ title: "How to Optimize Athletic Performance Through Metabolism"
 slug: athletic-performance
 keyword: athletic performance metabolism thyroid
 cluster: Exercise & Physical Activity
-date: 2025-10-23
+date: 2025-09-01
 ---
 
 # How to Optimize Athletic Performance Through Metabolism

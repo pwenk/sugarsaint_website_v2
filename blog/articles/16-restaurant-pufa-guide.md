@@ -3,7 +3,7 @@ title: "How to Eat at Restaurants Without Destroying Your Metabolism"
 slug: restaurant-pufa-guide
 keyword: restaurant seed oils avoid
 cluster: Restaurant Survival & Food Labeling
-date: 2025-10-23
+date: 2025-07-30
 ---
 
 # How to Eat at Restaurants Without Destroying Your Metabolism?

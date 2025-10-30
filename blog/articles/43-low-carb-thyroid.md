@@ -3,7 +3,7 @@ title: "Why Does Low-Carb Kill Your Thyroid and Energy?"
 slug: low-carb-thyroid
 keyword: low carb thyroid hypothyroid
 cluster: Sugar & Obesity Myth
-date: 2025-10-23
+date: 2025-08-26
 ---
 
 # Why Does Low-Carb Kill Your Thyroid and Energy?

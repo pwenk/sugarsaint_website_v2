@@ -3,7 +3,7 @@ title: "Is Sugar Really the Enemy?"
 slug: sugar-insulin-myth
 keyword: sugar insulin carbs diabetes insulin resistance
 cluster: Sugar & Obesity Myth-Busting
-date: 2025-10-28
+date: 2025-10-22
 ---
 
 # Is Sugar Really the Enemy?

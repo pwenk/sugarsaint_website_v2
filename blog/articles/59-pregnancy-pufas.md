@@ -3,7 +3,7 @@ title: "Can PUFAs Affect Pregnancy and Fetal Development?"
 slug: pregnancy-pufas
 keyword: pregnancy pufas fertility fetal development
 cluster: Women's Health
-date: 2025-10-24
+date: 2025-09-11
 ---
 
 # Can PUFAs Affect Pregnancy and Fetal Development?

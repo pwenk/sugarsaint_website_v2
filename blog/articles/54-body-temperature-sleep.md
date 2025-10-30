@@ -3,7 +3,7 @@ title: "Why Can't You Sleep? The Body Temperature Connection"
 slug: body-temperature-sleep
 keyword: body temperature sleep metabolism thyroid
 cluster: Tracking & Testing
-date: 2025-10-24
+date: 2025-09-06
 ---
 
 # Why Can't You Sleep? The Body Temperature Connection

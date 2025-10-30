@@ -3,7 +3,7 @@ title: "How Does Chronic Stress Suppress Your Metabolism?"
 slug: cortisol-stress-metabolism
 keyword: cortisol stress metabolism thyroid
 cluster: PUFAs & Metabolism
-date: 2025-10-24
+date: 2025-09-08
 ---
 
 # How Does Chronic Stress Suppress Your Metabolism?

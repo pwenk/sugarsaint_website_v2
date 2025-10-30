@@ -3,7 +3,7 @@ title: "How Do Seed Oils Lower Testosterone?"
 slug: seed-oils-testosterone
 keyword: seed oils testosterone
 cluster: Testosterone & Men's Health
-date: 2025-10-22
+date: 2025-07-19
 ---
 
 # How Do Seed Oils Lower Testosterone?

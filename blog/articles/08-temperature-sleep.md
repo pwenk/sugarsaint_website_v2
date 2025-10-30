@@ -3,7 +3,7 @@ title: "Why Does Low Body Temperature Ruin Your Sleep?"
 slug: body-temperature-sleep
 keyword: body temperature sleep quality
 cluster: Sleep
-date: 2025-10-22
+date: 2025-07-22
 ---
 
 # Why Does Low Body Temperature Ruin Your Sleep?

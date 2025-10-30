@@ -3,7 +3,7 @@ title: "How Do Seed Oils Affect Digestion?"
 slug: seed-oils-digestion
 keyword: seed oils digestion gut
 cluster: Digestion & Gut
-date: 2025-10-22
+date: 2025-07-21
 ---
 
 # How Do Seed Oils Affect Digestion?

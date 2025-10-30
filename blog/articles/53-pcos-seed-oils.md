@@ -3,7 +3,7 @@ title: "Can Eliminating Seed Oils Reverse PCOS?"
 slug: pcos-seed-oils
 keyword: pcos seed oils pufa thyroid hormones
 cluster: Women's Health
-date: 2025-10-24
+date: 2025-09-05
 ---
 
 # Can Eliminating Seed Oils Reverse PCOS?

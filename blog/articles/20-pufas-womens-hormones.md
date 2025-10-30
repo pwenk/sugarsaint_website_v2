@@ -3,7 +3,7 @@ title: "How Do PUFAs Affect Women's Hormones?"
 slug: pufas-womens-hormones
 keyword: seed oils estrogen dominance
 cluster: Women's Hormones
-date: 2025-10-23
+date: 2025-08-03
 ---
 
 # How Do PUFAs Affect Women's Hormones?

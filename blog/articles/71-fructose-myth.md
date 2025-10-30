@@ -3,7 +3,7 @@ title: "Is Fructose Really Toxic?"
 slug: fructose-myth
 keyword: fructose fruit sugar metabolism liver
 cluster: Sugar & Obesity Myth-Busting
-date: 2025-10-26
+date: 2025-09-23
 ---
 
 # Is Fructose Really Toxic?

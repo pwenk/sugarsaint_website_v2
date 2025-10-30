@@ -3,7 +3,7 @@ title: "Is High Cholesterol Really Dangerous?"
 slug: cholesterol-myth
 keyword: cholesterol myth saturated fat heart disease
 cluster: Sugar & Obesity Myth-Busting
-date: 2025-10-25
+date: 2025-09-16
 ---
 
 # Is High Cholesterol Really Dangerous?

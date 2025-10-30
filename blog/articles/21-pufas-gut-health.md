@@ -3,7 +3,7 @@ title: "How Do PUFAs Affect Gut Health and Digestion?"
 slug: pufas-gut-health
 keyword: seed oils gut health digestion
 cluster: Digestion & Gut Health
-date: 2025-10-23
+date: 2025-08-04
 ---
 
 # How Do PUFAs Affect Gut Health and Digestion?

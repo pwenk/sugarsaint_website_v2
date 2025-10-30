@@ -3,7 +3,7 @@ title: "Does Endurance Training Suppress Your Thyroid?"
 slug: endurance-training-thyroid
 keyword: endurance training running cycling thyroid cortisol
 cluster: Exercise & Physical Activity
-date: 2025-10-26
+date: 2025-10-01
 ---
 
 # Does Endurance Training Suppress Your Thyroid?

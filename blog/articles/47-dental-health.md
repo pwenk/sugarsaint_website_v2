@@ -3,7 +3,7 @@ title: "How Does Metabolism Affect Teeth and Gum Health?"
 slug: dental-health
 keyword: teeth gum health metabolism
 cluster: Practical Implementation
-date: 2025-10-23
+date: 2025-08-30
 ---
 
 # How Does Metabolism Affect Teeth and Gum Health?

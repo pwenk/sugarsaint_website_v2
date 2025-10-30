@@ -3,7 +3,7 @@ title: "What Lab Tests Show Inflammation from PUFAs?"
 slug: inflammation-markers
 keyword: inflammation markers crp labs testing
 cluster: Tracking & Testing
-date: 2025-10-25
+date: 2025-09-19
 ---
 
 # What Lab Tests Show Inflammation from PUFAs?

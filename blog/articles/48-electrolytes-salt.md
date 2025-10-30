@@ -3,7 +3,7 @@ title: "Do You Need Salt and Electrolytes for Metabolism?"
 slug: electrolytes-salt
 keyword: salt electrolytes metabolism
 cluster: Practical Implementation
-date: 2025-10-23
+date: 2025-08-31
 ---
 
 # Do You Need Salt and Electrolytes for Metabolism?

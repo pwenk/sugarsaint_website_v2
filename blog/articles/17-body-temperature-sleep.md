@@ -3,7 +3,7 @@ title: "How Does Body Temperature Affect Sleep Quality?"
 slug: body-temperature-sleep
 keyword: body temperature sleep quality
 cluster: Sleep & Circadian Rhythm
-date: 2025-10-23
+date: 2025-07-31
 ---
 
 # How Does Body Temperature Affect Sleep Quality?

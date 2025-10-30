@@ -3,7 +3,7 @@ title: "How to Track Your Menstrual Cycle for Metabolic Health"
 slug: menstrual-cycle-tracking
 keyword: menstrual cycle tracking period symptoms ovulation
 cluster: Women's Health
-date: 2025-10-27
+date: 2025-10-09
 ---
 
 # How to Track Your Menstrual Cycle for Metabolic Health

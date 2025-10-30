@@ -3,7 +3,7 @@ title: "Does Coffee Help or Harm Your Thyroid?"
 slug: coffee-thyroid
 keyword: coffee thyroid metabolism caffeine cortisol
 cluster: Practical Implementation
-date: 2025-10-26
+date: 2025-09-28
 ---
 
 # Does Coffee Help or Harm Your Thyroid?

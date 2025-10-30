@@ -3,7 +3,7 @@ title: "Do You Need More Salt? (Electrolytes and Metabolism)"
 slug: electrolytes-salt
 keyword: salt sodium electrolytes magnesium potassium
 cluster: Practical Implementation
-date: 2025-10-28
+date: 2025-10-17
 ---
 
 # Do You Need More Salt? (Electrolytes and Metabolism)

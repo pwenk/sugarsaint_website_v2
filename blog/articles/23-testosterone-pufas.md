@@ -3,7 +3,7 @@ title: "How Do PUFAs Lower Testosterone in Men?"
 slug: testosterone-pufas
 keyword: seed oils testosterone levels
 cluster: Testosterone & Men's Health
-date: 2025-10-23
+date: 2025-08-06
 ---
 
 # How Do PUFAs Lower Testosterone in Men?

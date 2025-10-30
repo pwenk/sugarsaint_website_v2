@@ -3,7 +3,7 @@ title: "Is Your Depression Actually Low Metabolism?"
 slug: depression-metabolism
 keyword: depression thyroid metabolism inflammation
 cluster: Mental Health
-date: 2025-10-25
+date: 2025-09-14
 ---
 
 # Is Your Depression Actually Low Metabolism?

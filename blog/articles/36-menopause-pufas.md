@@ -3,7 +3,7 @@ title: "How Do PUFAs Make Menopause Worse?"
 slug: menopause-pufas
 keyword: menopause symptoms seed oils
 cluster: Women's Hormones
-date: 2025-10-23
+date: 2025-08-19
 ---
 
 # How Do PUFAs Make Menopause Worse?

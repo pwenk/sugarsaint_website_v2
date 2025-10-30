@@ -3,7 +3,7 @@ title: "Does Intermittent Fasting Harm Your Metabolism?"
 slug: intermittent-fasting
 keyword: intermittent fasting thyroid metabolism
 cluster: Practical Implementation
-date: 2025-10-23
+date: 2025-08-29
 ---
 
 # Does Intermittent Fasting Harm Your Metabolism?

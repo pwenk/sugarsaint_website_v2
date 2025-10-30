@@ -3,7 +3,7 @@ title: "Does Keto Suppress Your Thyroid Function?"
 slug: keto-thyroid
 keyword: keto thyroid low carb t3 metabolism
 cluster: Sugar & Obesity Myth-Busting
-date: 2025-10-25
+date: 2025-09-21
 ---
 
 # Does Keto Suppress Your Thyroid Function?

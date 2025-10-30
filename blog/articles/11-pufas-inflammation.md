@@ -3,7 +3,7 @@ title: "How Do PUFAs Cause Inflammation?"
 slug: pufas-inflammation
 keyword: pufas inflammation
 cluster: PUFAs & Metabolism
-date: 2025-10-23
+date: 2025-07-25
 ---
 
 # How Do PUFAs Cause Inflammation?

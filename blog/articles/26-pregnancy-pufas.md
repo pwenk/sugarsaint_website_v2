@@ -3,7 +3,7 @@ title: "How Do PUFAs Affect Pregnancy and Postpartum Recovery?"
 slug: pregnancy-pufas
 keyword: seed oils pregnancy postpartum
 cluster: Women's Hormones
-date: 2025-10-23
+date: 2025-08-09
 ---
 
 # How Do PUFAs Affect Pregnancy and Postpartum Recovery?

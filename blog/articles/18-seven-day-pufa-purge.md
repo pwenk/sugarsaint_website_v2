@@ -3,7 +3,7 @@ title: "The 7-Day PUFA Purge: What Happens When You Eliminate Seed Oils"
 slug: seven-day-pufa-purge
 keyword: eliminate seed oils week
 cluster: Experiments & Self-Tracking
-date: 2025-10-23
+date: 2025-08-01
 ---
 
 # The 7-Day PUFA Purge: What Happens When You Eliminate Seed Oils?

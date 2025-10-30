@@ -3,7 +3,7 @@ title: "Does Low-Carb Suppress Your Thyroid?"
 slug: low-carb-thyroid
 keyword: low carb thyroid hypothyroidism carbs metabolism
 cluster: Sugar & Obesity Myth-Busting
-date: 2025-10-28
+date: 2025-10-19
 ---
 
 # Does Low-Carb Suppress Your Thyroid?

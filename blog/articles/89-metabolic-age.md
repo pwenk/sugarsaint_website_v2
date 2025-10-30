@@ -3,7 +3,7 @@ title: "What Is Metabolic Age (and How to Lower Yours)"
 slug: metabolic-age
 keyword: metabolic age biological age longevity health span
 cluster: Tracking & Testing
-date: 2025-10-27
+date: 2025-10-11
 ---
 
 # What Is Metabolic Age (and How to Lower Yours)

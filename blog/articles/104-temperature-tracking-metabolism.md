@@ -3,7 +3,7 @@ title: "How to Track Body Temperature to Monitor Your Metabolism"
 slug: temperature-tracking-metabolism
 keyword: body temperature metabolism thyroid tracking basal temperature
 cluster: Practical Implementation
-date: 2025-10-28
+date: 2025-10-26
 ---
 
 # How to Track Body Temperature to Monitor Your Metabolism

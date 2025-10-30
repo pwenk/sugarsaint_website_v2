@@ -3,7 +3,7 @@ title: "How to Track Your Pulse for Metabolic Health"
 slug: pulse-tracking-guide
 keyword: pulse tracking metabolism
 cluster: Temperature & Pulse Tracking
-date: 2025-10-23
+date: 2025-07-27
 ---
 
 # How to Track Your Pulse for Metabolic Health?

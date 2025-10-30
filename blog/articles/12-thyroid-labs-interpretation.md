@@ -3,7 +3,7 @@ title: "How to Read Your Thyroid Labs When TSH Looks Normal"
 slug: thyroid-labs-interpretation
 keyword: thyroid labs normal tsh
 cluster: Thyroid Health & Hormones
-date: 2025-10-23
+date: 2025-07-26
 ---
 
 # How to Read Your Thyroid Labs When TSH Looks Normal?
