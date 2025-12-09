@@ -1,0 +1,901 @@
+# CLAUDE CODE PROMPT: Build Complete Bona Fides Detective Agency Blog
+
+---
+
+## PROJECT OVERVIEW
+
+You are building a complete blog system for **Bona Fides Detective Agency**, a German private investigation agency specializing in digital investigations, cybercrime detection, and background checks.
+
+**Website:** https://bona-fides.vercel.app/
+**Target:** 200 blog articles based on the CSV file `Bona Fides Blog Ideas.csv`
+**Language:** German (primary content)
+**Tech Stack:** Next.js 15, TypeScript, React 19, Tailwind CSS, Markdown
+
+---
+
+## CSV FILE LOCATION
+
+**Path:** `/Users/patrick/Library/CloudStorage/Dropbox/Mac/Documents/vibe/sugarsaint_website_v2/Bona Fides Blog Ideas.csv`
+
+**CSV Structure:**
+```
+#,Category,Article Title (German),Article Title (English),Primary Keyword,Search Intent,Target Audience,Priority,Notes
+1,Digital Investigations,Digitale Spur 1: Moderne Ermittlungstechniken im Netz,Digital Trail 1: Modern Investigative Techniques Online,digitale spur 1,Informational,B2C/B2B,Priority 1,"Notes with sources..."
+```
+
+**Total Articles:** 200 (rows 3-202, after header)
+
+---
+
+## YOUR MISSION
+
+Build a complete, production-ready blog system with:
+
+1. ✅ **Blog Architecture** - Following the template in `blog-architecture-prompt.txt`
+2. ✅ **200 Article Generation** - Parse CSV, generate full German articles using AI
+3. ✅ **Internal Linking** - Strategic interlinking between related articles (2-3 links per article)
+4. ✅ **SEO Optimization** - Schema markup, meta tags, OpenGraph tags
+5. ✅ **Responsive Design** - Mobile-first, professional detective agency aesthetic
+6. ✅ **Conversion Focus** - Clear CTAs for consultation requests
+
+---
+
+## PHASE 1: ARCHITECTURE SETUP
+
+### 1.1 Create Directory Structure
+
+```bash
+# In the project root (where package.json is)
+mkdir -p blog/articles
+mkdir -p blog/_tonality-guide
+mkdir -p lib
+mkdir -p app/blog/[slug]
+mkdir -p public/images/blog
+```
+
+### 1.2 Install Dependencies
+
+```bash
+npm install gray-matter react-markdown
+```
+
+### 1.3 Create Core Files
+
+**File 1: `lib/blog.ts`**
+- Copy implementation from `blog-architecture-prompt.txt`
+- Utility functions: `getAllArticles()`, `getArticleBySlug()`, `getAllSlugs()`
+- Parse frontmatter with gray-matter
+- Sort by date (newest first)
+
+**File 2: `app/blog/page.tsx`**
+- Blog index page
+- Display all articles grouped by category
+- Filter by category via query parameter (`?category=Digital+Investigations`)
+- Responsive card-based layout
+- German text throughout
+
+**File 3: `app/blog/[slug]/page.tsx`**
+- Individual article page
+- Static generation (`generateStaticParams`)
+- Dynamic metadata for SEO
+- Schema markup (Article + FAQPage)
+- Markdown rendering with custom components
+- Breadcrumb navigation
+- Related articles section (same category)
+
+---
+
+## PHASE 2: ARTICLE CONTENT GENERATION
+
+### 2.1 Parse CSV File
+
+**Task:** Read `Bona Fides Blog Ideas.csv` and extract all 200 article ideas.
+
+**CSV Fields to Extract:**
+- `#` - Article number (for filename: `001-slug.md`, `002-slug.md`, etc.)
+- `Category` - Content cluster for organization
+- `Article Title (German)` - Use as H1 and meta title
+- `Primary Keyword` - For SEO optimization
+- `Target Audience` - Customize tone (B2C vs B2B)
+- `Priority` - Use for publication dates (Priority 1 = recent dates)
+- `Notes` - Use for research context and sources
+
+### 2.2 Article Generation Strategy
+
+**For each of the 200 articles:**
+
+1. **Generate Slug:** From German title (lowercase, hyphens, remove special chars)
+   - Example: "Digitale Spur 1: Moderne Ermittlungstechniken im Netz" → `digitale-spur-1-moderne-ermittlungstechniken`
+
+2. **Set Publication Date:**
+   - Priority 1: Recent dates (2025-10-01 to 2025-11-10)
+   - Priority 2: Earlier dates (2025-08-01 to 2025-09-30)
+   - Priority 3: Oldest dates (2025-06-01 to 2025-07-31)
+   - Distribute evenly (e.g., one per day)
+
+3. **Generate Full Article Content** using this template:
+
+---
+
+### 2.3 GERMAN ARTICLE TEMPLATE
+
+```markdown
+---
+title: "[German Title from CSV]"
+slug: [generated-slug]
+keyword: [Primary Keyword from CSV]
+category: [Category from CSV]
+date: [YYYY-MM-DD based on priority]
+excerpt: "[1-2 sentence summary in German]"
+---
+
+# [Article Title in German]
+
+## Zusammenfassung (TL;DR)
+
+[50-80 words in German: Problem statement, key insight, solution. Make it scannable.]
+
+---
+
+[3-4 paragraph hook in German: Show reader they have this problem. Use "Sie" (formal) for B2B, "du" (informal) for B2C based on Target Audience. Create urgency.]
+
+*[One sentence analogy in German, italicized: "Digitale Ermittlungen sind wie... [clever comparison]"]*
+
+## [H2 Question in German: Warum ist das wichtig?]
+
+[4-6 paragraphs explanation in German:]
+- What's actually happening
+- Why it matters for German businesses/individuals
+- Legal context (DSGVO/GDPR if relevant)
+- Statistics from BKA/Bitkom (if available in Notes field)
+- Real-world implications
+
+[Include information from Notes field if sources are provided]
+
+## [H2 Question in German: Wie können wir helfen?]
+
+[Practical solution section in German:]
+
+**Unsere Ermittlungsmethoden:**
+
+1. **[Method 1]** - [Brief description]
+2. **[Method 2]** - [Brief description]
+3. **[Method 3]** - [Brief description]
+
+**Was Sie erwarten können:**
+- Zeitrahmen: [X Tage/Wochen]
+- Diskretion: Absolute Vertraulichkeit
+- Ergebnisse: [What client receives]
+
+## [H2: Fallbeispiel (Optional)]
+
+[If category is suitable, include anonymized case example:]
+
+**Situation:** [Brief scenario]
+**Untersuchung:** [What we did]
+**Ergebnis:** [Outcome]
+
+*Name und Details wurden zum Schutz der Privatsphäre geändert.*
+
+## Häufig gestellte Fragen (FAQ)
+
+**F: [Question in German relevant to topic]**
+A: [Answer in 2-3 sentences. Direct, professional.]
+
+**F: [Question about legality/GDPR]**
+A: [Answer addressing German law, BDSG, DSGVO.]
+
+**F: [Question about cost/timeline]**
+A: [Answer with realistic expectations.]
+
+**F: [Question about discretion/confidentiality]**
+A: [Answer emphasizing professionalism.]
+
+---
+
+*Dieser Artikel dient nur zu Informationszwecken und stellt keine Rechtsberatung dar. Für spezifische Fälle kontaktieren Sie bitte unsere Detektei.*
+
+---
+
+## Benötigen Sie professionelle Ermittlungshilfe?
+
+Bona Fides ist Deutschlands führende Detektei für digitale Ermittlungen. Wir bieten:
+
+✓ 24/7 Verfügbarkeit
+✓ Kostenlose Erstberatung
+✓ Verschlüsselte Kommunikation
+✓ Deutschlandweite Ermittlungen
+
+**[Kostenlose Beratung anfragen](/kontakt)**
+
+**Nicht sicher, ob Sie unsere Hilfe brauchen?**
+[Zum Schnellcheck: Brauche ich einen Detektiv?](/schnellcheck)
+
+---
+
+## Verwandte Artikel
+
+- [Link to related article 1 in same category]
+- [Link to related article 2 in same category]
+- [Link to related article 3 in related category]
+
+```
+
+---
+
+### 2.4 Article Generation Guidelines
+
+**Tone & Style:**
+
+**For B2B Audience (Corporations):**
+- Use "Sie" (formal you)
+- Professional, data-driven tone
+- Emphasize ROI, risk mitigation, compliance
+- Include business statistics
+- Focus on preventive measures
+
+**For B2C Audience (Individuals):**
+- Use "Sie" (formal, but warmer)
+- Empathetic, understanding tone
+- Address emotional concerns (fear, privacy, trust)
+- Include reassurance about discretion
+- Focus on solving personal problems
+
+**Universal Style Rules:**
+- Clear, direct German (avoid jargon)
+- Short paragraphs (3-4 sentences max)
+- Active voice
+- Professional but approachable
+- Legal compliance (GDPR/DSGVO aware)
+
+**SEO Optimization:**
+- Use primary keyword naturally 3-5 times
+- Include keyword in: H1, first paragraph, one H2, conclusion
+- Use semantic variations
+- Question-based H2 headings (for featured snippets)
+- FAQ section (for FAQPage schema)
+
+**Length:**
+- Target: 1,000-1,500 words per article
+- Minimum: 800 words
+- Maximum: 2,000 words
+
+---
+
+## PHASE 3: INTERNAL LINKING STRATEGY
+
+### 3.1 Linking Rules
+
+**Each article must link to 2-3 related articles:**
+
+1. **Within-Category Links (2 links):**
+   - Link to 2 other articles in the same category
+   - Example: "Digitale Spur 1" links to "Digitale Spur 5" and "Digitale Spur 12"
+
+2. **Cross-Category Link (1 link):**
+   - Link to 1 article in a related category
+   - Example: "Digital Investigations" article links to "Cybercrime & Fraud" article
+
+**Where to Place Links:**
+- In explanation sections (contextual)
+- In "Verwandte Artikel" section at bottom
+- Use natural anchor text in German
+
+### 3.2 Category Relationships
+
+**Related Categories for Cross-Linking:**
+
+- **Digital Investigations** ↔ Cybercrime & Fraud, Technology & Tools
+- **Cybercrime & Fraud** ↔ Digital Investigations, Corporate Fraud
+- **Background Checks** ↔ Corporate Fraud, Legal & Regulatory
+- **Infidelity Investigations** ↔ Digital Investigations, How-To Guides
+- **Corporate Fraud** ↔ Cybercrime & Fraud, Background Checks
+- **Legal & Regulatory** ↔ Background Checks, How-To Guides
+- **Case Studies** ↔ Any category (use examples from)
+- **How-To Guides** ↔ All categories (educational bridge)
+- **Technology & Tools** ↔ Digital Investigations, Cybercrime & Fraud
+- **Industry Trends** ↔ All categories (data source)
+- **Geographic/Local** ↔ How-To Guides, Background Checks
+- **FAQ & Objections** ↔ How-To Guides, Legal & Regulatory
+- **International** ↔ Digital Investigations, Cybercrime & Fraud
+
+### 3.3 Implementation
+
+**After generating all articles:**
+
+1. Parse all articles to extract slugs and categories
+2. For each article:
+   - Find 2 articles in same category (random or by priority)
+   - Find 1 article in related category
+   - Add links to "Verwandte Artikel" section
+3. Update all markdown files with internal links
+4. Verify no broken links
+
+---
+
+## PHASE 4: SEO & METADATA
+
+### 4.1 Schema Markup
+
+**Every article includes:**
+
+**Article Schema:**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "[Article Title]",
+  "datePublished": "[YYYY-MM-DD]",
+  "dateModified": "[YYYY-MM-DD]",
+  "author": {
+    "@type": "Organization",
+    "name": "Bona Fides Detektei"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bona Fides Detektei",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bona-fides.vercel.app/logo.png"
+    }
+  },
+  "keywords": "[primary keyword]",
+  "articleSection": "[Category]"
+}
+```
+
+**FAQPage Schema** (extracted from FAQ section):
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "[Question]",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[Answer]"
+      }
+    }
+  ]
+}
+```
+
+### 4.2 Meta Tags
+
+**Generated for each article:**
+```html
+<title>[Article Title] | Bona Fides Detektei</title>
+<meta name="description" content="[Excerpt from frontmatter]" />
+<meta name="keywords" content="[primary keyword]" />
+<meta property="og:title" content="[Article Title]" />
+<meta property="og:description" content="[Excerpt]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bona-fides.vercel.app/blog/[slug]" />
+<meta property="article:published_time" content="[date]" />
+<meta property="article:section" content="[category]" />
+```
+
+### 4.3 Sitemap Generation
+
+**Create `public/sitemap.xml`:**
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://bona-fides.vercel.app/blog</loc>
+    <lastmod>[today's date]</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- For each article -->
+  <url>
+    <loc>https://bona-fides.vercel.app/blog/[slug]</loc>
+    <lastmod>[article date]</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
+```
+
+---
+
+## PHASE 5: DESIGN & STYLING
+
+### 5.1 Brand Colors (Detective Agency Aesthetic)
+
+**Primary Palette:**
+- **Deep Navy:** `#1a2332` (headers, text)
+- **Professional Gray:** `#4a5568` (body text)
+- **Accent Gold:** `#d4af37` (CTAs, links, highlights)
+- **Clean White:** `#ffffff` (backgrounds)
+- **Light Gray:** `#f7fafc` (alternate backgrounds)
+
+**Semantic Colors:**
+- **Success:** `#48bb78` (consultation booked)
+- **Warning:** `#ed8936` (urgent cases)
+- **Info:** `#4299e1` (informational content)
+
+### 5.2 Typography
+
+**Font Stack:**
+```css
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+```
+
+**Type Scale:**
+- H1: 40px / 2.5rem (article titles)
+- H2: 32px / 2rem (section headings)
+- H3: 24px / 1.5rem (sub-sections)
+- Body: 18px / 1.125rem (readable, professional)
+- Small: 14px / 0.875rem (meta info)
+
+### 5.3 Component Styling
+
+**Blog Index Cards:**
+- Card hover effect (subtle shadow, gold border)
+- Category badge (colored by category)
+- Gradient placeholder if no image
+- Excerpt truncation (2 lines max)
+- Date + reading time
+- "Artikel lesen →" CTA
+
+**Article Page:**
+- Max width: 800px (optimal reading)
+- Generous line height: 1.7
+- Italicized analogy: Gold left border, light background
+- FAQ section: Accordion or expanded (test both)
+- CTA box: Gold background, navy text, prominent
+- Related articles: Card grid at bottom
+
+**Navigation:**
+- Sticky header with blog link
+- Breadcrumbs: Home > Blog > [Category] > [Article]
+- Category filter dropdown on blog index
+
+### 5.4 Responsive Design
+
+**Breakpoints:**
+- Mobile: 320px - 640px (1 column)
+- Tablet: 641px - 1024px (2 columns)
+- Desktop: 1025px+ (3 columns on index)
+
+**Mobile Optimizations:**
+- Collapsible FAQ sections
+- Sticky CTA button (bottom of screen)
+- Simplified navigation
+- Touch-friendly card sizing
+
+---
+
+## PHASE 6: CONVERSION OPTIMIZATION
+
+### 6.1 CTA Placements
+
+**In Every Article:**
+
+1. **Above the fold:** Brief mention of services in intro
+2. **Mid-article:** After explanation section, before FAQ
+3. **End of article:** Main CTA box with contact form link
+4. **Sidebar (desktop):** Sticky CTA with phone number
+
+**CTA Variations:**
+
+**Primary CTA:**
+```html
+<div class="cta-box bg-gold p-8 rounded-lg my-8">
+  <h3>Kostenlose Erstberatung</h3>
+  <p>Unsere Detektive stehen Ihnen 24/7 zur Verfügung.</p>
+  <a href="/kontakt" class="btn-primary">Jetzt anfragen</a>
+  <p class="text-sm">☎ +49 XXX XXXXXXX</p>
+</div>
+```
+
+**Secondary CTA:**
+```html
+<a href="/schnellcheck" class="text-navy underline">
+  Nicht sicher? Machen Sie unseren Schnellcheck →
+</a>
+```
+
+### 6.2 Trust Signals
+
+**Include in articles:**
+- "24/7 Verfügbarkeit"
+- "Verschlüsselte Kommunikation"
+- "DSGVO-konform"
+- "Kostenlose Erstberatung"
+- "Deutschlandweit tätig"
+
+### 6.3 Lead Magnets
+
+**Mentioned in relevant articles:**
+- Free consultation (primary)
+- Quick assessment quiz ("Brauche ich einen Detektiv?")
+- Downloadable checklists (e.g., "Due Diligence Checklist")
+- Case study PDFs (e.g., "Cybercrime in Deutschland 2025")
+
+---
+
+## PHASE 7: IMPLEMENTATION CHECKLIST
+
+### Phase 7.1: Setup (Week 1)
+
+- [ ] Create directory structure
+- [ ] Install dependencies (gray-matter, react-markdown)
+- [ ] Create `lib/blog.ts` utility file
+- [ ] Create `app/blog/page.tsx` (blog index)
+- [ ] Create `app/blog/[slug]/page.tsx` (article template)
+- [ ] Test with 3 sample articles
+
+### Phase 7.2: Content Generation (Week 2-3)
+
+- [ ] Parse CSV file (200 articles)
+- [ ] Generate article slugs
+- [ ] Assign publication dates (based on priority)
+- [ ] Generate all 200 article markdown files
+- [ ] Validate frontmatter for all articles
+- [ ] Check for duplicate slugs
+
+### Phase 7.3: Internal Linking (Week 3)
+
+- [ ] Build article relationship map
+- [ ] Add 2-3 internal links per article
+- [ ] Update "Verwandte Artikel" sections
+- [ ] Verify all internal links work
+- [ ] Check for orphan articles (no incoming links)
+
+### Phase 7.4: SEO & Metadata (Week 4)
+
+- [ ] Add schema markup to article template
+- [ ] Generate meta tags dynamically
+- [ ] Create sitemap.xml
+- [ ] Test schema with Google Rich Results Test
+- [ ] Add robots.txt
+- [ ] Optimize for Core Web Vitals
+
+### Phase 7.5: Design & Polish (Week 4)
+
+- [ ] Apply brand colors
+- [ ] Style blog index cards
+- [ ] Style individual article pages
+- [ ] Add category badges
+- [ ] Create responsive navigation
+- [ ] Test mobile layout
+- [ ] Add loading states
+
+### Phase 7.6: Conversion Features (Week 5)
+
+- [ ] Add CTA boxes to article template
+- [ ] Create sticky CTA sidebar (desktop)
+- [ ] Add trust signals
+- [ ] Link to contact page
+- [ ] Add phone number CTAs
+- [ ] Create "Schnellcheck" quiz page (placeholder)
+
+### Phase 7.7: Testing & Launch (Week 5)
+
+- [ ] Build project (`npm run build`)
+- [ ] Test all 200 articles render
+- [ ] Verify internal links work
+- [ ] Test category filtering
+- [ ] Check mobile responsiveness
+- [ ] Validate HTML/CSS
+- [ ] Test schema markup
+- [ ] Performance audit (Lighthouse)
+- [ ] Deploy to production
+
+### Phase 7.8: Post-Launch (Ongoing)
+
+- [ ] Submit sitemap to Google Search Console
+- [ ] Monitor indexing status
+- [ ] Track article performance (analytics)
+- [ ] A/B test CTA variations
+- [ ] Update articles based on performance
+- [ ] Add new articles monthly
+
+---
+
+## EXECUTION STRATEGY
+
+### Option 1: Batch Generation (Recommended)
+
+**Generate articles in batches:**
+
+1. **Batch 1:** Priority 1 articles (~60 articles)
+   - Highest SEO value
+   - Recent publication dates
+   - Test entire pipeline with these
+
+2. **Batch 2:** Priority 2 articles (~80 articles)
+   - Mid-tier content
+   - Earlier publication dates
+
+3. **Batch 3:** Priority 3 articles (~60 articles)
+   - Supplementary content
+   - Oldest publication dates
+
+**Benefits:**
+- Test system early with high-value content
+- Iterate on template before generating all
+- Easier debugging
+- Can launch with Batch 1 only, add rest later
+
+### Option 2: Full Generation
+
+**Generate all 200 at once:**
+- Requires robust generation script
+- Less iteration opportunity
+- Faster if template is perfect
+- Higher risk of systematic errors
+
+**Recommendation: Use Option 1 (Batch Generation)**
+
+---
+
+## ARTICLE GENERATION SCRIPT
+
+### Automated Generation Process
+
+**Create Node.js script: `scripts/generate-articles.js`**
+
+```javascript
+const fs = require('fs');
+const path = require('path');
+const csv = require('csv-parser');
+
+// Configuration
+const CSV_PATH = '/Users/patrick/Library/CloudStorage/Dropbox/Mac/Documents/vibe/sugarsaint_website_v2/Bona Fides Blog Ideas.csv';
+const OUTPUT_DIR = 'blog/articles';
+
+// Parse CSV
+function parseCSV() {
+  return new Promise((resolve, reject) => {
+    const articles = [];
+    fs.createReadStream(CSV_PATH)
+      .pipe(csv())
+      .on('data', (row) => articles.push(row))
+      .on('end', () => resolve(articles))
+      .on('error', reject);
+  });
+}
+
+// Generate slug from German title
+function generateSlug(title) {
+  return title
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+    .replace(/ä/g, 'ae')
+    .replace(/ö/g, 'oe')
+    .replace(/ü/g, 'ue')
+    .replace(/ß/g, 'ss')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+// Assign date based on priority
+function assignDate(articleNum, priority) {
+  const baseDate = new Date('2025-06-01');
+  let offset = articleNum;
+
+  if (priority === 'Priority 1') {
+    offset += 120; // Recent dates
+  } else if (priority === 'Priority 2') {
+    offset += 60; // Mid dates
+  }
+
+  const date = new Date(baseDate);
+  date.setDate(date.getDate() + offset);
+  return date.toISOString().split('T')[0];
+}
+
+// Generate article content using AI
+async function generateArticleContent(article) {
+  // This is where you'd call Claude API or GPT-4 to generate content
+  // For now, return template structure
+
+  const slug = generateSlug(article['Article Title (German)']);
+  const date = assignDate(parseInt(article['#']), article['Priority']);
+
+  return `---
+title: "${article['Article Title (German)']}"
+slug: ${slug}
+keyword: ${article['Primary Keyword']}
+category: ${article['Category']}
+date: ${date}
+excerpt: "Professionelle Ermittlungshilfe für ${article['Category']} in Deutschland."
+---
+
+# ${article['Article Title (German)']}
+
+## Zusammenfassung (TL;DR)
+
+[AI-generated German summary based on category and title]
+
+---
+
+[AI-generated article content following the template]
+`;
+}
+
+// Write article to file
+function writeArticle(articleNum, content) {
+  const filename = `${String(articleNum).padStart(3, '0')}-${generateSlug(content.title)}.md`;
+  const filepath = path.join(OUTPUT_DIR, filename);
+  fs.writeFileSync(filepath, content);
+  console.log(`✅ Generated: ${filename}`);
+}
+
+// Main execution
+async function main() {
+  console.log('📖 Parsing CSV...');
+  const articles = await parseCSV();
+
+  console.log(`📝 Generating ${articles.length} articles...`);
+
+  for (const article of articles) {
+    const content = await generateArticleContent(article);
+    writeArticle(parseInt(article['#']), content);
+  }
+
+  console.log('✨ All articles generated!');
+}
+
+main().catch(console.error);
+```
+
+**Install CSV parser:**
+```bash
+npm install csv-parser
+```
+
+**Run script:**
+```bash
+node scripts/generate-articles.js
+```
+
+---
+
+## QUALITY ASSURANCE
+
+### Before Publishing Each Batch:
+
+**Content Quality:**
+- [ ] German grammar and spelling checked
+- [ ] Professional tone maintained
+- [ ] No placeholder text (e.g., "[AI-generated]")
+- [ ] All facts accurate (cross-reference with Notes field)
+- [ ] Legal disclaimers present
+
+**SEO Quality:**
+- [ ] Primary keyword used 3-5 times
+- [ ] Keyword in H1, first paragraph, one H2
+- [ ] Meta description < 155 characters
+- [ ] Title < 60 characters
+- [ ] FAQ section present
+
+**Technical Quality:**
+- [ ] Frontmatter valid YAML
+- [ ] All links work (no 404s)
+- [ ] Schema markup validates
+- [ ] Images load (if present)
+- [ ] Mobile responsive
+
+**Conversion Quality:**
+- [ ] CTA present and prominent
+- [ ] Contact link works
+- [ ] Trust signals included
+- [ ] Related articles linked
+
+---
+
+## SUCCESS METRICS
+
+### Track After Launch:
+
+**Traffic Metrics:**
+- Organic search traffic to blog
+- Top 10 ranking keywords
+- Blog → homepage traffic
+- Average time on page
+
+**Engagement Metrics:**
+- Bounce rate per article
+- Pages per session
+- Internal link click-through rate
+- CTA click rate
+
+**Conversion Metrics:**
+- Blog → contact form submissions
+- Phone call tracking (if possible)
+- Consultation requests from blog
+- Cost per lead from blog traffic
+
+**SEO Metrics:**
+- Number of indexed pages
+- Number of featured snippets
+- Domain authority growth
+- Backlinks to blog articles
+
+---
+
+## MAINTENANCE PLAN
+
+### Monthly:
+- Add 5-10 new articles
+- Update top-performing articles
+- Fix broken links
+- Review analytics
+
+### Quarterly:
+- Audit internal linking structure
+- Update statistics in articles
+- Refresh older content
+- A/B test CTA variations
+
+### Annually:
+- Comprehensive SEO audit
+- Redesign if needed
+- Archive outdated content
+- Expand into new categories
+
+---
+
+## FINAL NOTES
+
+### AI-Assisted Generation:
+
+**You can use Claude API or GPT-4 to generate article content:**
+
+**Prompt for each article:**
+```
+Generate a 1,200-word blog article in German for Bona Fides Detective Agency.
+
+Title: [German Title from CSV]
+Category: [Category]
+Keyword: [Primary Keyword]
+Target Audience: [B2C or B2B]
+Notes: [Research context from CSV]
+
+Write in professional German using "Sie" (formal). Follow this structure:
+1. Zusammenfassung (TL;DR) - 60 words
+2. Hook (3-4 paragraphs showing reader they have the problem)
+3. One-sentence analogy (italicized)
+4. Explanation section (why this matters, DSGVO context if relevant)
+5. Solution section (how Bona Fides can help)
+6. FAQ section (4 questions, German)
+7. Disclaimer and CTA
+
+Tone: Professional, trustworthy, authoritative. Emphasize discretion, 24/7 availability, DSGVO compliance.
+```
+
+### Human Review:
+
+**Even with AI generation, review for:**
+- Factual accuracy
+- Cultural appropriateness (German market)
+- Legal compliance (GDPR, German investigation laws)
+- Brand voice consistency
+- No hallucinated statistics or sources
+
+---
+
+## START BUILDING
+
+**Your Task:**
+
+1. **Read the CSV file** at the specified path
+2. **Create the blog architecture** following the template
+3. **Generate all 200 articles** in German
+4. **Implement internal linking** between related articles
+5. **Add SEO features** (schema, meta tags, sitemap)
+6. **Style the blog** with professional detective agency aesthetic
+7. **Test everything** before declaring success
+
+**Begin with Phase 1 (Architecture Setup) and work through sequentially.**
+
+---
+
+**LET'S BUILD THIS. 🕵️**

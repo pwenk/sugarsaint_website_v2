@@ -1,0 +1,872 @@
+# BLOG ARCHITECTURE PROMPT - Reusable Template
+# Copy and paste this to replicate the blog structure for any project
+
+---
+
+## PROJECT CONTEXT (Customize This Section)
+
+**Project Name:** [Your Project Name]
+**Primary Domain:** [yourdomain.com]
+**Blog Purpose:** [e.g., Content marketing, SEO, thought leadership, course sales funnel]
+**Target Audience:** [e.g., Health-conscious consumers, developers, entrepreneurs]
+**Conversion Goal:** [e.g., Course sales, email signups, product demos]
+
+---
+
+## TECHNICAL ARCHITECTURE
+
+### Tech Stack
+
+**Framework:** Next.js 15+ (App Router)
+**Language:** TypeScript
+**Content Format:** Markdown files with frontmatter (gray-matter parsing)
+**Styling:** Tailwind CSS
+**Markdown Rendering:** react-markdown
+
+### File Structure
+
+```
+project-root/
+├── app/
+│   ├── blog/
+│   │   ├── page.tsx                    # Blog index/listing page
+│   │   └── [slug]/
+│   │       └── page.tsx                # Individual article page
+│
+├── blog/                                # Content repository (outside app/)
+│   ├── articles/                        # All blog articles as .md files
+│   │   ├── 01-article-slug.md
+│   │   ├── 02-another-article.md
+│   │   └── README.md                   # Documentation of articles
+│   │
+│   ├── _tonality-guide/                # Writing style guides
+│   │   ├── README.md
+│   │   ├── writing-template.md         # Article template
+│   │   └── style-guide.md              # Voice & tone guidelines
+│   │
+│   ├── IMPLEMENTATION-PLAN.md          # Content roadmap & strategy
+│   └── IMAGE-GENERATION-GUIDE.md       # (Optional) Asset guidelines
+│
+├── lib/
+│   └── blog.ts                         # Blog utility functions
+│
+└── public/
+    └── images/
+        └── blog/                        # Blog images
+```
+
+### Why This Structure?
+
+1. **Content outside `/app`:** Keeps content separate from application code
+2. **Markdown files:** Easy to write, version control friendly, portable
+3. **Numbered prefixes:** `01-`, `02-` for easy ordering and chronological organization
+4. **Single folder for articles:** No nested complexity, all articles in one place
+5. **Style guides in `_tonality-guide/`:** Underscore prefix keeps it out of article lists
+
+---
+
+## CORE FILES TO IMPLEMENT
+
+### 1. Blog Utility Functions (`lib/blog.ts`)
+
+**Purpose:** Parse markdown files, extract frontmatter, provide data to pages
+
+**Key Functions:**
+- `getAllArticles()` - Get all articles sorted by date
+- `getArticleBySlug(slug)` - Get specific article by slug
+- `getAllSlugs()` - Get all slugs for static generation
+
+**Dependencies:**
+```json
+{
+  "gray-matter": "^4.0.3",    // Parse frontmatter
+  "react-markdown": "^9.0.0"  // Render markdown
+}
+```
+
+**Implementation Template:**
+
+```typescript
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+
+const articlesDirectory = path.join(process.cwd(), "blog/articles");
+
+export interface ArticleMetadata {
+  title: string;
+  slug: string;
+  keyword: string;          // Primary SEO keyword
+  cluster: string;          // Content category/cluster
+  date: string;             // YYYY-MM-DD format
+  image?: string;           // Optional cover image
+  excerpt?: string;         // Optional short description
+}
+
+export interface Article {
+  metadata: ArticleMetadata;
+  content: string;
+}
+
+// Get all articles, sorted by date (newest first)
+export function getAllArticles(): Article[] {
+  const fileNames = fs.readdirSync(articlesDirectory);
+  const articles = fileNames
+    .filter((fileName) => fileName.endsWith(".md") && fileName !== "README.md")
+    .map((fileName) => {
+      const fullPath = path.join(articlesDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, "utf8");
+      const { data, content } = matter(fileContents);
+
+      return {
+        metadata: data as ArticleMetadata,
+        content,
+      };
+    })
+    .sort((a, b) => {
+      return new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime();
+    });
+
+  return articles;
+}
+
+// Get article by slug
+export function getArticleBySlug(slug: string): Article | null {
+  const fileNames = fs.readdirSync(articlesDirectory);
+  const fileName = fileNames.find((name) => {
+    if (name === "README.md" || !name.endsWith(".md")) return false;
+    const fullPath = path.join(articlesDirectory, name);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const { data } = matter(fileContents);
+    return data.slug === slug;
+  });
+
+  if (!fileName) return null;
+
+  const fullPath = path.join(articlesDirectory, fileName);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+
+  return {
+    metadata: data as ArticleMetadata,
+    content,
+  };
+}
+
+// Get all slugs for static generation
+export function getAllSlugs(): string[] {
+  const articles = getAllArticles();
+  return articles.map((article) => article.metadata.slug);
+}
+```
+
+---
+
+### 2. Blog Index Page (`app/blog/page.tsx`)
+
+**Purpose:** Display all articles, optionally filtered by cluster/category
+
+**Key Features:**
+- List all articles grouped by cluster/category
+- Filter by cluster via query parameter (`?cluster=CategoryName`)
+- Card-based layout with image or gradient fallback
+- Responsive grid (mobile: 1 column, tablet: 2, desktop: 3)
+
+**Implementation Template:**
+
+```typescript
+import { getAllArticles } from "@/lib/blog";
+import Link from "next/link";
+import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog | [Your Project Name]",
+  description: "[Description of your blog content]",
+};
+
+interface BlogIndexProps {
+  searchParams: Promise<{ cluster?: string }>;
+}
+
+export default async function BlogIndex({ searchParams }: BlogIndexProps) {
+  const { cluster: filterCluster } = await searchParams;
+  const articles = getAllArticles();
+
+  // Filter by cluster if specified
+  const filteredArticles = filterCluster
+    ? articles.filter((article) => article.metadata.cluster === filterCluster)
+    : articles;
+
+  // Group by cluster for display
+  const articlesByCluster = filteredArticles.reduce(
+    (acc, article) => {
+      const cluster = article.metadata.cluster;
+      if (!acc[cluster]) {
+        acc[cluster] = [];
+      }
+      acc[cluster].push(article);
+      return acc;
+    },
+    {} as Record<string, typeof filteredArticles>
+  );
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto max-w-4xl px-4">
+          {filterCluster ? (
+            <>
+              <Link href="/blog" className="mb-4 inline-flex items-center hover:underline">
+                ← All Articles
+              </Link>
+              <h1 className="mb-6 text-center text-5xl font-semibold md:text-6xl">
+                {filterCluster}
+              </h1>
+              <p className="mx-auto max-w-2xl text-center text-lg">
+                {filteredArticles.length} article{filteredArticles.length !== 1 ? 's' : ''}
+              </p>
+            </>
+          ) : (
+            <>
+              <h1 className="mb-6 text-center text-5xl font-semibold md:text-6xl">
+                Blog
+              </h1>
+              <p className="mx-auto max-w-2xl text-center text-lg">
+                [Your blog tagline/description]
+              </p>
+            </>
+          )}
+        </div>
+      </section>
+
+      {/* Articles by Cluster */}
+      <section className="py-16">
+        <div className="container mx-auto max-w-6xl px-4">
+          {Object.entries(articlesByCluster).map(([cluster, clusterArticles]) => (
+            <div key={cluster} className="mb-16">
+              {!filterCluster && (
+                <h2 className="mb-8 border-b pb-4 text-2xl font-semibold md:text-3xl">
+                  {cluster}
+                </h2>
+              )}
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {clusterArticles.map((article) => (
+                  <Link
+                    key={article.metadata.slug}
+                    href={`/blog/${article.metadata.slug}`}
+                    className="group block overflow-hidden rounded-lg border bg-white transition-all hover:shadow-lg"
+                  >
+                    {/* Image or Placeholder */}
+                    {article.metadata.image ? (
+                      <div className="relative aspect-[16/9] w-full overflow-hidden">
+                        <Image
+                          src={article.metadata.image}
+                          alt={article.metadata.title}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                    ) : (
+                      <div className="aspect-[16/9] w-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <div className="text-center text-white">
+                          <div className="text-xs font-semibold uppercase tracking-wide">
+                            {article.metadata.cluster}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <h3 className="mb-3 text-xl font-semibold leading-tight">
+                        {article.metadata.title}
+                      </h3>
+                      {article.metadata.excerpt && (
+                        <p className="mb-3 text-sm line-clamp-2">
+                          {article.metadata.excerpt}
+                        </p>
+                      )}
+                      <p className="mb-4 text-xs opacity-60">
+                        {new Date(article.metadata.date).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </p>
+                      <div className="flex items-center text-sm font-medium">
+                        Read article →
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+```
+
+---
+
+### 3. Individual Article Page (`app/blog/[slug]/page.tsx`)
+
+**Purpose:** Render individual article with SEO optimization
+
+**Key Features:**
+- Static generation for all articles (`generateStaticParams`)
+- Dynamic metadata generation
+- Schema markup (Article + FAQPage)
+- Custom markdown component styling
+- Breadcrumb navigation
+
+**Implementation Template:**
+
+```typescript
+import { getArticleBySlug, getAllSlugs } from "@/lib/blog";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import ReactMarkdown from "react-markdown";
+import Link from "next/link";
+
+interface ArticlePageProps {
+  params: Promise<{ slug: string }>;
+}
+
+// Generate static pages for all articles
+export async function generateStaticParams() {
+  const slugs = getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
+
+// Generate metadata for SEO
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
+
+  if (!article) {
+    return { title: "Article Not Found" };
+  }
+
+  // Extract TL;DR or excerpt for description
+  const tldrMatch = article.content.match(/## TL;DR\n\n(.+?)(?=\n\n---)/s);
+  const description = tldrMatch ? tldrMatch[1].trim() : article.metadata.excerpt || "";
+
+  return {
+    title: `${article.metadata.title} | [Your Project Name]`,
+    description,
+    keywords: article.metadata.keyword,
+    openGraph: {
+      title: article.metadata.title,
+      description,
+      type: "article",
+      publishedTime: article.metadata.date,
+    },
+  };
+}
+
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
+
+  if (!article) {
+    notFound();
+  }
+
+  // Extract FAQ for schema markup
+  const faqMatch = article.content.match(/## FAQ\n\n([\s\S]*?)(?=\n---)/);
+  const faqSection = faqMatch ? faqMatch[1] : "";
+  const faqItems = [];
+
+  const faqRegex = /\*\*Q: (.+?)\*\*\nA: (.+?)(?=\n\n|\*\*Q:|$)/gs;
+  let match;
+  while ((match = faqRegex.exec(faqSection)) !== null) {
+    faqItems.push({
+      question: match[1].trim(),
+      answer: match[2].trim(),
+    });
+  }
+
+  // Generate JSON-LD schema
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.metadata.title,
+    datePublished: article.metadata.date,
+    author: { "@type": "Organization", name: "[Your Project Name]" },
+    publisher: { "@type": "Organization", name: "[Your Project Name]" },
+    keywords: article.metadata.keyword,
+  };
+
+  const faqSchema = faqItems.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  } : null;
+
+  return (
+    <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
+      <article className="min-h-screen">
+        {/* Article Header */}
+        <header className="py-12 md:py-16">
+          <div className="container mx-auto max-w-3xl px-4">
+            <Link href="/blog" className="mb-6 inline-flex items-center hover:underline">
+              ← Back to Blog
+            </Link>
+            <div className="mb-4 text-sm opacity-60">
+              {article.metadata.cluster} •{" "}
+              {new Date(article.metadata.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </div>
+            <h1 className="text-4xl font-semibold md:text-5xl">
+              {article.metadata.title}
+            </h1>
+          </div>
+        </header>
+
+        {/* Article Content */}
+        <div className="py-12 md:py-16">
+          <div className="container mx-auto max-w-3xl px-4">
+            <div className="prose prose-lg max-w-none">
+              <ReactMarkdown
+                components={{
+                  h1: ({ children }) => (
+                    <h1 className="mb-6 text-3xl font-semibold md:text-4xl">{children}</h1>
+                  ),
+                  h2: ({ children }) => (
+                    <h2 className="mb-4 mt-12 text-2xl font-semibold md:text-3xl">{children}</h2>
+                  ),
+                  h3: ({ children }) => (
+                    <h3 className="mb-3 mt-8 text-xl font-semibold md:text-2xl">{children}</h3>
+                  ),
+                  p: ({ children }) => (
+                    <p className="mb-6 text-lg leading-relaxed">{children}</p>
+                  ),
+                  em: ({ children }) => (
+                    <em className="not-italic my-8 block border-l-4 border-blue-500 bg-blue-50 px-6 py-4 text-lg font-medium italic">
+                      {children}
+                    </em>
+                  ),
+                  strong: ({ children }) => (
+                    <strong className="font-semibold">{children}</strong>
+                  ),
+                  ul: ({ children }) => (
+                    <ul className="mb-6 ml-6 list-disc space-y-2">{children}</ul>
+                  ),
+                  ol: ({ children }) => (
+                    <ol className="mb-6 ml-6 list-decimal space-y-2">{children}</ol>
+                  ),
+                  li: ({ children }) => (
+                    <li className="text-lg">{children}</li>
+                  ),
+                  blockquote: ({ children }) => (
+                    <blockquote className="my-6 border-l-4 border-blue-500 py-2 pl-6 italic">
+                      {children}
+                    </blockquote>
+                  ),
+                  hr: () => <hr className="my-12 border-t" />,
+                  a: ({ href, children }) => (
+                    <a href={href} className="text-blue-600 underline hover:text-blue-800">
+                      {children}
+                    </a>
+                  ),
+                }}
+              >
+                {article.content}
+              </ReactMarkdown>
+            </div>
+          </div>
+        </div>
+      </article>
+    </>
+  );
+}
+```
+
+---
+
+## MARKDOWN ARTICLE TEMPLATE
+
+### Frontmatter Schema
+
+Every article must include YAML frontmatter:
+
+```yaml
+---
+title: "Article Title (Question Format Works Best)"
+slug: article-url-slug
+keyword: primary seo keyword
+cluster: Content Category Name
+date: YYYY-MM-DD
+image: /images/blog/article-slug.jpg  # Optional
+excerpt: Short description for social sharing  # Optional
+---
+```
+
+### Content Structure Template
+
+```markdown
+---
+title: "How Does [X] Affect [Y]?"
+slug: x-affects-y
+keyword: x affects y
+cluster: Category Name
+date: 2025-01-15
+---
+
+# How Does [X] Affect [Y]?
+
+## TL;DR
+
+[40-60 words: State the problem, explain the mechanism, provide the solution. Make it skimmable and shareable.]
+
+---
+
+[2-4 paragraph hook: Show the reader they have this problem. Use "you" language. Paint a picture they recognize. Create the itch before you scratch it.]
+
+*[One sentence analogy: "Your X is like Y. Z breaks it." - Use italics for emphasis]*
+
+## [Question as H2: Why Does This Happen?]
+
+[Explanation section: Break down the mechanism. Short sentences. Second person. Active voice. Make complex ideas simple.]
+
+[Optional: Include data, study reference, or authority quote if it strengthens the point]
+
+## [Question as H2: What Do You Do About It?]
+
+[Practical steps: Numbered list or clear paragraphs. Actionable. Specific. Include timeline for results.]
+
+1. **Do this first** - [Specific action]
+2. **Then this** - [Specific action]
+3. **Track this** - [What to measure]
+4. **Expect this** - [Timeline: results in X weeks]
+
+## FAQ
+
+**Q: [Common objection or question]**
+A: [Answer in 2-3 sentences. Direct. No hedging.]
+
+**Q: [Second question]**
+A: [Answer in 2-3 sentences.]
+
+**Q: [Third question]**
+A: [Answer in 2-3 sentences.]
+
+---
+
+*[Disclaimer: "This isn't medical/legal/financial advice. You're responsible for your own decisions."]*
+
+---
+
+**[CTA Headline: What You Get Next]**
+
+[1-2 sentences about your product/service/offering]
+
+[Primary CTA Button]
+
+[Secondary CTA: "Not sure?" → Quiz/Free Resource]
+```
+
+---
+
+## WRITING STYLE GUIDELINES
+
+### Voice & Tone Principles
+
+**Customize these for your brand:**
+
+1. **Sentence Length:** Short sentences (under 15 words when possible)
+2. **Point of View:** Second person (you, your) - makes it personal
+3. **Active Voice:** "X does Y" not "Y is done by X"
+4. **No Hedging:** Avoid "maybe," "might," "could," "possibly"
+5. **Conversational:** Write how you'd explain it to a friend
+6. **Direct:** Don't bury the lead. Front-load value.
+
+### Required Elements (Every Article)
+
+- [ ] Title (question format for SEO)
+- [ ] TL;DR (40-60 words, skimmable)
+- [ ] Hook (show reader they have the problem)
+- [ ] One-sentence analogy (italicized for emphasis)
+- [ ] Explanation (what's actually happening)
+- [ ] Solution (what to do, with timeline)
+- [ ] FAQ (3+ questions)
+- [ ] Disclaimer
+- [ ] CTA (primary + secondary)
+
+### Optional Elements
+
+- Images/diagrams (if they add clarity)
+- Data/studies (if they add credibility)
+- Authority quotes (if they strengthen the point)
+- Internal links (2-3 per article to related content)
+
+---
+
+## SEO & CONVERSION OPTIMIZATION
+
+### Schema Markup (Auto-Generated)
+
+- **Article Schema:** Provides structured data for search engines
+- **FAQPage Schema:** Extracted from FAQ section, powers rich snippets
+
+### Internal Linking Strategy
+
+- Link to related articles within the same cluster
+- Cross-link between clusters where relevant
+- Aim for 2-3 contextual links per article
+- Use descriptive anchor text (not "click here")
+
+### Meta Optimization
+
+- **Title:** Auto-generated from article title + site name
+- **Description:** Auto-extracted from TL;DR or excerpt
+- **Keywords:** From frontmatter keyword field
+- **OG Tags:** For social sharing (auto-generated)
+
+### Conversion Funnel
+
+1. **Hook:** Show reader they have the problem (awareness)
+2. **Explanation:** Build trust by explaining mechanism (interest)
+3. **Solution:** Provide actionable steps (desire)
+4. **CTA:** Offer deeper solution via product/service (action)
+
+---
+
+## CONTENT ORGANIZATION SYSTEM
+
+### Cluster-Based Architecture
+
+**Why clusters?** Groups related articles into topic silos for better SEO and user navigation.
+
+**Example Clusters:**
+- "Getting Started" (beginner content)
+- "Advanced Techniques" (power user content)
+- "Case Studies" (social proof)
+- "Troubleshooting" (problem-solving)
+
+**How to Use:**
+1. Define 4-8 main clusters for your content
+2. Assign each article to exactly one cluster
+3. Use cluster field in frontmatter
+4. Blog index automatically groups by cluster
+5. Users can filter by cluster via URL: `/blog?cluster=Getting+Started`
+
+### Content Calendar Planning
+
+**Document in `blog/IMPLEMENTATION-PLAN.md`:**
+
+```markdown
+# Blog Implementation Plan
+
+## Content Clusters
+
+### Cluster 1: [Name] (Target: 10 articles)
+- [x] Article 1: Title (keyword) - Published 2025-01-15
+- [ ] Article 2: Title (keyword) - Draft
+- [ ] Article 3: Title (keyword) - Outline
+
+### Cluster 2: [Name] (Target: 15 articles)
+...
+
+## Production Schedule
+- Week 1: Write 3 articles in Cluster 1
+- Week 2: Write 3 articles in Cluster 2
+...
+
+## SEO Strategy
+- Primary keywords: [list]
+- Secondary keywords: [list]
+- Competitor gap analysis: [insights]
+```
+
+---
+
+## IMPLEMENTATION CHECKLIST
+
+### Initial Setup
+
+- [ ] Install dependencies: `npm install gray-matter react-markdown`
+- [ ] Create file structure (app/blog/, blog/articles/, lib/)
+- [ ] Copy `blog.ts` utility file to `lib/`
+- [ ] Copy `page.tsx` for blog index to `app/blog/`
+- [ ] Copy `page.tsx` for article detail to `app/blog/[slug]/`
+
+### Content Creation
+
+- [ ] Define 4-8 content clusters for your niche
+- [ ] Create writing template in `blog/_tonality-guide/writing-template.md`
+- [ ] Document style guidelines in `blog/_tonality-guide/style-guide.md`
+- [ ] Write first 3-5 articles to establish voice
+- [ ] Create `IMPLEMENTATION-PLAN.md` with content roadmap
+
+### Customization
+
+- [ ] Update colors/styling to match your brand
+- [ ] Customize metadata (titles, descriptions)
+- [ ] Update schema markup (organization name)
+- [ ] Customize CTA sections (your product/service)
+- [ ] Add logo and favicon
+
+### Testing
+
+- [ ] Build project: `npm run build`
+- [ ] Verify all articles render correctly
+- [ ] Test filtering by cluster
+- [ ] Validate schema markup (Google Rich Results Test)
+- [ ] Check mobile responsiveness
+- [ ] Test internal links
+
+### Deployment
+
+- [ ] Deploy to production (Vercel/Netlify)
+- [ ] Submit sitemap to Google Search Console
+- [ ] Set up analytics (Google Analytics, Plausible, etc.)
+- [ ] Monitor page speed (Lighthouse, PageSpeed Insights)
+
+---
+
+## COMMON QUESTIONS
+
+### Why markdown instead of a CMS?
+
+- **Version control:** Git tracks all changes
+- **Portability:** Easy to migrate between platforms
+- **Speed:** No database queries, pure static files
+- **Developer-friendly:** Write in your code editor
+- **Backup:** All content in your repo
+
+### Why gray-matter?
+
+- **Standard:** Widely used YAML frontmatter parser
+- **Simple:** Parse frontmatter + content in one function
+- **Flexible:** Supports multiple frontmatter formats
+
+### Why file numbering (01-, 02-)?
+
+- **Ordering:** Files stay in chronological order
+- **Organization:** Easy to see article sequence
+- **Optional:** You can skip this if you prefer date-based sorting only
+
+### How do I add images?
+
+1. Place images in `public/images/blog/[slug]/`
+2. Reference in markdown: `![Alt text](/images/blog/slug/image.jpg)`
+3. Or add to frontmatter: `image: /images/blog/slug/cover.jpg`
+
+### How do I add code syntax highlighting?
+
+Install and configure:
+```bash
+npm install react-syntax-highlighter @types/react-syntax-highlighter
+```
+
+Add to ReactMarkdown components:
+```typescript
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
+// In components prop:
+code({ node, inline, className, children, ...props }) {
+  const match = /language-(\w+)/.exec(className || '');
+  return !inline && match ? (
+    <SyntaxHighlighter style={vscDarkPlus} language={match[1]} PreTag="div">
+      {String(children).replace(/\n$/, '')}
+    </SyntaxHighlighter>
+  ) : (
+    <code className={className} {...props}>{children}</code>
+  );
+}
+```
+
+---
+
+## NEXT STEPS
+
+1. **Copy this prompt** to your new project
+2. **Customize** the "Project Context" section
+3. **Implement** the three core files (blog.ts, blog index, article page)
+4. **Create** your writing template and style guide
+5. **Write** your first 3-5 articles to establish voice
+6. **Launch** and iterate based on performance
+
+---
+
+## MAINTENANCE & SCALING
+
+### As Your Blog Grows
+
+**After 10 articles:**
+- Review internal linking strategy
+- Analyze which clusters perform best
+- Double down on high-performing topics
+
+**After 50 articles:**
+- Consider adding search functionality
+- Add related articles section to each post
+- Implement article recommendations based on cluster
+
+**After 100 articles:**
+- Consider pagination or infinite scroll
+- Add advanced filtering (by date, topic, popularity)
+- Build topic hubs (landing pages for each cluster)
+
+### Content Quality Checklist (Before Publishing)
+
+1. **Does it read well?** (Read aloud to test flow)
+2. **Does it teach something?** (Clear takeaway?)
+3. **Does it convert?** (CTA clear and compelling?)
+
+If yes to all three: Ship it.
+
+---
+
+## RESOURCES
+
+### Essential Dependencies
+
+```json
+{
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "gray-matter": "^4.0.3",
+    "react-markdown": "^9.0.0"
+  }
+}
+```
+
+### Helpful Tools
+
+- **Google Rich Results Test:** Validate schema markup
+- **Lighthouse:** Page speed and SEO audit
+- **Hemingway Editor:** Check reading level and clarity
+- **Grammarly:** Grammar and style checking
+
+---
+
+**This is your complete blog system. Copy, customize, ship.**

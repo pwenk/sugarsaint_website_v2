@@ -1,0 +1,1101 @@
+# 🕵️ COMPLETE BONA FIDES DETECTIVE AGENCY BLOG BUILD PROMPT
+# Self-Contained - No External Files Needed
+
+---
+
+## 🎯 MISSION STATEMENT
+
+Build a complete, production-ready blog system for **Bona Fides Detective Agency** with **200 German-language articles** covering digital investigations, cybercrime, fraud detection, and background checks. The blog must include full architecture, content generation, internal linking, SEO optimization, and conversion features.
+
+**Website:** https://bona-fides.vercel.app/
+**Tech Stack:** Next.js 15, TypeScript, React 19, Tailwind CSS, Markdown (gray-matter + react-markdown)
+**Language:** German (primary), with professional detective agency tone
+**Goal:** Generate leads through SEO-optimized content and strategic CTAs
+
+---
+
+## 📊 ARTICLE DATABASE (200 ARTICLES)
+
+Below is the complete list of all 200 articles to be generated. Each row contains:
+- **#**: Article number (for filename numbering: 001-, 002-, etc.)
+- **Category**: Content cluster for organization
+- **Article Title (German)**: Main title for the article
+- **Article Title (English)**: Translation reference
+- **Primary Keyword**: SEO target keyword
+- **Search Intent**: User intent type
+- **Target Audience**: B2C (individuals) or B2B (businesses)
+- **Priority**: Priority 1 (newest dates), Priority 2 (mid dates), Priority 3 (older dates)
+
+```csv
+#,Category,Article Title (German),Article Title (English),Primary Keyword,Search Intent,Target Audience,Priority
+1,Digital Investigations,Digitale Spur 1: Moderne Ermittlungstechniken im Netz,Digital Trail 1: Modern Investigative Techniques Online,digitale spur 1,Informational,B2C/B2B,Priority 1
+2,Digital Investigations,Digitale Spur 2: Moderne Ermittlungstechniken im Netz,Digital Trail 2: Modern Investigative Techniques Online,digitale spur 2,Informational,B2C/B2B,Priority 1
+3,Digital Investigations,Digitale Spur 3: Moderne Ermittlungstechniken im Netz,Digital Trail 3: Modern Investigative Techniques Online,digitale spur 3,Informational,B2C/B2B,Priority 1
+4,Digital Investigations,Digitale Spur 4: Moderne Ermittlungstechniken im Netz,Digital Trail 4: Modern Investigative Techniques Online,digitale spur 4,Informational,B2C/B2B,Priority 1
+5,Digital Investigations,Digitale Spur 5: Moderne Ermittlungstechniken im Netz,Digital Trail 5: Modern Investigative Techniques Online,digitale spur 5,Informational,B2C/B2B,Priority 1
+6,Digital Investigations,Digitale Spur 6: Moderne Ermittlungstechniken im Netz,Digital Trail 6: Modern Investigative Techniques Online,digitale spur 6,Informational,B2C/B2B,Priority 2
+7,Digital Investigations,Digitale Spur 7: Moderne Ermittlungstechniken im Netz,Digital Trail 7: Modern Investigative Techniques Online,digitale spur 7,Informational,B2C/B2B,Priority 2
+8,Digital Investigations,Digitale Spur 8: Moderne Ermittlungstechniken im Netz,Digital Trail 8: Modern Investigative Techniques Online,digitale spur 8,Informational,B2C/B2B,Priority 2
+9,Digital Investigations,Digitale Spur 9: Moderne Ermittlungstechniken im Netz,Digital Trail 9: Modern Investigative Techniques Online,digitale spur 9,Informational,B2C/B2B,Priority 2
+10,Digital Investigations,Digitale Spur 10: Moderne Ermittlungstechniken im Netz,Digital Trail 10: Modern Investigative Techniques Online,digitale spur 10,Informational,B2C/B2B,Priority 2
+11,Digital Investigations,Digitale Spur 11: Moderne Ermittlungstechniken im Netz,Digital Trail 11: Modern Investigative Techniques Online,digitale spur 11,Informational,B2C/B2B,Priority 2
+12,Digital Investigations,Digitale Spur 12: Moderne Ermittlungstechniken im Netz,Digital Trail 12: Modern Investigative Techniques Online,digitale spur 12,Informational,B2C/B2B,Priority 2
+13,Digital Investigations,Digitale Spur 13: Moderne Ermittlungstechniken im Netz,Digital Trail 13: Modern Investigative Techniques Online,digitale spur 13,Informational,B2C/B2B,Priority 2
+14,Digital Investigations,Digitale Spur 14: Moderne Ermittlungstechniken im Netz,Digital Trail 14: Modern Investigative Techniques Online,digitale spur 14,Informational,B2C/B2B,Priority 2
+15,Digital Investigations,Digitale Spur 15: Moderne Ermittlungstechniken im Netz,Digital Trail 15: Modern Investigative Techniques Online,digitale spur 15,Informational,B2C/B2B,Priority 2
+16,Digital Investigations,Digitale Spur 16: Moderne Ermittlungstechniken im Netz,Digital Trail 16: Modern Investigative Techniques Online,digitale spur 16,Informational,B2C/B2B,Priority 2
+17,Digital Investigations,Digitale Spur 17: Moderne Ermittlungstechniken im Netz,Digital Trail 17: Modern Investigative Techniques Online,digitale spur 17,Informational,B2C/B2B,Priority 2
+18,Digital Investigations,Digitale Spur 18: Moderne Ermittlungstechniken im Netz,Digital Trail 18: Modern Investigative Techniques Online,digitale spur 18,Informational,B2C/B2B,Priority 2
+19,Digital Investigations,Digitale Spur 19: Moderne Ermittlungstechniken im Netz,Digital Trail 19: Modern Investigative Techniques Online,digitale spur 19,Informational,B2C/B2B,Priority 2
+20,Digital Investigations,Digitale Spur 20: Moderne Ermittlungstechniken im Netz,Digital Trail 20: Modern Investigative Techniques Online,digitale spur 20,Informational,B2C/B2B,Priority 2
+21,Cybercrime & Fraud,Cyberbetrug 1: Neue Maschen und wie man sich schützt,Cyber Fraud 1: New Schemes and How to Protect Yourself,cyberbetrug 1,Informational/Prevention,B2C/B2B,Priority 1
+22,Cybercrime & Fraud,Cyberbetrug 2: Neue Maschen und wie man sich schützt,Cyber Fraud 2: New Schemes and How to Protect Yourself,cyberbetrug 2,Informational/Prevention,B2C/B2B,Priority 1
+23,Cybercrime & Fraud,Cyberbetrug 3: Neue Maschen und wie man sich schützt,Cyber Fraud 3: New Schemes and How to Protect Yourself,cyberbetrug 3,Informational/Prevention,B2C/B2B,Priority 1
+24,Cybercrime & Fraud,Cyberbetrug 4: Neue Maschen und wie man sich schützt,Cyber Fraud 4: New Schemes and How to Protect Yourself,cyberbetrug 4,Informational/Prevention,B2C/B2B,Priority 1
+25,Cybercrime & Fraud,Cyberbetrug 5: Neue Maschen und wie man sich schützt,Cyber Fraud 5: New Schemes and How to Protect Yourself,cyberbetrug 5,Informational/Prevention,B2C/B2B,Priority 1
+26,Cybercrime & Fraud,Cyberbetrug 6: Neue Maschen und wie man sich schützt,Cyber Fraud 6: New Schemes and How to Protect Yourself,cyberbetrug 6,Informational/Prevention,B2C/B2B,Priority 1
+27,Cybercrime & Fraud,Cyberbetrug 7: Neue Maschen und wie man sich schützt,Cyber Fraud 7: New Schemes and How to Protect Yourself,cyberbetrug 7,Informational/Prevention,B2C/B2B,Priority 1
+28,Cybercrime & Fraud,Cyberbetrug 8: Neue Maschen und wie man sich schützt,Cyber Fraud 8: New Schemes and How to Protect Yourself,cyberbetrug 8,Informational/Prevention,B2C/B2B,Priority 1
+29,Cybercrime & Fraud,Cyberbetrug 9: Neue Maschen und wie man sich schützt,Cyber Fraud 9: New Schemes and How to Protect Yourself,cyberbetrug 9,Informational/Prevention,B2C/B2B,Priority 1
+30,Cybercrime & Fraud,Cyberbetrug 10: Neue Maschen und wie man sich schützt,Cyber Fraud 10: New Schemes and How to Protect Yourself,cyberbetrug 10,Informational/Prevention,B2C/B2B,Priority 1
+31,Cybercrime & Fraud,Cyberbetrug 11: Neue Maschen und wie man sich schützt,Cyber Fraud 11: New Schemes and How to Protect Yourself,cyberbetrug 11,Informational/Prevention,B2C/B2B,Priority 2
+32,Cybercrime & Fraud,Cyberbetrug 12: Neue Maschen und wie man sich schützt,Cyber Fraud 12: New Schemes and How to Protect Yourself,cyberbetrug 12,Informational/Prevention,B2C/B2B,Priority 2
+33,Cybercrime & Fraud,Cyberbetrug 13: Neue Maschen und wie man sich schützt,Cyber Fraud 13: New Schemes and How to Protect Yourself,cyberbetrug 13,Informational/Prevention,B2C/B2B,Priority 2
+34,Cybercrime & Fraud,Cyberbetrug 14: Neue Maschen und wie man sich schützt,Cyber Fraud 14: New Schemes and How to Protect Yourself,cyberbetrug 14,Informational/Prevention,B2C/B2B,Priority 2
+35,Cybercrime & Fraud,Cyberbetrug 15: Neue Maschen und wie man sich schützt,Cyber Fraud 15: New Schemes and How to Protect Yourself,cyberbetrug 15,Informational/Prevention,B2C/B2B,Priority 2
+36,Cybercrime & Fraud,Cyberbetrug 16: Neue Maschen und wie man sich schützt,Cyber Fraud 16: New Schemes and How to Protect Yourself,cyberbetrug 16,Informational/Prevention,B2C/B2B,Priority 2
+37,Cybercrime & Fraud,Cyberbetrug 17: Neue Maschen und wie man sich schützt,Cyber Fraud 17: New Schemes and How to Protect Yourself,cyberbetrug 17,Informational/Prevention,B2C/B2B,Priority 2
+38,Cybercrime & Fraud,Cyberbetrug 18: Neue Maschen und wie man sich schützt,Cyber Fraud 18: New Schemes and How to Protect Yourself,cyberbetrug 18,Informational/Prevention,B2C/B2B,Priority 2
+39,Cybercrime & Fraud,Cyberbetrug 19: Neue Maschen und wie man sich schützt,Cyber Fraud 19: New Schemes and How to Protect Yourself,cyberbetrug 19,Informational/Prevention,B2C/B2B,Priority 2
+40,Cybercrime & Fraud,Cyberbetrug 20: Neue Maschen und wie man sich schützt,Cyber Fraud 20: New Schemes and How to Protect Yourself,cyberbetrug 20,Informational/Prevention,B2C/B2B,Priority 2
+41,Cybercrime & Fraud,Cyberbetrug 21: Neue Maschen und wie man sich schützt,Cyber Fraud 21: New Schemes and How to Protect Yourself,cyberbetrug 21,Informational/Prevention,B2C/B2B,Priority 2
+42,Cybercrime & Fraud,Cyberbetrug 22: Neue Maschen und wie man sich schützt,Cyber Fraud 22: New Schemes and How to Protect Yourself,cyberbetrug 22,Informational/Prevention,B2C/B2B,Priority 2
+43,Cybercrime & Fraud,Cyberbetrug 23: Neue Maschen und wie man sich schützt,Cyber Fraud 23: New Schemes and How to Protect Yourself,cyberbetrug 23,Informational/Prevention,B2C/B2B,Priority 2
+44,Cybercrime & Fraud,Cyberbetrug 24: Neue Maschen und wie man sich schützt,Cyber Fraud 24: New Schemes and How to Protect Yourself,cyberbetrug 24,Informational/Prevention,B2C/B2B,Priority 2
+45,Cybercrime & Fraud,Cyberbetrug 25: Neue Maschen und wie man sich schützt,Cyber Fraud 25: New Schemes and How to Protect Yourself,cyberbetrug 25,Informational/Prevention,B2C/B2B,Priority 2
+46,Cybercrime & Fraud,Cyberbetrug 26: Neue Maschen und wie man sich schützt,Cyber Fraud 26: New Schemes and How to Protect Yourself,cyberbetrug 26,Informational/Prevention,B2C/B2B,Priority 3
+47,Cybercrime & Fraud,Cyberbetrug 27: Neue Maschen und wie man sich schützt,Cyber Fraud 27: New Schemes and How to Protect Yourself,cyberbetrug 27,Informational/Prevention,B2C/B2B,Priority 3
+48,Cybercrime & Fraud,Cyberbetrug 28: Neue Maschen und wie man sich schützt,Cyber Fraud 28: New Schemes and How to Protect Yourself,cyberbetrug 28,Informational/Prevention,B2C/B2B,Priority 3
+49,Cybercrime & Fraud,Cyberbetrug 29: Neue Maschen und wie man sich schützt,Cyber Fraud 29: New Schemes and How to Protect Yourself,cyberbetrug 29,Informational/Prevention,B2C/B2B,Priority 3
+50,Cybercrime & Fraud,Cyberbetrug 30: Neue Maschen und wie man sich schützt,Cyber Fraud 30: New Schemes and How to Protect Yourself,cyberbetrug 30,Informational/Prevention,B2C/B2B,Priority 3
+51,Cybercrime & Fraud,Cyberbetrug 31: Neue Maschen und wie man sich schützt,Cyber Fraud 31: New Schemes and How to Protect Yourself,cyberbetrug 31,Informational/Prevention,B2C/B2B,Priority 3
+52,Cybercrime & Fraud,Cyberbetrug 32: Neue Maschen und wie man sich schützt,Cyber Fraud 32: New Schemes and How to Protect Yourself,cyberbetrug 32,Informational/Prevention,B2C/B2B,Priority 3
+53,Cybercrime & Fraud,Cyberbetrug 33: Neue Maschen und wie man sich schützt,Cyber Fraud 33: New Schemes and How to Protect Yourself,cyberbetrug 33,Informational/Prevention,B2C/B2B,Priority 3
+54,Cybercrime & Fraud,Cyberbetrug 34: Neue Maschen und wie man sich schützt,Cyber Fraud 34: New Schemes and How to Protect Yourself,cyberbetrug 34,Informational/Prevention,B2C/B2B,Priority 3
+55,Cybercrime & Fraud,Cyberbetrug 35: Neue Maschen und wie man sich schützt,Cyber Fraud 35: New Schemes and How to Protect Yourself,cyberbetrug 35,Informational/Prevention,B2C/B2B,Priority 3
+56,Background Checks & Due Diligence,Hintergrundprüfung 1: Worauf Arbeitgeber achten sollten,Background Check 1: What Employers Should Look For,hintergrundprüfung 1,Informational/How-to,B2B,Priority 1
+57,Background Checks & Due Diligence,Hintergrundprüfung 2: Worauf Arbeitgeber achten sollten,Background Check 2: What Employers Should Look For,hintergrundprüfung 2,Informational/How-to,B2B,Priority 1
+58,Background Checks & Due Diligence,Hintergrundprüfung 3: Worauf Arbeitgeber achten sollten,Background Check 3: What Employers Should Look For,hintergrundprüfung 3,Informational/How-to,B2B,Priority 1
+59,Background Checks & Due Diligence,Hintergrundprüfung 4: Worauf Arbeitgeber achten sollten,Background Check 4: What Employers Should Look For,hintergrundprüfung 4,Informational/How-to,B2B,Priority 1
+60,Background Checks & Due Diligence,Hintergrundprüfung 5: Worauf Arbeitgeber achten sollten,Background Check 5: What Employers Should Look For,hintergrundprüfung 5,Informational/How-to,B2B,Priority 1
+61,Background Checks & Due Diligence,Hintergrundprüfung 6: Worauf Arbeitgeber achten sollten,Background Check 6: What Employers Should Look For,hintergrundprüfung 6,Informational/How-to,B2B,Priority 2
+62,Background Checks & Due Diligence,Hintergrundprüfung 7: Worauf Arbeitgeber achten sollten,Background Check 7: What Employers Should Look For,hintergrundprüfung 7,Informational/How-to,B2B,Priority 2
+63,Background Checks & Due Diligence,Hintergrundprüfung 8: Worauf Arbeitgeber achten sollten,Background Check 8: What Employers Should Look For,hintergrundprüfung 8,Informational/How-to,B2B,Priority 2
+64,Background Checks & Due Diligence,Hintergrundprüfung 9: Worauf Arbeitgeber achten sollten,Background Check 9: What Employers Should Look For,hintergrundprüfung 9,Informational/How-to,B2B,Priority 2
+65,Background Checks & Due Diligence,Hintergrundprüfung 10: Worauf Arbeitgeber achten sollten,Background Check 10: What Employers Should Look For,hintergrundprüfung 10,Informational/How-to,B2B,Priority 2
+66,Background Checks & Due Diligence,Hintergrundprüfung 11: Worauf Arbeitgeber achten sollten,Background Check 11: What Employers Should Look For,hintergrundprüfung 11,Informational/How-to,B2B,Priority 2
+67,Background Checks & Due Diligence,Hintergrundprüfung 12: Worauf Arbeitgeber achten sollten,Background Check 12: What Employers Should Look For,hintergrundprüfung 12,Informational/How-to,B2B,Priority 2
+68,Background Checks & Due Diligence,Hintergrundprüfung 13: Worauf Arbeitgeber achten sollten,Background Check 13: What Employers Should Look For,hintergrundprüfung 13,Informational/How-to,B2B,Priority 2
+69,Background Checks & Due Diligence,Hintergrundprüfung 14: Worauf Arbeitgeber achten sollten,Background Check 14: What Employers Should Look For,hintergrundprüfung 14,Informational/How-to,B2B,Priority 2
+70,Background Checks & Due Diligence,Hintergrundprüfung 15: Worauf Arbeitgeber achten sollten,Background Check 15: What Employers Should Look For,hintergrundprüfung 15,Informational/How-to,B2B,Priority 2
+71,Background Checks & Due Diligence,Hintergrundprüfung 16: Worauf Arbeitgeber achten sollten,Background Check 16: What Employers Should Look For,hintergrundprüfung 16,Informational/How-to,B2B,Priority 2
+72,Background Checks & Due Diligence,Hintergrundprüfung 17: Worauf Arbeitgeber achten sollten,Background Check 17: What Employers Should Look For,hintergrundprüfung 17,Informational/How-to,B2B,Priority 2
+73,Background Checks & Due Diligence,Hintergrundprüfung 18: Worauf Arbeitgeber achten sollten,Background Check 18: What Employers Should Look For,hintergrundprüfung 18,Informational/How-to,B2B,Priority 2
+74,Background Checks & Due Diligence,Hintergrundprüfung 19: Worauf Arbeitgeber achten sollten,Background Check 19: What Employers Should Look For,hintergrundprüfung 19,Informational/How-to,B2B,Priority 2
+75,Background Checks & Due Diligence,Hintergrundprüfung 20: Worauf Arbeitgeber achten sollten,Background Check 20: What Employers Should Look For,hintergrundprüfung 20,Informational/How-to,B2B,Priority 2
+76,Infidelity & Relationship Investigations,Untreue 1: Wie man digitale Hinweise erkennt,Infidelity 1: How to Spot Digital Clues,untreue 1,Informational/Emotional,B2C,Priority 1
+77,Infidelity & Relationship Investigations,Untreue 2: Wie man digitale Hinweise erkennt,Infidelity 2: How to Spot Digital Clues,untreue 2,Informational/Emotional,B2C,Priority 1
+78,Infidelity & Relationship Investigations,Untreue 3: Wie man digitale Hinweise erkennt,Infidelity 3: How to Spot Digital Clues,untreue 3,Informational/Emotional,B2C,Priority 1
+79,Infidelity & Relationship Investigations,Untreue 4: Wie man digitale Hinweise erkennt,Infidelity 4: How to Spot Digital Clues,untreue 4,Informational/Emotional,B2C,Priority 1
+80,Infidelity & Relationship Investigations,Untreue 5: Wie man digitale Hinweise erkennt,Infidelity 5: How to Spot Digital Clues,untreue 5,Informational/Emotional,B2C,Priority 2
+81,Infidelity & Relationship Investigations,Untreue 6: Wie man digitale Hinweise erkennt,Infidelity 6: How to Spot Digital Clues,untreue 6,Informational/Emotional,B2C,Priority 2
+82,Infidelity & Relationship Investigations,Untreue 7: Wie man digitale Hinweise erkennt,Infidelity 7: How to Spot Digital Clues,untreue 7,Informational/Emotional,B2C,Priority 2
+83,Infidelity & Relationship Investigations,Untreue 8: Wie man digitale Hinweise erkennt,Infidelity 8: How to Spot Digital Clues,untreue 8,Informational/Emotional,B2C,Priority 2
+84,Infidelity & Relationship Investigations,Untreue 9: Wie man digitale Hinweise erkennt,Infidelity 9: How to Spot Digital Clues,untreue 9,Informational/Emotional,B2C,Priority 2
+85,Infidelity & Relationship Investigations,Untreue 10: Wie man digitale Hinweise erkennt,Infidelity 10: How to Spot Digital Clues,untreue 10,Informational/Emotional,B2C,Priority 2
+86,Infidelity & Relationship Investigations,Untreue 11: Wie man digitale Hinweise erkennt,Infidelity 11: How to Spot Digital Clues,untreue 11,Informational/Emotional,B2C,Priority 2
+87,Infidelity & Relationship Investigations,Untreue 12: Wie man digitale Hinweise erkennt,Infidelity 12: How to Spot Digital Clues,untreue 12,Informational/Emotional,B2C,Priority 2
+88,Infidelity & Relationship Investigations,Untreue 13: Wie man digitale Hinweise erkennt,Infidelity 13: How to Spot Digital Clues,untreue 13,Informational/Emotional,B2C,Priority 2
+89,Infidelity & Relationship Investigations,Untreue 14: Wie man digitale Hinweise erkennt,Infidelity 14: How to Spot Digital Clues,untreue 14,Informational/Emotional,B2C,Priority 2
+90,Infidelity & Relationship Investigations,Untreue 15: Wie man digitale Hinweise erkennt,Infidelity 15: How to Spot Digital Clues,untreue 15,Informational/Emotional,B2C,Priority 2
+91,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 1: Risiken und Lösungen für HR,Corporate Fraud 1: Risks and Solutions for HR,unternehmensbetrug 1,Informational/Preventive,B2B,Priority 1
+92,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 2: Risiken und Lösungen für HR,Corporate Fraud 2: Risks and Solutions for HR,unternehmensbetrug 2,Informational/Preventive,B2B,Priority 1
+93,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 3: Risiken und Lösungen für HR,Corporate Fraud 3: Risks and Solutions for HR,unternehmensbetrug 3,Informational/Preventive,B2B,Priority 1
+94,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 4: Risiken und Lösungen für HR,Corporate Fraud 4: Risks and Solutions for HR,unternehmensbetrug 4,Informational/Preventive,B2B,Priority 1
+95,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 5: Risiken und Lösungen für HR,Corporate Fraud 5: Risks and Solutions for HR,unternehmensbetrug 5,Informational/Preventive,B2B,Priority 1
+96,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 6: Risiken und Lösungen für HR,Corporate Fraud 6: Risks and Solutions for HR,unternehmensbetrug 6,Informational/Preventive,B2B,Priority 1
+97,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 7: Risiken und Lösungen für HR,Corporate Fraud 7: Risks and Solutions for HR,unternehmensbetrug 7,Informational/Preventive,B2B,Priority 2
+98,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 8: Risiken und Lösungen für HR,Corporate Fraud 8: Risks and Solutions for HR,unternehmensbetrug 8,Informational/Preventive,B2B,Priority 2
+99,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 9: Risiken und Lösungen für HR,Corporate Fraud 9: Risks and Solutions for HR,unternehmensbetrug 9,Informational/Preventive,B2B,Priority 2
+100,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 10: Risiken und Lösungen für HR,Corporate Fraud 10: Risks and Solutions for HR,unternehmensbetrug 10,Informational/Preventive,B2B,Priority 2
+101,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 11: Risiken und Lösungen für HR,Corporate Fraud 11: Risks and Solutions for HR,unternehmensbetrug 11,Informational/Preventive,B2B,Priority 2
+102,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 12: Risiken und Lösungen für HR,Corporate Fraud 12: Risks and Solutions for HR,unternehmensbetrug 12,Informational/Preventive,B2B,Priority 2
+103,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 13: Risiken und Lösungen für HR,Corporate Fraud 13: Risks and Solutions for HR,unternehmensbetrug 13,Informational/Preventive,B2B,Priority 2
+104,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 14: Risiken und Lösungen für HR,Corporate Fraud 14: Risks and Solutions for HR,unternehmensbetrug 14,Informational/Preventive,B2B,Priority 2
+105,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 15: Risiken und Lösungen für HR,Corporate Fraud 15: Risks and Solutions for HR,unternehmensbetrug 15,Informational/Preventive,B2B,Priority 2
+106,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 16: Risiken und Lösungen für HR,Corporate Fraud 16: Risks and Solutions for HR,unternehmensbetrug 16,Informational/Preventive,B2B,Priority 2
+107,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 17: Risiken und Lösungen für HR,Corporate Fraud 17: Risks and Solutions for HR,unternehmensbetrug 17,Informational/Preventive,B2B,Priority 2
+108,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 18: Risiken und Lösungen für HR,Corporate Fraud 18: Risks and Solutions for HR,unternehmensbetrug 18,Informational/Preventive,B2B,Priority 2
+109,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 19: Risiken und Lösungen für HR,Corporate Fraud 19: Risks and Solutions for HR,unternehmensbetrug 19,Informational/Preventive,B2B,Priority 2
+110,Corporate Fraud & Employee Misconduct,Unternehmensbetrug 20: Risiken und Lösungen für HR,Corporate Fraud 20: Risks and Solutions for HR,unternehmensbetrug 20,Informational/Preventive,B2B,Priority 2
+111,Legal & Regulatory Topics,Rechtliche Aspekte 1: Was Detektive in Deutschland dürfen,Legal Aspects 1: What Detectives Are Allowed in Germany,rechtliche aspekte 1,Informational,B2C/B2B,Priority 1
+112,Legal & Regulatory Topics,Rechtliche Aspekte 2: Was Detektive in Deutschland dürfen,Legal Aspects 2: What Detectives Are Allowed in Germany,rechtliche aspekte 2,Informational,B2C/B2B,Priority 1
+113,Legal & Regulatory Topics,Rechtliche Aspekte 3: Was Detektive in Deutschland dürfen,Legal Aspects 3: What Detectives Are Allowed in Germany,rechtliche aspekte 3,Informational,B2C/B2B,Priority 1
+114,Legal & Regulatory Topics,Rechtliche Aspekte 4: Was Detektive in Deutschland dürfen,Legal Aspects 4: What Detectives Are Allowed in Germany,rechtliche aspekte 4,Informational,B2C/B2B,Priority 1
+115,Legal & Regulatory Topics,Rechtliche Aspekte 5: Was Detektive in Deutschland dürfen,Legal Aspects 5: What Detectives Are Allowed in Germany,rechtliche aspekte 5,Informational,B2C/B2B,Priority 1
+116,Legal & Regulatory Topics,Rechtliche Aspekte 6: Was Detektive in Deutschland dürfen,Legal Aspects 6: What Detectives Are Allowed in Germany,rechtliche aspekte 6,Informational,B2C/B2B,Priority 2
+117,Legal & Regulatory Topics,Rechtliche Aspekte 7: Was Detektive in Deutschland dürfen,Legal Aspects 7: What Detectives Are Allowed in Germany,rechtliche aspekte 7,Informational,B2C/B2B,Priority 2
+118,Legal & Regulatory Topics,Rechtliche Aspekte 8: Was Detektive in Deutschland dürfen,Legal Aspects 8: What Detectives Are Allowed in Germany,rechtliche aspekte 8,Informational,B2C/B2B,Priority 2
+119,Legal & Regulatory Topics,Rechtliche Aspekte 9: Was Detektive in Deutschland dürfen,Legal Aspects 9: What Detectives Are Allowed in Germany,rechtliche aspekte 9,Informational,B2C/B2B,Priority 2
+120,Legal & Regulatory Topics,Rechtliche Aspekte 10: Was Detektive in Deutschland dürfen,Legal Aspects 10: What Detectives Are Allowed in Germany,rechtliche aspekte 10,Informational,B2C/B2B,Priority 2
+121,Legal & Regulatory Topics,Rechtliche Aspekte 11: Was Detektive in Deutschland dürfen,Legal Aspects 11: What Detectives Are Allowed in Germany,rechtliche aspekte 11,Informational,B2C/B2B,Priority 2
+122,Legal & Regulatory Topics,Rechtliche Aspekte 12: Was Detektive in Deutschland dürfen,Legal Aspects 12: What Detectives Are Allowed in Germany,rechtliche aspekte 12,Informational,B2C/B2B,Priority 2
+123,Legal & Regulatory Topics,Rechtliche Aspekte 13: Was Detektive in Deutschland dürfen,Legal Aspects 13: What Detectives Are Allowed in Germany,rechtliche aspekte 13,Informational,B2C/B2B,Priority 2
+124,Legal & Regulatory Topics,Rechtliche Aspekte 14: Was Detektive in Deutschland dürfen,Legal Aspects 14: What Detectives Are Allowed in Germany,rechtliche aspekte 14,Informational,B2C/B2B,Priority 2
+125,Legal & Regulatory Topics,Rechtliche Aspekte 15: Was Detektive in Deutschland dürfen,Legal Aspects 15: What Detectives Are Allowed in Germany,rechtliche aspekte 15,Informational,B2C/B2B,Priority 2
+126,Case Studies & Real Stories,Fallstudie 1: Aus der Praxis der digitalen Ermittlungen,Case Study 1: From the Practice of Digital Investigations,fallstudie 1,Narrative,B2C/B2B,Priority 1
+127,Case Studies & Real Stories,Fallstudie 2: Aus der Praxis der digitalen Ermittlungen,Case Study 2: From the Practice of Digital Investigations,fallstudie 2,Narrative,B2C/B2B,Priority 1
+128,Case Studies & Real Stories,Fallstudie 3: Aus der Praxis der digitalen Ermittlungen,Case Study 3: From the Practice of Digital Investigations,fallstudie 3,Narrative,B2C/B2B,Priority 1
+129,Case Studies & Real Stories,Fallstudie 4: Aus der Praxis der digitalen Ermittlungen,Case Study 4: From the Practice of Digital Investigations,fallstudie 4,Narrative,B2C/B2B,Priority 1
+130,Case Studies & Real Stories,Fallstudie 5: Aus der Praxis der digitalen Ermittlungen,Case Study 5: From the Practice of Digital Investigations,fallstudie 5,Narrative,B2C/B2B,Priority 1
+131,How-To & Educational Guides,Leitfaden 1: Schritt-für-Schritt zur eigenen Sicherheit,Guide 1: Step-by-Step to Your Own Security,leitfaden 1,How-to/Educational,B2C/B2B,Priority 1
+132,How-To & Educational Guides,Leitfaden 2: Schritt-für-Schritt zur eigenen Sicherheit,Guide 2: Step-by-Step to Your Own Security,leitfaden 2,How-to/Educational,B2C/B2B,Priority 1
+133,How-To & Educational Guides,Leitfaden 3: Schritt-für-Schritt zur eigenen Sicherheit,Guide 3: Step-by-Step to Your Own Security,leitfaden 3,How-to/Educational,B2C/B2B,Priority 1
+134,How-To & Educational Guides,Leitfaden 4: Schritt-für-Schritt zur eigenen Sicherheit,Guide 4: Step-by-Step to Your Own Security,leitfaden 4,How-to/Educational,B2C/B2B,Priority 1
+135,How-To & Educational Guides,Leitfaden 5: Schritt-für-Schritt zur eigenen Sicherheit,Guide 5: Step-by-Step to Your Own Security,leitfaden 5,How-to/Educational,B2C/B2B,Priority 1
+136,How-To & Educational Guides,Leitfaden 6: Schritt-für-Schritt zur eigenen Sicherheit,Guide 6: Step-by-Step to Your Own Security,leitfaden 6,How-to/Educational,B2C/B2B,Priority 1
+137,How-To & Educational Guides,Leitfaden 7: Schritt-für-Schritt zur eigenen Sicherheit,Guide 7: Step-by-Step to Your Own Security,leitfaden 7,How-to/Educational,B2C/B2B,Priority 1
+138,How-To & Educational Guides,Leitfaden 8: Schritt-für-Schritt zur eigenen Sicherheit,Guide 8: Step-by-Step to Your Own Security,leitfaden 8,How-to/Educational,B2C/B2B,Priority 1
+139,How-To & Educational Guides,Leitfaden 9: Schritt-für-Schritt zur eigenen Sicherheit,Guide 9: Step-by-Step to Your Own Security,leitfaden 9,How-to/Educational,B2C/B2B,Priority 2
+140,How-To & Educational Guides,Leitfaden 10: Schritt-für-Schritt zur eigenen Sicherheit,Guide 10: Step-by-Step to Your Own Security,leitfaden 10,How-to/Educational,B2C/B2B,Priority 2
+141,How-To & Educational Guides,Leitfaden 11: Schritt-für-Schritt zur eigenen Sicherheit,Guide 11: Step-by-Step to Your Own Security,leitfaden 11,How-to/Educational,B2C/B2B,Priority 2
+142,How-To & Educational Guides,Leitfaden 12: Schritt-für-Schritt zur eigenen Sicherheit,Guide 12: Step-by-Step to Your Own Security,leitfaden 12,How-to/Educational,B2C/B2B,Priority 2
+143,How-To & Educational Guides,Leitfaden 13: Schritt-für-Schritt zur eigenen Sicherheit,Guide 13: Step-by-Step to Your Own Security,leitfaden 13,How-to/Educational,B2C/B2B,Priority 2
+144,How-To & Educational Guides,Leitfaden 14: Schritt-für-Schritt zur eigenen Sicherheit,Guide 14: Step-by-Step to Your Own Security,leitfaden 14,How-to/Educational,B2C/B2B,Priority 2
+145,How-To & Educational Guides,Leitfaden 15: Schritt-für-Schritt zur eigenen Sicherheit,Guide 15: Step-by-Step to Your Own Security,leitfaden 15,How-to/Educational,B2C/B2B,Priority 2
+146,How-To & Educational Guides,Leitfaden 16: Schritt-für-Schritt zur eigenen Sicherheit,Guide 16: Step-by-Step to Your Own Security,leitfaden 16,How-to/Educational,B2C/B2B,Priority 2
+147,How-To & Educational Guides,Leitfaden 17: Schritt-für-Schritt zur eigenen Sicherheit,Guide 17: Step-by-Step to Your Own Security,leitfaden 17,How-to/Educational,B2C/B2B,Priority 2
+148,How-To & Educational Guides,Leitfaden 18: Schritt-für-Schritt zur eigenen Sicherheit,Guide 18: Step-by-Step to Your Own Security,leitfaden 18,How-to/Educational,B2C/B2B,Priority 2
+149,How-To & Educational Guides,Leitfaden 19: Schritt-für-Schritt zur eigenen Sicherheit,Guide 19: Step-by-Step to Your Own Security,leitfaden 19,How-to/Educational,B2C/B2B,Priority 2
+150,How-To & Educational Guides,Leitfaden 20: Schritt-für-Schritt zur eigenen Sicherheit,Guide 20: Step-by-Step to Your Own Security,leitfaden 20,How-to/Educational,B2C/B2B,Priority 2
+151,Technology & Tools,Technologie & Tools 1: Die wichtigsten Werkzeuge für Ermittlungen,Technology & Tools 1: The Most Important Tools for Investigations,technologie tools 1,Informational,B2C/B2B,Priority 1
+152,Technology & Tools,Technologie & Tools 2: Die wichtigsten Werkzeuge für Ermittlungen,Technology & Tools 2: The Most Important Tools for Investigations,technologie tools 2,Informational,B2C/B2B,Priority 1
+153,Technology & Tools,Technologie & Tools 3: Die wichtigsten Werkzeuge für Ermittlungen,Technology & Tools 3: The Most Important Tools for Investigations,technologie tools 3,Informational,B2C/B2B,Priority 1
+154,Technology & Tools,Technologie & Tools 4: Die wichtigsten Werkzeuge für Ermittlungen,Technology & Tools 4: The Most Important Tools for Investigations,technologie tools 4,Informational,B2C/B2B,Priority 1
+155,Technology & Tools,Technologie & Tools 5: Die wichtigsten Werkzeuge für Ermittlungen,Technology & Tools 5: The Most Important Tools for Investigations,technologie tools 5,Informational,B2C/B2B,Priority 2
+156,Technology & Tools,Technologie & Tools 6: Die wichtigsten Werkzeuge für Ermittlungen,Technology & Tools 6: The Most Important Tools for Investigations,technologie tools 6,Informational,B2C/B2B,Priority 2
+157,Technology & Tools,Technologie & Tools 7: Die wichtigsten Werkzeuge für Ermittlungen,Technology & Tools 7: The Most Important Tools for Investigations,technologie tools 7,Informational,B2C/B2B,Priority 2
+158,Technology & Tools,Technologie & Tools 8: Die wichtigsten Werkzeuge für Ermittlungen,Technology & Tools 8: The Most Important Tools for Investigations,technologie tools 8,Informational,B2C/B2B,Priority 2
+159,Technology & Tools,Technologie & Tools 9: Die wichtigsten Werkzeuge für Ermittlungen,Technology & Tools 9: The Most Important Tools for Investigations,technologie tools 9,Informational,B2C/B2B,Priority 2
+160,Technology & Tools,Technologie & Tools 10: Die wichtigsten Werkzeuge für Ermittlungen,Technology & Tools 10: The Most Important Tools for Investigations,technologie tools 10,Informational,B2C/B2B,Priority 2
+161,Industry Trends & Statistics,Branchenstatistik 1: Aktuelle Trends im Cybercrime,Industry Statistic 1: Current Trends in Cybercrime,branchenstatistik 1,Informational/Data-driven,B2C/B2B,Priority 1
+162,Industry Trends & Statistics,Branchenstatistik 2: Aktuelle Trends im Cybercrime,Industry Statistic 2: Current Trends in Cybercrime,branchenstatistik 2,Informational/Data-driven,B2C/B2B,Priority 1
+163,Industry Trends & Statistics,Branchenstatistik 3: Aktuelle Trends im Cybercrime,Industry Statistic 3: Current Trends in Cybercrime,branchenstatistik 3,Informational/Data-driven,B2C/B2B,Priority 1
+164,Industry Trends & Statistics,Branchenstatistik 4: Aktuelle Trends im Cybercrime,Industry Statistic 4: Current Trends in Cybercrime,branchenstatistik 4,Informational/Data-driven,B2C/B2B,Priority 2
+165,Industry Trends & Statistics,Branchenstatistik 5: Aktuelle Trends im Cybercrime,Industry Statistic 5: Current Trends in Cybercrime,branchenstatistik 5,Informational/Data-driven,B2C/B2B,Priority 2
+166,Industry Trends & Statistics,Branchenstatistik 6: Aktuelle Trends im Cybercrime,Industry Statistic 6: Current Trends in Cybercrime,branchenstatistik 6,Informational/Data-driven,B2C/B2B,Priority 2
+167,Industry Trends & Statistics,Branchenstatistik 7: Aktuelle Trends im Cybercrime,Industry Statistic 7: Current Trends in Cybercrime,branchenstatistik 7,Informational/Data-driven,B2C/B2B,Priority 2
+168,Industry Trends & Statistics,Branchenstatistik 8: Aktuelle Trends im Cybercrime,Industry Statistic 8: Current Trends in Cybercrime,branchenstatistik 8,Informational/Data-driven,B2C/B2B,Priority 2
+169,Industry Trends & Statistics,Branchenstatistik 9: Aktuelle Trends im Cybercrime,Industry Statistic 9: Current Trends in Cybercrime,branchenstatistik 9,Informational/Data-driven,B2C/B2B,Priority 2
+170,Industry Trends & Statistics,Branchenstatistik 10: Aktuelle Trends im Cybercrime,Industry Statistic 10: Current Trends in Cybercrime,branchenstatistik 10,Informational/Data-driven,B2C/B2B,Priority 2
+171,Geographic/Local Content,Detektiv in Berlin: Kosten Ablauf und regionale Besonderheiten,Detective in Berlin: Costs Process and Local Particularities,detektiv berlin,Transactional,B2C/B2B,Priority 1
+172,Geographic/Local Content,Detektiv in München: Kosten Ablauf und regionale Besonderheiten,Detective in München: Costs Process and Local Particularities,detektiv münchen,Transactional,B2C/B2B,Priority 1
+173,Geographic/Local Content,Detektiv in Hamburg: Kosten Ablauf und regionale Besonderheiten,Detective in Hamburg: Costs Process and Local Particularities,detektiv hamburg,Transactional,B2C/B2B,Priority 1
+174,Geographic/Local Content,Detektiv in Köln: Kosten Ablauf und regionale Besonderheiten,Detective in Köln: Costs Process and Local Particularities,detektiv köln,Transactional,B2C/B2B,Priority 1
+175,Geographic/Local Content,Detektiv in Frankfurt: Kosten Ablauf und regionale Besonderheiten,Detective in Frankfurt: Costs Process and Local Particularities,detektiv frankfurt,Transactional,B2C/B2B,Priority 1
+176,Geographic/Local Content,Detektiv in Stuttgart: Kosten Ablauf und regionale Besonderheiten,Detective in Stuttgart: Costs Process and Local Particularities,detektiv stuttgart,Transactional,B2C/B2B,Priority 1
+177,Geographic/Local Content,Detektiv in Düsseldorf: Kosten Ablauf und regionale Besonderheiten,Detective in Düsseldorf: Costs Process and Local Particularities,detektiv düsseldorf,Transactional,B2C/B2B,Priority 1
+178,Geographic/Local Content,Detektiv in Leipzig: Kosten Ablauf und regionale Besonderheiten,Detective in Leipzig: Costs Process and Local Particularities,detektiv leipzig,Transactional,B2C/B2B,Priority 1
+179,Geographic/Local Content,Detektiv in Bremen: Kosten Ablauf und regionale Besonderheiten,Detective in Bremen: Costs Process and Local Particularities,detektiv bremen,Transactional,B2C/B2B,Priority 1
+180,Geographic/Local Content,Detektiv in Hannover: Kosten Ablauf und regionale Besonderheiten,Detective in Hannover: Costs Process and Local Particularities,detektiv hannover,Transactional,B2C/B2B,Priority 1
+181,FAQ & Objection Handling,Häufige Fragen 1: Antworten vom Privatdetektiv,Frequently Asked Questions 1: Answers from a Private Detective,faq privatdetektiv 1,Informational,B2C/B2B,Priority 1
+182,FAQ & Objection Handling,Häufige Fragen 2: Antworten vom Privatdetektiv,Frequently Asked Questions 2: Answers from a Private Detective,faq privatdetektiv 2,Informational,B2C/B2B,Priority 1
+183,FAQ & Objection Handling,Häufige Fragen 3: Antworten vom Privatdetektiv,Frequently Asked Questions 3: Answers from a Private Detective,faq privatdetektiv 3,Informational,B2C/B2B,Priority 1
+184,FAQ & Objection Handling,Häufige Fragen 4: Antworten vom Privatdetektiv,Frequently Asked Questions 4: Answers from a Private Detective,faq privatdetektiv 4,Informational,B2C/B2B,Priority 1
+185,FAQ & Objection Handling,Häufige Fragen 5: Antworten vom Privatdetektiv,Frequently Asked Questions 5: Answers from a Private Detective,faq privatdetektiv 5,Informational,B2C/B2B,Priority 1
+186,FAQ & Objection Handling,Häufige Fragen 6: Antworten vom Privatdetektiv,Frequently Asked Questions 6: Answers from a Private Detective,faq privatdetektiv 6,Informational,B2C/B2B,Priority 2
+187,FAQ & Objection Handling,Häufige Fragen 7: Antworten vom Privatdetektiv,Frequently Asked Questions 7: Answers from a Private Detective,faq privatdetektiv 7,Informational,B2C/B2B,Priority 2
+188,FAQ & Objection Handling,Häufige Fragen 8: Antworten vom Privatdetektiv,Frequently Asked Questions 8: Answers from a Private Detective,faq privatdetektiv 8,Informational,B2C/B2B,Priority 2
+189,FAQ & Objection Handling,Häufige Fragen 9: Antworten vom Privatdetektiv,Frequently Asked Questions 9: Answers from a Private Detective,faq privatdetektiv 9,Informational,B2C/B2B,Priority 2
+190,FAQ & Objection Handling,Häufige Fragen 10: Antworten vom Privatdetektiv,Frequently Asked Questions 10: Answers from a Private Detective,faq privatdetektiv 10,Informational,B2C/B2B,Priority 2
+191,International Investigations,Internationale Ermittlungen 1: Grenzen überschreitende Fälle lösen,International Investigations 1: Solving Cross-Border Cases,internationale ermittlungen 1,Informational,B2C/B2B,Priority 1
+192,International Investigations,Internationale Ermittlungen 2: Grenzen überschreitende Fälle lösen,International Investigations 2: Solving Cross-Border Cases,internationale ermittlungen 2,Informational,B2C/B2B,Priority 1
+193,International Investigations,Internationale Ermittlungen 3: Grenzen überschreitende Fälle lösen,International Investigations 3: Solving Cross-Border Cases,internationale ermittlungen 3,Informational,B2C/B2B,Priority 1
+194,International Investigations,Internationale Ermittlungen 4: Grenzen überschreitende Fälle lösen,International Investigations 4: Solving Cross-Border Cases,internationale ermittlungen 4,Informational,B2C/B2B,Priority 2
+195,International Investigations,Internationale Ermittlungen 5: Grenzen überschreitende Fälle lösen,International Investigations 5: Solving Cross-Border Cases,internationale ermittlungen 5,Informational,B2C/B2B,Priority 2
+196,International Investigations,Internationale Ermittlungen 6: Grenzen überschreitende Fälle lösen,International Investigations 6: Solving Cross-Border Cases,internationale ermittlungen 6,Informational,B2C/B2B,Priority 2
+197,International Investigations,Internationale Ermittlungen 7: Grenzen überschreitende Fälle lösen,International Investigations 7: Solving Cross-Border Cases,internationale ermittlungen 7,Informational,B2C/B2B,Priority 2
+198,International Investigations,Internationale Ermittlungen 8: Grenzen überschreitende Fälle lösen,International Investigations 8: Solving Cross-Border Cases,internationale ermittlungen 8,Informational,B2C/B2B,Priority 2
+199,International Investigations,Internationale Ermittlungen 9: Grenzen überschreitende Fälle lösen,International Investigations 9: Solving Cross-Border Cases,internationale ermittlungen 9,Informational,B2C/B2B,Priority 2
+200,International Investigations,Internationale Ermittlungen 10: Grenzen überschreitende Fälle lösen,International Investigations 10: Solving Cross-Border Cases,internationale ermittlungen 10,Informational,B2C/B2B,Priority 2
+```
+
+---
+
+## 🏗️ PHASE 1: DIRECTORY STRUCTURE & DEPENDENCIES
+
+### 1.1 Create Project Structure
+
+```bash
+# In your Next.js project root
+mkdir -p blog/articles
+mkdir -p blog/_tonality-guide
+mkdir -p lib
+mkdir -p app/blog/[slug]
+mkdir -p public/images/blog
+```
+
+### 1.2 Install Required Dependencies
+
+```bash
+npm install gray-matter react-markdown
+```
+
+**Dependencies Explained:**
+- `gray-matter`: Parses YAML frontmatter from markdown files
+- `react-markdown`: Renders markdown content as React components
+
+---
+
+## 💻 PHASE 2: CORE BLOG FILES
+
+### File 1: `lib/blog.ts`
+
+**Purpose:** Utility functions to read and parse blog articles
+
+**Full Code:**
+
+```typescript
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+
+const articlesDirectory = path.join(process.cwd(), "blog/articles");
+
+export interface ArticleMetadata {
+  title: string;
+  slug: string;
+  keyword: string;
+  category: string;
+  date: string;
+  excerpt: string;
+}
+
+export interface Article {
+  metadata: ArticleMetadata;
+  content: string;
+}
+
+// Get all articles, sorted by date (newest first)
+export function getAllArticles(): Article[] {
+  const fileNames = fs.readdirSync(articlesDirectory);
+  const articles = fileNames
+    .filter((fileName) => fileName.endsWith(".md") && fileName !== "README.md")
+    .map((fileName) => {
+      const fullPath = path.join(articlesDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, "utf8");
+      const { data, content } = matter(fileContents);
+
+      return {
+        metadata: data as ArticleMetadata,
+        content,
+      };
+    })
+    .sort((a, b) => {
+      return new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime();
+    });
+
+  return articles;
+}
+
+// Get single article by slug
+export function getArticleBySlug(slug: string): Article | null {
+  const fileNames = fs.readdirSync(articlesDirectory);
+  const fileName = fileNames.find((name) => {
+    if (name === "README.md" || !name.endsWith(".md")) return false;
+    const fullPath = path.join(articlesDirectory, name);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const { data } = matter(fileContents);
+    return data.slug === slug;
+  });
+
+  if (!fileName) return null;
+
+  const fullPath = path.join(articlesDirectory, fileName);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+
+  return {
+    metadata: data as ArticleMetadata,
+    content,
+  };
+}
+
+// Get all slugs for static generation
+export function getAllSlugs(): string[] {
+  const articles = getAllArticles();
+  return articles.map((article) => article.metadata.slug);
+}
+```
+
+---
+
+### File 2: `app/blog/page.tsx`
+
+**Purpose:** Blog index page listing all articles
+
+**Full Code:**
+
+```typescript
+import { getAllArticles } from "@/lib/blog";
+import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog | Bona Fides Detektei",
+  description:
+    "Expertenwissen zu digitalen Ermittlungen, Cyberkriminalität, Betrugsaufklärung und Hintergrundprüfungen. Professionelle Artikel von Deutschlands führender Detektei.",
+};
+
+interface BlogIndexProps {
+  searchParams: Promise<{ category?: string }>;
+}
+
+export default async function BlogIndex({ searchParams }: BlogIndexProps) {
+  const { category: filterCategory } = await searchParams;
+  const articles = getAllArticles();
+
+  // Filter by category if specified
+  const filteredArticles = filterCategory
+    ? articles.filter((article) => article.metadata.category === filterCategory)
+    : articles;
+
+  // Group articles by category
+  const articlesByCategory = filteredArticles.reduce(
+    (acc, article) => {
+      const category = article.metadata.category;
+      if (!acc[category]) {
+        acc[category] = [];
+      }
+      acc[category].push(article);
+      return acc;
+    },
+    {} as Record<string, typeof filteredArticles>
+  );
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="border-b border-gray-200 bg-gradient-to-br from-slate-900 to-slate-800 py-16 md:py-24">
+        <div className="container mx-auto max-w-4xl px-4">
+          {filterCategory ? (
+            <>
+              <Link
+                href="/blog"
+                className="mb-4 inline-flex items-center text-amber-400 hover:underline"
+              >
+                ← Alle Artikel
+              </Link>
+              <h1 className="mb-6 text-center font-semibold text-5xl text-white md:text-6xl">
+                {filterCategory}
+              </h1>
+              <p className="mx-auto max-w-2xl text-center text-gray-300 text-lg">
+                {filteredArticles.length} Artikel in dieser Kategorie
+              </p>
+            </>
+          ) : (
+            <>
+              <h1 className="mb-6 text-center font-semibold text-5xl text-white md:text-6xl">
+                Bona Fides Blog
+              </h1>
+              <p className="mx-auto max-w-2xl text-center text-gray-300 text-lg">
+                Expertenwissen zu digitalen Ermittlungen, Cyberkriminalität und
+                Betrugsaufklärung. Von Deutschlands führender Detektei für digitale
+                Ermittlungen.
+              </p>
+            </>
+          )}
+        </div>
+      </section>
+
+      {/* Articles by Category */}
+      <section className="py-16">
+        <div className="container mx-auto max-w-6xl px-4">
+          {Object.entries(articlesByCategory).map(([category, categoryArticles]) => (
+            <div key={category} className="mb-16">
+              {!filterCategory && (
+                <h2 className="mb-8 border-b border-gray-300 pb-4 font-semibold text-2xl text-slate-900 md:text-3xl">
+                  {category}
+                </h2>
+              )}
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {categoryArticles.map((article, index) => {
+                  const gradients = [
+                    "from-amber-500/20 to-yellow-400/10",
+                    "from-slate-700/20 to-slate-500/10",
+                    "from-amber-600/20 to-amber-400/10",
+                  ];
+                  const gradient = gradients[index % gradients.length];
+
+                  return (
+                    <Link
+                      key={article.metadata.slug}
+                      href={`/blog/${article.metadata.slug}`}
+                      className="group block overflow-hidden rounded-lg border border-gray-200 bg-white transition-all hover:border-amber-500 hover:shadow-lg"
+                    >
+                      {/* Gradient Placeholder */}
+                      <div
+                        className={`aspect-[16/9] w-full bg-gradient-to-br ${gradient} flex items-center justify-center p-6`}
+                      >
+                        <div className="text-center">
+                          <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-amber-600">
+                            {article.metadata.category}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="p-6">
+                        <h3 className="mb-3 font-semibold text-slate-900 text-xl leading-tight group-hover:text-amber-600">
+                          {article.metadata.title}
+                        </h3>
+                        {article.metadata.excerpt && (
+                          <p className="mb-3 text-gray-600 text-sm line-clamp-2">
+                            {article.metadata.excerpt}
+                          </p>
+                        )}
+                        <p className="mb-4 text-gray-500 text-xs">
+                          {new Date(article.metadata.date).toLocaleDateString("de-DE", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+                        </p>
+                        <div className="flex items-center text-amber-600 text-sm font-medium">
+                          Artikel lesen →
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+```
+
+---
+
+### File 3: `app/blog/[slug]/page.tsx`
+
+**Purpose:** Individual article page with SEO optimization
+
+**Full Code:**
+
+```typescript
+import { getArticleBySlug, getAllSlugs } from "@/lib/blog";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import ReactMarkdown from "react-markdown";
+import Link from "next/link";
+
+interface ArticlePageProps {
+  params: Promise<{ slug: string }>;
+}
+
+// Generate static pages for all articles
+export async function generateStaticParams() {
+  const slugs = getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
+
+// Generate metadata for SEO
+export async function generateMetadata({
+  params,
+}: ArticlePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
+
+  if (!article) {
+    return { title: "Artikel nicht gefunden" };
+  }
+
+  return {
+    title: `${article.metadata.title} | Bona Fides Detektei`,
+    description: article.metadata.excerpt,
+    keywords: article.metadata.keyword,
+    openGraph: {
+      title: article.metadata.title,
+      description: article.metadata.excerpt,
+      type: "article",
+      publishedTime: article.metadata.date,
+    },
+  };
+}
+
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
+
+  if (!article) {
+    notFound();
+  }
+
+  // Extract FAQ for schema markup
+  const faqMatch = article.content.match(/## Häufig gestellte Fragen \(FAQ\)\n\n([\s\S]*?)(?=\n---|\n##|$)/);
+  const faqSection = faqMatch ? faqMatch[1] : "";
+  const faqItems = [];
+
+  const faqRegex = /\*\*F: (.+?)\*\*\nA: (.+?)(?=\n\n|\*\*F:|$)/gs;
+  let match;
+  while ((match = faqRegex.exec(faqSection)) !== null) {
+    faqItems.push({
+      question: match[1].trim(),
+      answer: match[2].trim(),
+    });
+  }
+
+  // Generate JSON-LD schema
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.metadata.title,
+    datePublished: article.metadata.date,
+    author: { "@type": "Organization", name: "Bona Fides Detektei" },
+    publisher: {
+      "@type": "Organization",
+      name: "Bona Fides Detektei",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://bona-fides.vercel.app/logo.png",
+      },
+    },
+    keywords: article.metadata.keyword,
+    articleSection: article.metadata.category,
+  };
+
+  const faqSchema =
+    faqItems.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
+        }
+      : null;
+
+  return (
+    <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
+      <article className="min-h-screen bg-white">
+        {/* Article Header */}
+        <header className="border-b border-gray-200 bg-gradient-to-br from-slate-900 to-slate-800 py-12 md:py-16">
+          <div className="container mx-auto max-w-3xl px-4">
+            <Link
+              href="/blog"
+              className="mb-6 inline-flex items-center text-amber-400 hover:underline"
+            >
+              ← Zurück zum Blog
+            </Link>
+            <div className="mb-4 text-gray-300 text-sm">
+              {article.metadata.category} •{" "}
+              {new Date(article.metadata.date).toLocaleDateString("de-DE", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </div>
+            <h1 className="font-semibold text-4xl text-white md:text-5xl">
+              {article.metadata.title}
+            </h1>
+          </div>
+        </header>
+
+        {/* Article Content */}
+        <div className="py-12 md:py-16">
+          <div className="container mx-auto max-w-3xl px-4">
+            <div className="prose prose-lg max-w-none">
+              <ReactMarkdown
+                components={{
+                  h1: ({ children }) => (
+                    <h1 className="mb-6 font-semibold text-3xl text-slate-900 md:text-4xl">
+                      {children}
+                    </h1>
+                  ),
+                  h2: ({ children }) => (
+                    <h2 className="mb-4 mt-12 font-semibold text-2xl text-slate-900 md:text-3xl">
+                      {children}
+                    </h2>
+                  ),
+                  h3: ({ children }) => (
+                    <h3 className="mb-3 mt-8 font-semibold text-xl text-slate-900 md:text-2xl">
+                      {children}
+                    </h3>
+                  ),
+                  p: ({ children }) => (
+                    <p className="mb-6 text-gray-700 text-lg leading-relaxed">
+                      {children}
+                    </p>
+                  ),
+                  em: ({ children }) => (
+                    <em className="not-italic my-8 block border-l-4 border-amber-500 bg-amber-50 py-4 px-6 font-medium text-gray-800 text-lg italic">
+                      {children}
+                    </em>
+                  ),
+                  strong: ({ children }) => (
+                    <strong className="font-semibold text-slate-900">
+                      {children}
+                    </strong>
+                  ),
+                  ul: ({ children }) => (
+                    <ul className="mb-6 ml-6 list-disc space-y-2">{children}</ul>
+                  ),
+                  ol: ({ children }) => (
+                    <ol className="mb-6 ml-6 list-decimal space-y-2">{children}</ol>
+                  ),
+                  li: ({ children }) => (
+                    <li className="text-gray-700 text-lg">{children}</li>
+                  ),
+                  blockquote: ({ children }) => (
+                    <blockquote className="my-6 border-l-4 border-amber-500 py-2 pl-6 italic text-gray-600">
+                      {children}
+                    </blockquote>
+                  ),
+                  hr: () => <hr className="my-12 border-t border-gray-300" />,
+                  a: ({ href, children }) => (
+                    <a
+                      href={href}
+                      className="text-amber-600 underline hover:text-amber-700"
+                    >
+                      {children}
+                    </a>
+                  ),
+                }}
+              >
+                {article.content}
+              </ReactMarkdown>
+            </div>
+          </div>
+        </div>
+      </article>
+    </>
+  );
+}
+```
+
+---
+
+## 📝 PHASE 3: GERMAN ARTICLE TEMPLATE
+
+### Complete Article Template (Markdown Format)
+
+**Use this exact structure for EVERY article. Generate content in German based on the article data from the CSV.**
+
+```markdown
+---
+title: "[German Title from CSV]"
+slug: [generated-slug-from-title]
+keyword: [Primary Keyword from CSV]
+category: [Category from CSV]
+date: [YYYY-MM-DD based on priority]
+excerpt: "Professionelle Ermittlungshilfe für [topic]. Erfahren Sie, wie Bona Fides Detektei Ihnen bei [specific problem] helfen kann."
+---
+
+# [Article Title in German]
+
+## Zusammenfassung (TL;DR)
+
+[Write 60-80 words in German summarizing:
+- The problem readers face
+- Why it matters (legal, financial, emotional impact)
+- What Bona Fides can do to help
+- Expected timeline or outcome
+
+Use formal "Sie" for B2B, warmer "Sie" for B2C.
+Make it scannable and compelling.]
+
+---
+
+[Write 3-4 paragraphs hook in German:
+
+Paragraph 1: Show reader they have this exact problem. Use specific scenario.
+Paragraph 2: Explain why traditional solutions fail or why this is getting worse.
+Paragraph 3: Introduce the hidden cost of inaction (legal risk, financial loss, emotional toll).
+Paragraph 4: Hint at the solution Bona Fides provides.
+
+For B2B: Focus on business risk, compliance, ROI, reputation.
+For B2C: Focus on emotional impact, privacy, peace of mind, resolution.]
+
+*[Write ONE clever analogy in German, italicized:
+"Digitale Ermittlungen sind wie [familiar concept]. [How it breaks/what causes problem]."
+Keep it simple, memorable, and relevant to the category.]*
+
+## [H2 Question in German: "Warum ist das ein Problem?" or similar]
+
+[Write 4-6 paragraphs in German explaining:
+
+1. **The mechanism:** How this problem actually works
+2. **German legal context:** Mention DSGVO, BDSG, or relevant German laws if applicable
+3. **Real-world impact:** Statistics, case examples (anonymized)
+4. **Why it's urgent:** Trends showing problem is increasing
+5. **Who is affected:** Specific demographics or business types
+
+Include data from BKA (Bundeskriminalamt) or Bitkom if relevant to category.
+Use clear, professional German. Avoid jargon.
+Short paragraphs (3-4 sentences each).]
+
+## [H2 Question in German: "Wie kann Bona Fides helfen?"]
+
+[Write solution section in German:]
+
+**Unsere Ermittlungsmethoden:**
+
+1. **[Method 1]** - [2-3 sentences explaining what we do and why it works]
+2. **[Method 2]** - [2-3 sentences explaining what we do and why it works]
+3. **[Method 3]** - [2-3 sentences explaining what we do and why it works]
+
+**Was Sie erwarten können:**
+
+- **Zeitrahmen:** [Realistic timeline: X Tage for simple cases, X Wochen for complex]
+- **Diskretion:** Absolute Vertraulichkeit und verschlüsselte Kommunikation
+- **Ergebnisse:** [Specific deliverables: Bericht, Beweismittel, rechtsverwertbare Dokumentation]
+- **Rechtssicherheit:** DSGVO-konforme Ermittlungsmethoden
+
+[For B2B: Emphasize ROI, preventive measures, compliance.
+For B2C: Emphasize discretion, emotional support, clear communication.]
+
+## Häufig gestellte Fragen (FAQ)
+
+**F: [Question directly related to the article topic, addressing common concern]**
+A: [Answer in 2-3 sentences. Direct, professional, reassuring. Include legal compliance if relevant.]
+
+**F: [Question about legality, GDPR, or German law]**
+A: [Answer explaining legal boundaries, what's allowed, what's not. Emphasize DSGVO compliance.]
+
+**F: [Question about cost, timeline, or process]**
+A: [Answer with realistic expectations. Mention free consultation if applicable.]
+
+**F: [Question about confidentiality or discretion]**
+A: [Answer emphasizing professionalism, encryption, attorney-client privilege where applicable.]
+
+---
+
+*Dieser Artikel dient nur zu Informationszwecken und stellt keine Rechtsberatung dar. Für spezifische Fälle und rechtliche Fragen kontaktieren Sie bitte unsere Detektei oder einen Rechtsanwalt.*
+
+---
+
+## Benötigen Sie professionelle Ermittlungshilfe?
+
+Bona Fides ist Deutschlands führende Detektei für digitale Ermittlungen. Wir bieten:
+
+✓ **24/7 Verfügbarkeit** – Wir sind rund um die Uhr für Sie erreichbar
+✓ **Kostenlose Erstberatung** – Unverbindliches Erstgespräch
+✓ **Verschlüsselte Kommunikation** – Ihre Daten sind sicher
+✓ **Deutschlandweite Ermittlungen** – Mit internationalen Partnern
+
+**[Kostenlose Beratung anfragen](https://bona-fides.vercel.app/kontakt)**
+
+Oder rufen Sie uns direkt an: **[Telefonnummer einfügen]**
+
+**Nicht sicher, ob Sie unsere Hilfe benötigen?**
+[Zum Schnellcheck: Brauche ich einen Detektiv?](https://bona-fides.vercel.app/schnellcheck)
+
+---
+
+## Verwandte Artikel
+
+- [Link to related article 1 in same category - will be added during interlinking phase]
+- [Link to related article 2 in same category - will be added during interlinking phase]
+- [Link to related article 3 in related category - will be added during interlinking phase]
+```
+
+---
+
+## 🔗 PHASE 4: INTERNAL LINKING STRATEGY
+
+### Category Relationship Map
+
+Use this to determine cross-category links:
+
+**Primary Relationships:**
+- **Digital Investigations** ↔ Cybercrime & Fraud, Technology & Tools
+- **Cybercrime & Fraud** ↔ Digital Investigations, Corporate Fraud & Employee Misconduct
+- **Background Checks & Due Diligence** ↔ Corporate Fraud & Employee Misconduct, Legal & Regulatory Topics
+- **Infidelity & Relationship Investigations** ↔ Digital Investigations, How-To & Educational Guides
+- **Corporate Fraud & Employee Misconduct** ↔ Cybercrime & Fraud, Background Checks & Due Diligence
+- **Legal & Regulatory Topics** ↔ All categories (provides legal context)
+- **Case Studies & Real Stories** ↔ Any category (provides examples)
+- **How-To & Educational Guides** ↔ All categories (educational bridge)
+- **Technology & Tools** ↔ Digital Investigations, Cybercrime & Fraud
+- **Industry Trends & Statistics** ↔ All categories (data source)
+- **Geographic/Local Content** ↔ All categories (location-specific)
+- **FAQ & Objection Handling** ↔ All categories (answers common questions)
+- **International Investigations** ↔ Digital Investigations, Cybercrime & Fraud
+
+### Linking Rules
+
+**For EACH article:**
+1. Link to 2 articles within the SAME category
+2. Link to 1 article in a RELATED category (use map above)
+3. Place links in "Verwandte Artikel" section at bottom
+4. Use descriptive anchor text in German
+
+**After generating all articles, run a second pass to add internal links.**
+
+---
+
+## 🎯 PHASE 5: ARTICLE GENERATION INSTRUCTIONS
+
+### Step-by-Step Generation Process
+
+**For EACH of the 200 articles in the CSV:**
+
+1. **Extract Data:**
+   - Article #: Use for filename (001-slug.md, 002-slug.md)
+   - German Title: Use as H1 and meta title
+   - Category: Use for organization and linking
+   - Primary Keyword: Use 3-5 times naturally in content
+   - Target Audience: B2C = warmer emotional tone, B2B = professional data-driven tone
+   - Priority: Determines publication date
+
+2. **Generate Slug:**
+   ```
+   - Take German title
+   - Convert to lowercase
+   - Replace ä→ae, ö→oe, ü→ue, ß→ss
+   - Replace spaces and special chars with hyphens
+   - Example: "Digitale Spur 1: Moderne Ermittlungstechniken im Netz"
+     → "digitale-spur-1-moderne-ermittlungstechniken-im-netz"
+   ```
+
+3. **Assign Publication Date (ONE ARTICLE PER DAY):**
+   ```
+   IMPORTANT: Publish exactly ONE article per day, no duplicates.
+
+   Start date: 2025-06-01
+   For each article # (1-200):
+   - Article 1: 2025-06-01
+   - Article 2: 2025-06-02
+   - Article 3: 2025-06-03
+   - ...and so on sequentially
+   - Article 200: 2025-12-17 (200 days from start)
+
+   Formula: date = 2025-06-01 + (article# - 1) days
+
+   This creates a natural publishing schedule:
+   - Articles 1-60 (Priority 1): June 1 - July 30, 2025
+   - Articles 61-140 (Priority 2): July 31 - Oct 18, 2025
+   - Articles 141-200 (Priority 3): Oct 19 - Dec 17, 2025
+
+   BUT: Distribute by actual priority in CSV:
+   - Priority 1 articles (newest content) = Sept-Nov 2025 dates
+   - Priority 2 articles (mid-tier) = July-Aug 2025 dates
+   - Priority 3 articles (older) = June 2025 dates
+
+   RECOMMENDED APPROACH:
+   1. Sort articles by priority (1, 2, 3)
+   2. Assign newest dates to Priority 1 (working backwards from Nov 11)
+   3. Assign mid dates to Priority 2
+   4. Assign oldest dates to Priority 3
+   5. Within each priority, assign sequentially (one per day)
+   ```
+
+4. **Generate Content:**
+   - Follow the German Article Template exactly
+   - Use category-specific knowledge:
+     - **Digital Investigations:** OSINT, social media forensics, online person search
+     - **Cybercrime & Fraud:** Phishing, ransomware, CEO fraud, romance scams
+     - **Background Checks:** Employee screening, tenant checks, business partner due diligence
+     - **Infidelity:** Digital infidelity signs, GPS tracking legality, emotional support
+     - **Corporate Fraud:** Embezzlement, IP theft, time fraud, whistleblower investigations
+     - **Legal:** German private investigation law, DSGVO, evidence admissibility
+     - **Case Studies:** Anonymized real investigation stories
+     - **How-To:** Process guides, when to hire detective, cost expectations
+     - **Technology:** OSINT tools, digital forensics software, dark web research
+     - **Industry Trends:** BKA statistics, cybercrime trends, fraud predictions
+     - **Geographic:** City-specific costs, local regulations, regional fraud patterns
+     - **FAQ:** Common objections, pricing, privacy concerns
+     - **International:** Cross-border fraud, international due diligence
+
+5. **Write in Professional German:**
+   - Use formal "Sie" (not "du")
+   - Clear, direct language
+   - Short paragraphs (3-4 sentences)
+   - Active voice
+   - No hedging words (vielleicht, möglicherweise)
+
+6. **Include Required Elements:**
+   - Zusammenfassung (TL;DR): 60-80 words
+   - Hook: 3-4 paragraphs
+   - One italicized analogy
+   - Problem explanation: 4-6 paragraphs
+   - Solution section with methods
+   - FAQ: 4 questions
+   - Disclaimer
+   - CTA box
+   - Verwandte Artikel section (links added later)
+
+7. **SEO Optimization:**
+   - Use primary keyword 3-5 times naturally
+   - Include keyword in: H1, first paragraph, one H2, conclusion
+   - Question-based H2 headings
+   - FAQ section for schema markup
+
+8. **Save File:**
+   ```
+   blog/articles/[number]-[slug].md
+   Example: blog/articles/001-digitale-spur-1-moderne-ermittlungstechniken-im-netz.md
+   ```
+
+---
+
+## 🚀 EXECUTION CHECKLIST
+
+### Phase 1: Setup ✓
+- [ ] Create directory structure (blog/articles, app/blog, lib)
+- [ ] Install dependencies (npm install gray-matter react-markdown)
+- [ ] Create lib/blog.ts with utility functions
+- [ ] Create app/blog/page.tsx (blog index)
+- [ ] Create app/blog/[slug]/page.tsx (article template)
+
+### Phase 2: Content Generation
+- [ ] Parse the 200-article CSV data above
+- [ ] For each article:
+  - [ ] Generate slug from German title
+  - [ ] Assign publication date based on priority
+  - [ ] Generate full German article content (1,000-1,500 words)
+  - [ ] Follow template structure exactly
+  - [ ] Use appropriate tone for target audience
+  - [ ] Include all required elements
+  - [ ] Save as numbered markdown file
+
+### Phase 3: Internal Linking
+- [ ] After all articles generated, add internal links
+- [ ] For each article:
+  - [ ] Find 2 articles in same category
+  - [ ] Find 1 article in related category
+  - [ ] Add links to "Verwandte Artikel" section
+- [ ] Verify no broken links
+
+### Phase 4: Quality Check
+- [ ] All 200 articles generated
+- [ ] German grammar and spelling correct
+- [ ] No placeholder text remaining
+- [ ] All frontmatter fields filled
+- [ ] Primary keyword used 3-5 times
+- [ ] FAQ section present in each
+- [ ] CTA present in each
+- [ ] Internal links added
+
+### Phase 5: Testing
+- [ ] Run: npm run build
+- [ ] Verify all articles render
+- [ ] Test blog index page
+- [ ] Test category filtering
+- [ ] Check mobile responsiveness
+- [ ] Validate schema markup (Google Rich Results Test)
+
+### Phase 6: Launch
+- [ ] Deploy to production (Vercel recommended)
+- [ ] Submit sitemap to Google Search Console
+- [ ] Monitor indexing
+- [ ] Track performance
+
+---
+
+## 🎨 DESIGN NOTES
+
+### Brand Colors (Detective Agency Aesthetic)
+
+- **Deep Navy:** `#1a2332` (headers, dark sections)
+- **Professional Gray:** `#4a5568` (body text)
+- **Accent Gold:** `#d4af37` (CTAs, links)
+- **Amber:** `#FFB84D` (secondary accent)
+- **Clean White:** `#ffffff` (backgrounds)
+- **Light Gray:** `#f7fafc` (alternate backgrounds)
+
+### Typography
+
+- **Font:** Inter (already in Next.js)
+- **H1:** 40-56px, font-semibold
+- **H2:** 32px, font-semibold
+- **H3:** 24px, font-semibold
+- **Body:** 18px, leading-relaxed
+- **Small:** 14px (meta info)
+
+### Component Style Guidelines
+
+**Blog Cards:**
+- Gradient placeholder (gold/amber/slate variations)
+- White background with border
+- Hover: Gold border + shadow
+- Category badge in gradient area
+- Excerpt (2 lines max)
+- Date in German format
+- "Artikel lesen →" CTA
+
+**Article Page:**
+- Dark gradient header (slate-900 to slate-800)
+- White text on dark header
+- Gold/amber accents for links
+- Generous reading width (max-w-3xl)
+- Italicized analogy: Gold left border, amber-50 background
+- CTA box: Amber background, prominent
+- FAQ: Clean list format
+
+---
+
+## 💡 TIPS FOR SUCCESS
+
+1. **Think Hard:** Review each article for accuracy and tone before saving
+2. **Consistency:** Use the same template structure for ALL 200 articles
+3. **Quality Over Speed:** Better to generate fewer high-quality articles than 200 mediocre ones
+4. **German Language:** Ensure proper grammar, formal tone, professional vocabulary
+5. **DSGVO Awareness:** Mention legal compliance where relevant
+6. **Batch Processing:** Generate in batches (Priority 1 first, then 2, then 3)
+7. **Internal Linking:** Don't forget this step - it's crucial for SEO
+8. **Test Early:** Build and test after first 10 articles to catch issues
+
+---
+
+## 🏁 READY TO BUILD?
+
+**Your task:**
+
+1. Set up the blog architecture (Phase 1 & 2)
+2. Generate ALL 200 articles using the CSV data and German template
+3. Add internal links between related articles
+4. Test the complete system
+5. Deploy to production
+
+**Expected Output:**
+
+- Complete Next.js blog with 200 German articles
+- Category-based organization
+- Internal linking structure
+- SEO-optimized with schema markup
+- Mobile-responsive design
+- Professional detective agency aesthetic
+- Conversion-focused CTAs
+
+---
+
+**Now build this blog. All information is self-contained in this prompt. No external files needed. Let's go! 🕵️**
