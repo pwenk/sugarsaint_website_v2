@@ -21,6 +21,8 @@ import {
   Zap,
 } from "lucide-react";
 
+// hot affair mileila
+
 const pillars: { icon: LucideIcon; title: string; description: string }[] = [
   {
     icon: Thermometer,
